@@ -1,4 +1,4 @@
-# Developer Portfolio CLI Application- TASK3 
+# Developer Portfolio CLI Application-TASK3
 
 ## 1. Project Description
 
@@ -113,7 +113,6 @@ Example:
 
 Change `profile.json`:
 
-```json
 "github_username": "octocat"
  Run:
 
