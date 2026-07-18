@@ -85,6 +85,60 @@ The application is organized into separate functions:
 ### `main()`
 - Controls the complete application workflow.
 
+## 8. REST API Integration
+
+This project uses the GitHub Public REST API.
+
+API Endpoint:
+
+https://api.github.com/users/{username}
+
+The API provides public GitHub information:
+
+- Username
+- Public repositories
+- Followers
+
+No authentication token is required because only public GitHub data is accessed.
+
+## 9. Running the Application
+
+Run the application using:
+python portfolio.py
+## 10. Testing
+
+The application was tested using different GitHub usernames.
+
+Example:
+
+Change `profile.json`:
+
+"github_username": "octocat"
+ Run:
+
+python portfolio.py
+
+The application successfully retrieves and displays information for different GitHub accounts.
+
+## 11. Error Handling
+
+The application handles:
+
+- Missing profile JSON file
+- Invalid JSON format
+- Invalid GitHub username
+- API connection problems
+- Failed API requests
+
+The program displays appropriate error messages instead of crashing.
+
+## 12. Dependencies
+
+The required Python package is listed in:
+requirements.txt
+Example:
+requests
+
 ## 12. Dependencies
 
 The required Python package is listed in:
