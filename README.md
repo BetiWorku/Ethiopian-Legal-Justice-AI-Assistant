@@ -1,66 +1,62 @@
-# Developer Portfolio CLI Application-Task3
+# Developer Portfolio CLI Application - Task 3
 
 ## 1. Project Description
 
-The Developer Portfolio CLI Application is a Python Command Line Interface (CLI) application that displays developer profile information from a JSON configuration file and integrates with the GitHub Public REST API to retrieve and display GitHub user information.
-
-The project demonstrates fundamental Python programming concepts, JSON file handling, REST API integration, error handling, and clean code organization using functions.
+This project is a Python command-line application that reads developer profile information from a JSON file and fetches public GitHub profile data from the GitHub REST API. It demonstrates core Python concepts such as file handling, API integration, error handling, and modular function design.
 
 ## 2. Features
 
 - Read developer information from a JSON configuration file
 - Display formatted developer portfolio information
-- Consume GitHub Public REST API
-- Display GitHub user information
-- Convert API responses into JSON format
-- Handle invalid GitHub usernames gracefully
-- Handle API connection errors
-- Follow clean coding practices using modular functions
+- Retrieve public GitHub user information
+- Convert API responses into JSON-friendly data
+- Handle invalid GitHub usernames and API errors gracefully
+- Follow clean coding practices using separate functions
 
 ## 3. Project Structure
+
+```text
 AILegalAssistant/
-│
 ├── README.md
 ├── app.py
+├── portfolio.py
+├── profile.json
 ├── requirements.txt
-│
-├── reports/              
 ├── data/
-├── models/           
+├── models/
 ├── notebooks/
-├── resourses
+├── reports/
+├── resourses/
 ├── scripts/
-├── tests
-└── venv/                     # Python virtual environment
-│.env
-├── portfolio.py              # Main Python CLI application
-├── profile.json              # Developer profile configuration file
-├── requirements.txt          # Python dependencies
-├── README.md                 # Project documentation
-                   
+└── tests/
+```
+
 ## 4. Technologies Used
 
 - Python 3.13
 - JSON
-- REST API
-- GitHub API
-- Requests Library
+- Requests
+- GitHub REST API
 
 ## 5. Installation and Setup
 
-### Create Virtual Environment
+### Create a virtual environment
 
-A virtual environment was created to isolate project dependencies.
-
+```bash
 python -m venv venv
+```
 
-### Activate Virtual Environment
+### Activate the virtual environment
+
+```bash
 venv\Scripts\activate
+```
 
-### Install Dependencies
+### Install dependencies
+
+```bash
 pip install -r requirements.txt
-
-The Python environment was successfully configured and all required dependencies were installed.
+```
 
 ## 6. Configuration File
 
@@ -70,81 +66,56 @@ Developer information is stored in `profile.json`.
 
 The application is organized into separate functions:
 
-### `read_profile()`
-- Reads developer information from the JSON file.
-
-### `display_profile()`
-- Displays formatted developer profile information.
-
-### `get_github_data()`
-- Sends a request to GitHub REST API and retrieves user data.
-
-### `display_github()`
-- Displays GitHub API response information.
-
-### `main()`
-- Controls the complete application workflow.
+- `read_profile()` - reads developer information from the JSON file
+- `display_profile()` - displays formatted developer profile information
+- `get_github_data()` - sends a request to the GitHub API and retrieves user data
+- `display_github()` - displays GitHub API response information
+- `main()` - controls the complete application workflow
 
 ## 8. REST API Integration
 
 This project uses the GitHub Public REST API.
 
-API Endpoint:
+API endpoint:
 
+```text
 https://api.github.com/users/{username}
+```
 
-The API provides public GitHub information:
+The API provides public GitHub information such as:
 
 - Username
 - Public repositories
 - Followers
 
-No authentication token is required because only public GitHub data is accessed.
-
 ## 9. Running the Application
 
 Run the application using:
+
+```bash
 python portfolio.py
+```
+
 ## 10. Testing
 
-The application was tested using different GitHub usernames.
-
-Example:
-
-Change `profile.json`:
-
-"github_username": "octocat"
- Run:
-
-python portfolio.py
-
-The application successfully retrieves and displays information for different GitHub accounts.
+You can test the application by updating `profile.json` with a GitHub username such as `octocat` and then running the script again.
 
 ## 11. Error Handling
 
 The application handles:
 
-- Missing profile JSON file
+- Missing profile JSON files
 - Invalid JSON format
-- Invalid GitHub username
-- API connection problems
+- Invalid GitHub usernames
+- API connection errors
 - Failed API requests
 
-The program displays appropriate error messages instead of crashing.
-
 ## 12. Dependencies
 
-The required Python package is listed in:
-requirements.txt
-Example:
-requests
+The required package is listed in `requirements.txt`:
 
-## 12. Dependencies
-
-The required Python package is listed in:
-requirements.txt
-Example:
-requests
+- requests
 
 ## 13. Author
-    Betelhem Worku 
+
+Betelhem Worku
