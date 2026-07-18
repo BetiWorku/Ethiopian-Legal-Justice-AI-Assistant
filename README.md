@@ -1,121 +1,114 @@
-# Developer Portfolio CLI Application - Task 3
+## Task 1 Deliverables
 
-## 1. Project Description
+ 1. Successfully Configured Development Environment
 
-This project is a Python command-line application that reads developer profile information from a JSON file and fetches public GitHub profile data from the GitHub REST API. It demonstrates core Python concepts such as file handling, API integration, error handling, and modular function design.
+The AI Legal Assistant development environment has been successfully configured with all required tools and dependencies.
 
-## 2. Features
+Configured tools:
 
-- Read developer information from a JSON configuration file
-- Display formatted developer portfolio information
-- Retrieve public GitHub user information
-- Convert API responses into JSON-friendly data
-- Handle invalid GitHub usernames and API errors gracefully
-- Follow clean coding practices using separate functions
+- ✅ Visual Studio Code
+- ✅ Python 3.13.14
+- ✅ Git 2.51.0
+- ✅ GitHub integration
+- ✅ Python Virtual Environment (venv)
+- ✅ Node.js v20.19.5
+- ✅ npm 10.8.2
+- ✅ Docker Desktop 29.6.1
+- ✅ PostgreSQL 18.4
+- ✅ Postman
 
-## 3. Project Structure
+The Python virtual environment was created and activated successfully, and all required project dependencies were installed from `requirements.txt`.
 
-```text
-AILegalAssistant/
-├── README.md
-├── app.py
-├── portfolio.py
-├── profile.json
-├── requirements.txt
-├── data/
-├── models/
-├── notebooks/
-├── reports/
-├── resourses/
-├── scripts/
-└── tests/
-```
 
-## 4. Technologies Used
+ 2. Environment Verification Checklist
 
-- Python 3.13
-- JSON
-- Requests
-- GitHub REST API
+| Component | Version | Status |
+|-----------|---------|--------|
+| Python | 3.13.14 | ✅ Verified |
+| VS Code | 1.127.0 | ✅ Verified |
+| Git | 2.51.0.windows.2 | ✅ Verified |
+| Virtual Environment | venv | ✅ Created & Activated |
+| Node.js | v20.19.5 | ✅ Verified |
+| npm | 10.8.2 | ✅ Verified |
+| Docker Desktop | 29.6.1 | ✅ Verified |
+| PostgreSQL | 18.4 | ✅ Verified |
+| Postman | Installed | ✅ Verified |
 
-## 5. Installation and Setup
+3. Starter Project Execution Verification
 
-### Create a virtual environment
+The starter Python project was successfully executed inside the virtual environment.
 
-```bash
-python -m venv venv
-```
+Command:
+python app.py
 
-### Activate the virtual environment
+Output:
+Hello GitHub Collaboration
 
-```bash
-venv\Scripts\activate
-```
+Status:
 
-### Install dependencies
+✅ Starter project runs successfully.
 
-```bash
-pip install -r requirements.txt
-```
+### Final Status
 
-## 6. Configuration File
+The development environment setup task has been completed successfully.
 
-Developer information is stored in `profile.json`.
+All required software tools were installed, configured, verified, and the starter project was executed successfully.
 
-## 7. Application Functions
+## Task 2 Deliverables
+ ## GitHub Repository Setup and Branch Workflow
 
-The application is organized into separate functions:
+The project was connected to GitHub using Git version control. A separate development branch was created to follow team collaboration practices and avoid direct changes to the main branch.
 
-- `read_profile()` - reads developer information from the JSON file
-- `display_profile()` - displays formatted developer profile information
-- `get_github_data()` - sends a request to the GitHub API and retrieves user data
-- `display_github()` - displays GitHub API response information
-- `main()` - controls the complete application workflow
+### 1. Initialize Git Repository
 
-## 8. REST API Integration
+Initialize Git inside the project folder:
 
-This project uses the GitHub Public REST API.
+git init
 
-API endpoint:
+### 2. Add Project Files
 
-```text
-https://api.github.com/users/{username}
-```
+Add all project files to Git staging:
+git add .
 
-The API provides public GitHub information such as:
+### 3. Create Initial Commit
 
-- Username
-- Public repositories
-- Followers
+Commit the project files:
 
-## 9. Running the Application
+git commit -m "Add development environment setup"
 
-Run the application using:
+### 4. Create Development Branch
 
-```bash
-python portfolio.py
-```
+A separate branch was created for development work:
 
-## 10. Testing
+git checkout -b betelhemdevelopment
 
-You can test the application by updating `profile.json` with a GitHub username such as `octocat` and then running the script again.
+Verify current branch:
+git branch
 
-## 11. Error Handling
+### 5. Connect Local Repository with GitHub
 
-The application handles:
+Add the remote GitHub repository:
+git remote add origin https://github.com/BetiWorku/Ethiopian-Legal-Justice-AI-Assistant.git
 
-- Missing profile JSON files
-- Invalid JSON format
-- Invalid GitHub usernames
-- API connection errors
-- Failed API requests
+### 6. Push Development Branch to GitHub
 
-## 12. Dependencies
+Push the created branch:
+git push -u origin betelhemdevelopment
 
-The required package is listed in `requirements.txt`:
+The development branch was successfully pushed to the GitHub repository.
 
-- requests
+### 7. Create Pull Request
 
-## 13. Author
+After pushing the branch:
 
-Betelhem Worku
+1. Open the GitHub repository.
+2. Navigate to **Pull Requests**.
+3. Click **New Pull Request**.
+4. Select:
+   - Base branch: `main`
+   - Compare branch: `betelhem-development-setup`
+5. Create the Pull Request for review.
+
+
+
+
