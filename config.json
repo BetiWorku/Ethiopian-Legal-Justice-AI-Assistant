@@ -1,0 +1,42 @@
+{
+  "application": {
+    "name": "AI Legal Assistant",
+    "version": "1.0"
+  },
+
+  "courtlistener_api": {
+    "base_url": "https://www.courtlistener.com/api/rest/v4",
+
+    "endpoints": {
+      "search_cases": "/search/",
+      "courts": "/courts/",
+      "opinions": "/opinions/"
+    },
+
+    "authentication": {
+      "required": false,
+      "token": null
+    }
+  },
+
+  "features": {
+    "search_legal_cases": true,
+    "list_courts": true,
+    "get_opinions": true,
+    "ai_summary": false,
+    "database_storage": false
+  },
+
+  "cli_menu": {
+    "1": "Search Legal Cases",
+    "2": "List Courts",
+    "3": "Search Opinions",
+    "4": "Exit"
+  },
+
+  "search_settings": {
+    "default_type": "o",
+    "max_results": 5,
+    "sort_order": "dateFiled desc"
+  }
+}

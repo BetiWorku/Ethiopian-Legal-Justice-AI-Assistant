@@ -113,7 +113,6 @@ Example:
 
 Change `profile.json`:
 
-```json
 "github_username": "octocat"
  Run:
 
