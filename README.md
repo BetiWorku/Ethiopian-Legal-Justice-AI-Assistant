@@ -1,143 +1,114 @@
-# Developer Portfolio CLI Application-Task3
+## Task 1 Deliverables
 
-## 1. Project Description
+ 1. Successfully Configured Development Environment
 
-The Developer Portfolio CLI Application is a Python Command Line Interface (CLI) application that displays developer profile information from a JSON configuration file and integrates with the GitHub Public REST API to retrieve and display GitHub user information.
+The AI Legal Assistant development environment has been successfully configured with all required tools and dependencies.
 
-The project demonstrates fundamental Python programming concepts, JSON file handling, REST API integration, error handling, and clean code organization using functions.
+Configured tools:
 
-## 2. Features
+- ✅ Visual Studio Code
+- ✅ Python 3.13.14
+- ✅ Git 2.51.0
+- ✅ GitHub integration
+- ✅ Python Virtual Environment (venv)
+- ✅ Node.js v20.19.5
+- ✅ npm 10.8.2
+- ✅ Docker Desktop 29.6.1
+- ✅ PostgreSQL 18.4
+- ✅ Postman
 
-- Read developer information from a JSON configuration file
-- Display formatted developer portfolio information
-- Consume GitHub Public REST API
-- Display GitHub user information
-- Convert API responses into JSON format
-- Handle invalid GitHub usernames gracefully
-- Handle API connection errors
-- Follow clean coding practices using modular functions
+The Python virtual environment was created and activated successfully, and all required project dependencies were installed from `requirements.txt`.
 
-## 3. Project Structure
-AILegalAssistant/
-│
-├── README.md
-├── app.py
-├── requirements.txt
-│
-├── reports/              
-├── data/
-├── models/           
-├── notebooks/
-├── resourses
-├── scripts/
-├── tests
-└── venv/                     # Python virtual environment
-│.env
-├── portfolio.py              # Main Python CLI application
-├── profile.json              # Developer profile configuration file
-├── requirements.txt          # Python dependencies
-├── README.md                 # Project documentation
-                   
-## 4. Technologies Used
 
-- Python 3.13
-- JSON
-- REST API
-- GitHub API
-- Requests Library
+ 2. Environment Verification Checklist
 
-## 5. Installation and Setup
+| Component | Version | Status |
+|-----------|---------|--------|
+| Python | 3.13.14 | ✅ Verified |
+| VS Code | 1.127.0 | ✅ Verified |
+| Git | 2.51.0.windows.2 | ✅ Verified |
+| Virtual Environment | venv | ✅ Created & Activated |
+| Node.js | v20.19.5 | ✅ Verified |
+| npm | 10.8.2 | ✅ Verified |
+| Docker Desktop | 29.6.1 | ✅ Verified |
+| PostgreSQL | 18.4 | ✅ Verified |
+| Postman | Installed | ✅ Verified |
 
-### Create Virtual Environment
+3. Starter Project Execution Verification
 
-A virtual environment was created to isolate project dependencies.
+The starter Python project was successfully executed inside the virtual environment.
 
-python -m venv venv
+Command:
+python app.py
 
-### Activate Virtual Environment
-venv\Scripts\activate
+Output:
+Hello GitHub Collaboration
 
-### Install Dependencies
-pip install -r requirements.txt
+Status:
 
-The Python environment was successfully configured and all required dependencies were installed.
+✅ Starter project runs successfully.
 
-## 6. Configuration File
+### Final Status
 
-Developer information is stored in `profile.json`.
+The development environment setup task has been completed successfully.
 
-## 7. Application Functions
+All required software tools were installed, configured, verified, and the starter project was executed successfully.
 
-The application is organized into separate functions:
+## Task 2 Deliverables
+ ## GitHub Repository Setup and Branch Workflow
 
-### `read_profile()`
-- Reads developer information from the JSON file.
+The project was connected to GitHub using Git version control. A separate development branch was created to follow team collaboration practices and avoid direct changes to the main branch.
 
-### `display_profile()`
-- Displays formatted developer profile information.
+### 1. Initialize Git Repository
 
-### `get_github_data()`
-- Sends a request to GitHub REST API and retrieves user data.
+Initialize Git inside the project folder:
 
-### `display_github()`
-- Displays GitHub API response information.
+git init
 
-### `main()`
-- Controls the complete application workflow.
+### 2. Add Project Files
 
-## 8. REST API Integration
+Add all project files to Git staging:
+git add .
 
-This project uses the GitHub Public REST API.
+### 3. Create Initial Commit
 
-API Endpoint:
-https://api.github.com/users/{username}
+Commit the project files:
 
-The API provides public GitHub information:
+git commit -m "Add development environment setup"
 
-- Username
-- Public repositories
-- Followers
+### 4. Create Development Branch
 
-No authentication token is required because only public GitHub data is accessed.
+A separate branch was created for development work:
 
-## 9. Running the Application
+git checkout -b betelhemdevelopment
 
-Run the application using:
-python portfolio.py
+Verify current branch:
+git branch
 
-## 10. Testing
+### 5. Connect Local Repository with GitHub
 
-The application was tested using different GitHub usernames.
+Add the remote GitHub repository:
+git remote add origin https://github.com/BetiWorku/Ethiopian-Legal-Justice-AI-Assistant.git
 
-Example:
+### 6. Push Development Branch to GitHub
 
-Change `profile.json`:
+Push the created branch:
+git push -u origin betelhemdevelopment
 
-"github_username": "octocat"
- Run:
+The development branch was successfully pushed to the GitHub repository.
 
-python portfolio.py
+### 7. Create Pull Request
 
-The application successfully retrieves and displays information for different GitHub accounts.
+After pushing the branch:
 
-## 11. Error Handling
+1. Open the GitHub repository.
+2. Navigate to **Pull Requests**.
+3. Click **New Pull Request**.
+4. Select:
+   - Base branch: `main`
+   - Compare branch: `betelhem-development-setup`
+5. Create the Pull Request for review.
 
-The application handles:
 
-- Missing profile JSON file
-- Invalid JSON format
-- Invalid GitHub username
-- API connection problems
-- Failed API requests
 
-The program displays appropriate error messages instead of crashing.
 
-## 12. Dependencies
-
-The required Python package is listed in:
-requirements.txt
-Example:
-requests
-
-## 13. Author
-    Betelhem Worku 
