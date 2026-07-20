@@ -1,0 +1,3 @@
+### Why Structured Legal Content is Important for RAG Systems
+
+Structured legal content is important for RAG systems because it organizes legal information into searchable fields such as title, article, keywords, and content. This allows the system to retrieve relevant legal documents efficiently and provide accurate context to the LLM. It also improves answer reliability by enabling source citation and reducing hallucination.
