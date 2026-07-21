@@ -5,10 +5,15 @@
     "article": "Article 25",
     "topic": "Right to Equality",
     "keywords": [
+      "article 25",
+      "25",
       "equality",
       "equal",
+      "right to equality",
       "discrimination",
-      "law"
+      "equal protection",
+      "law",
+      "rights"
     ],
     "content": "All persons are equal before the law and are entitled without any discrimination to equal protection of the law.",
     "source": "FDRE Constitution, Article 25"
@@ -19,13 +24,95 @@
     "article": "Article 26",
     "topic": "Right to Privacy",
     "keywords": [
+      "article 26",
+      "26",
       "privacy",
-      "private",
+      "right to privacy",
+      "private life",
       "home",
-      "property"
+      "property",
+      "family",
+      "rights"
     ],
-    "content": "Everyone has the right to privacy. This right includes protection against interference with personal and family life.",
+    "content": "Everyone has the right to privacy. This right includes protection against interference with personal and family life, home, and correspondence.",
     "source": "FDRE Constitution, Article 26"
+  },
+  {
+    "id": "eth_const_003",
+    "title": "FDRE Constitution",
+    "article": "Article 19",
+    "topic": "Rights During Arrest",
+    "keywords": [
+      "article 19",
+      "19",
+      "arrest",
+      "arrested",
+      "suspect",
+      "charges",
+      "reason for arrest",
+      "rights during arrest",
+      "information"
+    ],
+    "content": "A person arrested has the right to be informed of the reasons for the arrest and the charges against them.",
+    "source": "FDRE Constitution, Article 19"
+  },
+  {
+    "id": "eth_const_004",
+    "title": "FDRE Constitution",
+    "article": "Article 20",
+    "topic": "Rights of Accused Persons",
+    "keywords": [
+      "article 20",
+      "20",
+      "accused",
+      "accused person",
+      "fair trial",
+      "public trial",
+      "defense",
+      "court",
+      "criminal case",
+      "rights"
+    ],
+    "content": "Accused persons have the right to a public trial and the right to defend themselves before a court.",
+    "source": "FDRE Constitution, Article 20"
+  },
+  {
+    "id": "eth_const_005",
+    "title": "FDRE Constitution",
+    "article": "Article 17",
+    "topic": "Right to Liberty",
+    "keywords": [
+      "article 17",
+      "17",
+      "liberty",
+      "freedom",
+      "right to liberty",
+      "arrest",
+      "detention",
+      "security",
+      "rights"
+    ],
+    "content": "Every person has the right to liberty and security. No person shall be deprived of liberty except according to procedures established by law.",
+    "source": "FDRE Constitution, Article 17"
+  },
+  {
+    "id": "eth_const_006",
+    "title": "FDRE Constitution",
+    "article": "Article 37",
+    "topic": "Right of Access to Justice",
+    "keywords": [
+      "article 37",
+      "37",
+      "justice",
+      "access to justice",
+      "court",
+      "legal remedy",
+      "bring a case",
+      "judicial power",
+      "rights"
+    ],
+    "content": "Everyone has the right to bring a justiciable matter before a court or other competent body with judicial power.",
+    "source": "FDRE Constitution, Article 37"
   },
   {
     "id": "eth_civil_001",
@@ -33,10 +120,15 @@
     "article": "Article 1725",
     "topic": "Contract Requirements",
     "keywords": [
+      "article 1725",
+      "1725",
       "contract",
+      "valid contract",
       "agreement",
       "capacity",
-      "obligation"
+      "lawful object",
+      "obligation",
+      "contract requirements"
     ],
     "content": "A valid contract requires agreement between parties, capacity to contract, and a lawful object.",
     "source": "Ethiopian Civil Code, Article 1725"
@@ -47,54 +139,16 @@
     "article": "Article 2027",
     "topic": "Legal Obligations",
     "keywords": [
+      "article 2027",
+      "2027",
       "obligation",
+      "legal obligation",
       "duty",
-      "responsibility"
+      "responsibility",
+      "legal relationship"
     ],
     "content": "An obligation is a legal relationship that requires one party to perform an action for another party.",
     "source": "Ethiopian Civil Code, Article 2027"
-  },
-  {
-    "id": "eth_const_003",
-    "title": "FDRE Constitution",
-    "article": "Article 20",
-    "topic": "Rights of Accused Persons",
-    "keywords": [
-      "accused",
-      "trial",
-      "defense",
-      "court"
-    ],
-    "content": "Accused persons have the right to a public trial and the right to defend themselves before a court.",
-    "source": "FDRE Constitution, Article 20"
-  },
-  {
-    "id": "eth_const_004",
-    "title": "FDRE Constitution",
-    "article": "Article 17",
-    "topic": "Right to Liberty",
-    "keywords": [
-      "liberty",
-      "freedom",
-      "arrest",
-      "detention"
-    ],
-    "content": "Every person has the right to liberty and security. No person shall be deprived of liberty except according to procedures established by law.",
-    "source": "FDRE Constitution, Article 17"
-  },
-  {
-    "id": "eth_const_005",
-    "title": "FDRE Constitution",
-    "article": "Article 37",
-    "topic": "Right of Access to Justice",
-    "keywords": [
-      "justice",
-      "court",
-      "legal remedy",
-      "access"
-    ],
-    "content": "Everyone has the right to bring a justiciable matter before a court or other competent body with judicial power.",
-    "source": "FDRE Constitution, Article 37"
   },
   {
     "id": "eth_civil_003",
@@ -102,10 +156,13 @@
     "article": "Contract Law",
     "topic": "Agreement Between Parties",
     "keywords": [
-      "agreement",
       "contract",
+      "agreement",
       "parties",
-      "consent"
+      "consent",
+      "contract law",
+      "civil code",
+      "legal agreement"
     ],
     "content": "A contract is created when parties reach an agreement that creates legal obligations recognized by law.",
     "source": "Ethiopian Civil Code, Contract Provisions"
@@ -118,24 +175,13 @@
     "keywords": [
       "crime",
       "criminal",
+      "criminal responsibility",
       "responsibility",
-      "punishment"
+      "punishment",
+      "criminal law",
+      "offense"
     ],
     "content": "A person may be held criminally responsible only when the requirements defined by criminal law are fulfilled.",
     "source": "Ethiopian Criminal Law, General Principles"
-  },
-  {
-    "id": "eth_const_006",
-    "title": "FDRE Constitution",
-    "article": "Article 19",
-    "topic": "Rights During Arrest",
-    "keywords": [
-      "arrest",
-      "suspect",
-      "information",
-      "rights"
-    ],
-    "content": "A person arrested has the right to be informed of the reasons for the arrest and the charges against them.",
-    "source": "FDRE Constitution, Article 19"
   }
 ]

@@ -1,30 +1,18 @@
-from chatbot import chatbot
+from chatbot import chat
 
 
-def main():
-
-    print("Ethiopian Legal AI Assistant")
-    print("----------------------------")
+print("Ethiopian Legal Assistant Chatbot")
+print("Type exit to quit")
 
 
-    while True:
+while True:
 
-        question = input(
-            "\nAsk your legal question: "
-        )
+    question = input("\nAsk legal question: ")
 
+    if question.lower() == "exit":
+        break
 
-        if question.lower() == "exit":
-            break
+    answer = chat(question)
 
-
-        response = chatbot(question)
-
-
-        print("\n")
-        print(response)
-
-
-
-if __name__ == "__main__":
-    main()
+    print("\n")
+    print(answer)

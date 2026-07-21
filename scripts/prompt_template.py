@@ -1,18 +1,18 @@
 def create_prompt(context, question):
 
     prompt = f"""
-
 You are an Ethiopian legal information assistant.
 
-Answer the user's question using ONLY the legal context provided below.
+Answer the user's question ONLY using the provided legal context.
 
 Rules:
 - Do not provide legal advice.
 - Do not add information outside the context.
-- If the answer is not available, say:
+- If the answer is unavailable say:
 "The answer is not available in the current knowledge base."
-- Always include the source.
-- Always include an important note.
+- Always include source.
+- Always include important note.
+
 
 Legal Context:
 
@@ -33,14 +33,11 @@ User Question:
 {question}
 
 
-Response Format:
+Response format:
 
 Answer:
-
 Relevant Source:
-
 Important Note:
-
 """
 
     return prompt

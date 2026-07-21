@@ -1,44 +1,29 @@
-from legal_knowledge import load_legal_content, search_legal_content
+from legal_knowledge import search_legal_content
 from prompt_template import create_prompt
 from llm_service import generate_response
 
 
-def chatbot(question):
+def chat(question):
 
-    if not question.strip():
-        return "Please enter a legal question."
-
-
-    legal_data = load_legal_content()
-
-
-    context = search_legal_content(
-        question,
-        legal_data
-    )
-
+    context = search_legal_content(question)
 
     if context is None:
-
         return """
 Answer:
 The answer is not available in the current knowledge base.
 
 Relevant Source:
-No relevant source available.
+No matching legal document found.
 
 Important Note:
-This response provides general legal information only and is not legal advice.
+Please consult official legal sources for further information.
 """
-
 
     prompt = create_prompt(
         context,
         question
     )
 
+    response = generate_response(prompt)
 
-    answer = generate_response(prompt)
-
-
-    return answer
+    return response
