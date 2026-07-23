@@ -64,10 +64,12 @@ scripts/
 ├── chatbot.py
 ├── legal_knowledge.py
 ├── prompt_template.py
+└── Language_detector.py
 └── llm_service.py
 3. JSON Legal Knowledge File
 data/
 └── sample_legal_content.json
+└── sample_legal_content_am.json
 
 Contains predefined Ethiopian legal information including:
 Article
