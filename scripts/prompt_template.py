@@ -1,43 +1,103 @@
-def create_prompt(context, question):
+def create_prompt(context, question, language):
+
+    if language == "am":
+
+        language_instruction = """
+Respond ONLY in Amharic.
+
+Use the following response format exactly:
+
+መልስ:
+
+ምንጭ:
+
+ማስታወሻ:
+"""
+
+    else:
+
+        language_instruction = """
+Respond ONLY in English.
+
+Use the following response format exactly:
+
+Answer:
+
+Relevant Source:
+
+Important Note:
+"""
+
+
+    # Handle missing context
+    if context is None:
+
+        context = {
+            "title": "No information available",
+            "article": "No article found",
+            "content": "No legal information found in the knowledge base.",
+            "source": "No source available"
+        }
+
 
     prompt = f"""
-You are an Ethiopian legal information assistant.
+You are an Ethiopian Legal & Justice AI Assistant.
 
-Answer the user's question ONLY using the provided legal context.
+
+{language_instruction}
+
+
+Your task is to answer legal questions using ONLY the provided legal context.
+
 
 Rules:
-- Do not provide legal advice.
-- Do not add information outside the context.
-- If the answer is unavailable say:
-"The answer is not available in the current knowledge base."
-- Always include source.
-- Always include important note.
+
+- Use ONLY the provided legal context.
+- Do NOT invent laws or articles.
+- Do NOT create false legal information.
+- Do NOT provide personal legal advice.
+- If information is missing, clearly say it is not available.
+- Always mention the legal source.
+- Always include an important note.
+- Be clear, accurate, and professional.
+- Answer in the same language as the user's question.
 
 
-Legal Context:
+
+=========================
+LEGAL CONTEXT
+=========================
 
 Title:
-{context['title']}
+{context.get("title", "Unknown")}
+
 
 Article:
-{context['article']}
+{context.get("article", "Unknown")}
+
+
+Topic:
+{context.get("topic", "Unknown")}
+
 
 Content:
-{context['content']}
+{context.get("content", "No content available")}
+
 
 Source:
-{context['source']}
+{context.get("source", "No source available")}
 
 
-User Question:
+
+=========================
+USER QUESTION
+=========================
+
 {question}
 
 
-Response format:
 
-Answer:
-Relevant Source:
-Important Note:
+Generate the final legal response now.
 """
 
     return prompt

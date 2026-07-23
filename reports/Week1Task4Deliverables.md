@@ -2,15 +2,15 @@
 
 ## 1. Chatbot Testing Results
 
-The chatbot was tested using five legal information questions to evaluate retrieval accuracy, response quality, source citation, and safe handling of unsupported questions.
+The chatbot was tested using five legal information questions in both English and Amharic languages to evaluate retrieval accuracy, response quality, source citation, and safe handling of unsupported questions.
 
-| No | Legal Question | Response Quality Comment |
+| No | Legal Question (English / Amharic) | Response Quality Comment |
 |---|---|---|
-| 1 | What does Article 25 say about equality? | The chatbot correctly retrieved Article 25 from the legal knowledge base and generated an accurate response with source citation and legal disclaimer. |
-| 2 | What are accused persons' rights? | The chatbot correctly identified Article 20 and provided relevant information about accused persons' rights with the correct legal source. |
-| 3 | What is Article 19 about? | The chatbot successfully retrieved Article 19 and generated a clear explanation about rights during arrest with source citation. |
-| 4 | What are the requirements of a contract? | The chatbot correctly matched Ethiopian Civil Code Article 1725 and provided the required contract information with the relevant source. |
-| 5 | What is Article 100 about? | The chatbot safely handled an unsupported question by returning that the information was not available in the current knowledge base. |
+| 1 | What does Article 25 say about equality? / አንቀጽ 25 ስለ እኩልነት ምን ይላል? | The chatbot correctly retrieved Article 25 from the legal knowledge base and generated an accurate response in the user's language with source citation and legal disclaimer. / ቻትቦቱ አንቀጽ 25ን በትክክል ከሕግ መረጃ ዳታቤዝ ላይ በማግኘት በተጠቃሚው ቋንቋ ትክክለኛ ምላሽ ከምንጭ መግለጫ ጋር ሰጥቷል። |
+| 2 | What are accused persons' rights? / የተከሳሽ ሰዎች መብቶች ምንድን ናቸው? | The chatbot correctly identified Article 20 and provided relevant information about accused persons' rights with the correct legal source. / ቻትቦቱ አንቀጽ 20ን በትክክል ለይቶ የተከሳሽ ሰዎችን መብቶች ከተገቢው የሕግ ምንጭ ጋር አቅርቧል። |
+| 3 | What is Article 19 about? / አንቀጽ 19 ስለ ምን ነው? | The chatbot successfully retrieved Article 19 and generated a clear explanation about rights during arrest with source citation. / ቻትቦቱ አንቀጽ 19ን በትክክል በማግኘት በእስር ጊዜ ያሉ መብቶችን በግልጽ መልኩ ከምንጭ ጋር አቅርቧል። |
+| 4 | What are the requirements of a contract? / የውል መስፈርቶች ምንድን ናቸው? | The chatbot correctly matched Ethiopian Civil Code Article 1725 and provided the required contract information with the relevant source. / ቻትቦቱ የኢትዮጵያ ፍትሐ ብሔር ሕግ አንቀጽ 1725ን በትክክል በማዛመድ የውል መስፈርቶችን ከተገቢው ምንጭ ጋር ሰጥቷል። |
+| 5 | What is Article 100 about? / አንቀጽ 100 ስለ ምን ነው? | The chatbot safely handled an unsupported question by stating that the information was not available in the current knowledge base. / ቻትቦቱ የማይደገፍ ጥያቄ ሲቀርብ መረጃው በአሁኑ የሕግ መረጃ ውስጥ እንደሌለ በደህና መልሷል። |
 
 
 ## Testing Summary

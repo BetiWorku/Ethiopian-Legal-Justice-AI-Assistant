@@ -1,29 +1,92 @@
 from legal_knowledge import search_legal_content
 from prompt_template import create_prompt
 from llm_service import generate_response
+from language_detector import detect_language
 
 
 def chat(question):
 
-    context = search_legal_content(question)
+    # Detect user language
+    language = detect_language(question)
 
+
+    # Retrieve legal context
+    context = search_legal_content(
+        question,
+        language
+    )
+
+
+    # If no matching legal information
     if context is None:
-        return """
+
+        if language == "am":
+
+            return """
+መልስ:
+
+በአሁኑ የሕግ መረጃ ውሂብ ውስጥ ተዛማጅ መልስ አልተገኘም።
+
+ምንጭ:
+
+ምንም ተዛማጅ የሕግ ሰነድ አልተገኘም።
+
+ማስታወሻ:
+
+እባክዎ ይፋዊ የሕግ ምንጮችን ያረጋግጡ።
+"""
+
+        else:
+
+            return """
 Answer:
-The answer is not available in the current knowledge base.
+
+The answer is not available in the current legal knowledge base.
 
 Relevant Source:
+
 No matching legal document found.
 
 Important Note:
-Please consult official legal sources for further information.
+
+Please consult official legal sources.
 """
 
+
+    # Create Gemini prompt
+    # Send dictionary directly
     prompt = create_prompt(
         context,
-        question
+        question,
+        language
     )
 
+
+    # Generate response from Gemini
     response = generate_response(prompt)
 
+
     return response
+
+
+
+if __name__ == "__main__":
+
+    while True:
+
+        question = input(
+            "\nጥያቄዎን ያስገቡ (exit to stop): "
+        )
+
+
+        if question.lower() == "exit":
+            print("Chatbot stopped.")
+            break
+
+
+        answer = chat(question)
+
+
+        print("\n====================")
+        print(answer)
+        print("====================")
