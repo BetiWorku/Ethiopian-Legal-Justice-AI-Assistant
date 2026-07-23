@@ -2,7 +2,7 @@ import json
 import os
 
 
-def load_legal_content():
+def load_legal_content(language="am"):
 
     base_dir = os.path.dirname(
         os.path.dirname(
@@ -10,22 +10,26 @@ def load_legal_content():
         )
     )
 
+    if language == "am":
+        file_name = "sample_legal_content_am.json"
+    else:
+        file_name = "sample_legal_content.json"
+
     file_path = os.path.join(
         base_dir,
         "data",
-        "sample_legal_content.json"
+        file_name
     )
 
     with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
+def search_legal_content(question, language="am"):
 
-def search_legal_content(question):
+    legal_data = load_legal_content(language)
 
-    legal_data = load_legal_content()
-
-    question = question.lower()
+    question = question.lower().strip()
 
     best_match = None
     highest_score = 0
@@ -34,26 +38,63 @@ def search_legal_content(question):
 
         score = 0
 
-        # Check article
-        if item["article"].lower() in question:
-            score += 5
+        # Article matching
+        if item.get("article"):
+            if item["article"].lower() in question:
+                score += 5
 
-        # Check topic
-        if item["topic"].lower() in question:
-            score += 3
+        # Topic matching
+        if item.get("topic"):
+            if item["topic"].lower() in question:
+                score += 3
 
-        # Check keywords
-        for keyword in item["keywords"]:
+        # Title matching
+        if item.get("title"):
+            if item["title"].lower() in question:
+                score += 2
+
+        # Keyword matching
+        for keyword in item.get("keywords", []):
 
             if keyword.lower() in question:
                 score += 1
+
+
+        # Content matching
+        if item.get("content"):
+            if item["content"].lower() in question:
+                score += 1
+
 
         if score > highest_score:
             highest_score = score
             best_match = item
 
 
-    if highest_score == 0:
-        return None
-
     return best_match
+
+
+def format_legal_response(result):
+
+    if not result:
+        return (
+            "ይቅርታ፣ በሕግ መረጃ ውሂብ ውስጥ "
+            "ተዛማጅ መረጃ አልተገኘም።"
+        )
+
+    response = f"""
+ርዕስ: {result['title']}
+
+አንቀጽ: {result['article']}
+
+ርዕስ:
+{result['topic']}
+
+መልስ:
+{result['content']}
+
+ምንጭ:
+{result['source']}
+"""
+
+    return response.strip()
