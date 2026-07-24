@@ -17,9 +17,46 @@ MODEL_NAME = "gemini-3.1-flash-lite"
 
 def generate_response(prompt):
 
-    response = client.models.generate_content(
-        model=MODEL_NAME,
-        contents=prompt
-    )
+    try:
 
-    return response.text
+        response = client.models.generate_content(
+            model=MODEL_NAME,
+            contents=prompt
+        )
+
+
+        answer = response.text.strip()
+
+
+        # Remove unwanted Gemini header
+        remove_list = [
+            "Answer | መልስ:",
+            "Answer | Answer:",
+            "መልስ:",
+        ]
+
+
+        for item in remove_list:
+            answer = answer.replace(item, "")
+
+
+        return answer.strip()
+
+
+    except Exception as e:
+
+        print("Gemini Error:", e)
+
+        return """
+Answer:
+
+Gemini API is unavailable.
+
+Relevant Source:
+
+No source available.
+
+Important Note:
+
+Please try again later.
+"""
