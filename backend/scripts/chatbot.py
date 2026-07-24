@@ -9,6 +9,7 @@ def chat(question):
     # Detect user language
     language = detect_language(question)
 
+    print(f"\n[DEBUG] Language: {language}")
 
     # Retrieve legal context
     context = search_legal_content(
@@ -16,6 +17,13 @@ def chat(question):
         language
     )
 
+    print(f"[DEBUG] Context Found: {context is not None}")
+
+    if context:
+        print(f"[DEBUG] Article: {context.get('article')}")
+        print(f"[DEBUG] Topic: {context.get('topic')}")
+        print(f"[DEBUG] Source: {context.get('source')}")
+        print(f"[DEBUG] Content Length: {len(context.get('content', ''))}")
 
     # If no matching legal information
     if context is None:
@@ -52,22 +60,46 @@ Important Note:
 Please consult official legal sources.
 """
 
-
     # Create Gemini prompt
-    # Send dictionary directly
     prompt = create_prompt(
         context,
         question,
         language
     )
 
+    print("\n========== DEBUG ==========")
+    print(f"Prompt Length: {len(prompt)} characters")
+    print("---------------------------")
+    print(prompt[:800])   # First 800 characters only
+    print("---------------------------")
 
     # Generate response from Gemini
-    response = generate_response(prompt)
+    try:
 
+        response = generate_response(prompt)
 
-    return response
+        print("[DEBUG] Gemini Response Received Successfully")
 
+        return response
+
+    except Exception as e:
+
+        print("\n========== ERROR ==========")
+        print(e)
+        print("===========================")
+
+        if language == "am":
+            return (
+                "Gemini API በአሁኑ ጊዜ አይገኝም ወይም "
+                "quota አልቋል። "
+                "እባክዎ ቆይተው ይሞክሩ።"
+            )
+
+        return (
+            "Gemini API is unavailable or "
+            "quota has been exceeded. "
+            "Please try again later."
+        )
 
 
 if __name__ == "__main__":
@@ -78,14 +110,11 @@ if __name__ == "__main__":
             "\nጥያቄዎን ያስገቡ (exit to stop): "
         )
 
-
         if question.lower() == "exit":
             print("Chatbot stopped.")
             break
 
-
         answer = chat(question)
-
 
         print("\n====================")
         print(answer)
