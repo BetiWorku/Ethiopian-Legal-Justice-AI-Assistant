@@ -1,5 +1,6 @@
 import json
 import os
+import re
 
 
 
@@ -14,11 +15,8 @@ def load_legal_content(language="am"):
 
 
     if language == "am":
-
         file_name = "fdre_constitution_articles.json"
-
     else:
-
         file_name = "fdre_constitution_english.json"
 
 
@@ -41,17 +39,33 @@ def load_legal_content(language="am"):
 
 
 
+
 def search_legal_content(question, language="am"):
 
 
     legal_data = load_legal_content(language)
 
 
-    question = question.lower().strip()
+    question_lower = question.lower().strip()
 
 
     best_match = None
     highest_score = 0
+
+
+
+    article_match = re.search(
+        r"(article|አንቀጽ)\s*(\d+)",
+        question_lower
+    )
+
+
+    requested_article = None
+
+
+    if article_match:
+
+        requested_article = article_match.group(2)
 
 
 
@@ -62,27 +76,63 @@ def search_legal_content(question, language="am"):
 
 
 
-        if item.get("article"):
-
-            if item["article"].lower() in question:
-
-                score += 5
-
-
-
-        if item.get("topic"):
-
-            if item["topic"].lower() in question:
-
-                score += 3
+        article_text = item.get(
+            "article",
+            ""
+        ).lower()
 
 
 
-        for keyword in item.get("keywords", []):
+        # Article number matching
 
-            if keyword.lower() in question:
+        if requested_article:
+
+
+            item_number = re.search(
+                r"\d+",
+                article_text
+            )
+
+
+            if item_number:
+
+                if item_number.group() == requested_article:
+
+                    score += 10
+
+
+
+
+
+        # Topic matching
+
+        topic = item.get(
+            "topic",
+            ""
+        ).lower()
+
+
+        if topic and topic in question_lower:
+
+            score += 3
+
+
+
+
+
+        # Keyword matching
+
+        for keyword in item.get(
+            "keywords",
+            []
+        ):
+
+
+            if keyword.lower() in question_lower:
 
                 score += 1
+
+
 
 
 
@@ -91,6 +141,8 @@ def search_legal_content(question, language="am"):
             highest_score = score
 
             best_match = item
+
+
 
 
 

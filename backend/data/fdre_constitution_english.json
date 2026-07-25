@@ -1,13 +1,195 @@
 [
   {
+    "id": "fdre_const_article_1",
+    "title": "FDRE Constitution",
+    "article": "Article 1",
+    "topic": "Nomenclature of the State",
+    "keywords": [
+      "Ethiopia",
+      "Federal Democratic Republic",
+      "State structure",
+      "Constitution",
+      "Nomenclature"
+    ],
+    "content": "Nomenclature of the State This Constitution establishes a Federal and Democratic State structure. Accordingly, the Ethiopian state shall be known as the Federal Democratic Republic of Ethiopia.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_2",
+    "title": "FDRE Constitution",
+    "article": "Article 2",
+    "topic": "Territorial Jurisdiction",
+    "keywords": [
+      "territory",
+      "jurisdiction",
+      "Ethiopia",
+      "Federation",
+      "boundaries"
+    ],
+    "content": "Ethiopian Territorial Jurisdiction The territorial jurisdiction of Ethiopia shall comprise the territory of the members of the Federation and its boundaries shall be as determined by international agreements.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_3",
+    "title": "FDRE Constitution",
+    "article": "Article 3",
+    "topic": "National Flag of Ethiopia",
+    "keywords": [
+      "Ethiopian flag",
+      "national emblem",
+      "federalism",
+      "state symbols",
+      "regional legislatures"
+    ],
+    "content": "The Ethiopian Flag 1. The Ethiopian flag shall consist of green at the top, yellow in the middle and red at the bottom, and shall have a national emblem at the center. The three colors shall be set horizontally in equal dimension. 2. The national emblem on the flag shall reflect the hope of the Nations, Nationalities, Peoples as well as religious communities of Ethiopia to live together in equality and unity. 3. Members of the Federation may have their respective flags and emblems and shall determine the details thereof through their respective legislatures.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_4",
+    "title": "FDRE Constitution",
+    "article": "Article 4",
+    "topic": "National Anthem of Ethiopia",
+    "keywords": [
+      "National anthem",
+      "Ethiopian Constitution",
+      "Democratic order",
+      "Common destiny",
+      "Legal determination"
+    ],
+    "content": "National Anthem of Ethiopia The national anthem of Ethiopia, to be determined by law, shall reflect the ideals of the Constitution, the Commitment of the Peoples of Ethiopia to live together in a democratic order and of their common destiny.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_5",
+    "title": "FDRE Constitution",
+    "article": "Article 5",
+    "topic": "Language Rights and Status",
+    "keywords": [
+      "Ethiopian languages",
+      "state recognition",
+      "Amharic",
+      "Federal Government",
+      "working language"
+    ],
+    "content": "Languages 1. All Ethiopian languages shall enjoy equal state recognition. 2. Amharic shall be the working language of the Federal Government. 3. Members of the Federation may by law determine their respective working languages.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_6",
+    "title": "FDRE Constitution",
+    "article": "Article 6",
+    "topic": "Ethiopian Nationality",
+    "keywords": [
+      "Ethiopian national",
+      "citizenship",
+      "parentage",
+      "naturalization",
+      "statutory law"
+    ],
+    "content": "Nationality 1. Any person of either sex shall be an Ethiopian national where both or either parent is Ethiopian. 2. Foreign nationals may acquire Ethiopian nationality. 3. Particulars relating to nationality shall be determined by law.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_7",
+    "title": "FDRE Constitution",
+    "article": "Article 7",
+    "topic": "Gender Neutrality Interpretation",
+    "keywords": [
+      "gender",
+      "constitution",
+      "interpretation",
+      "masculine",
+      "feminine"
+    ],
+    "content": "Gender Reference Provisions of this Constitution set out in the masculine gender shall also apply to the feminine gender CHAPTER TWO FUNDAMENTAL PRINCIPLES OF THE CONSTITUTION",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_8",
+    "title": "FDRE Constitution",
+    "article": "Article 8",
+    "topic": "Sovereignty of the People",
+    "keywords": [
+      "sovereignty",
+      "Nations Nationalities and Peoples",
+      "Constitution",
+      "democratic participation",
+      "elected representatives"
+    ],
+    "content": "Sovereignty of the people 1. All sovereign power resides in the Nations, Nationalities and Peoples of Ethiopia. 2. This Constitution is an expression of their sovereignty. 3. Their sovereignty shall be expressed through their representatives elected in accordance with this Constitution and through their direct democratic participation",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_9",
+    "title": "FDRE Constitution",
+    "article": "Article 9",
+    "topic": "Supremacy of the Constitution",
+    "keywords": [
+      "constitutional supremacy",
+      "rule of law",
+      "international agreements",
+      "state power",
+      "legal hierarchy"
+    ],
+    "content": "Supremacy of the Constitution 1. The Constitution is the supreme law of the land. Any law, customary practice or a decision of an organ of state or a public official which contravenes this Constitution shall be of no effect. 2. All citizens, organs of state, political organizations, other associations as well as their officials have the duty to ensure observance of the Constitution and to obey it. 3. It is prohibited to assume state power in any manner other than that provided under the Constitution. 4. All international agreements ratified by Ethiopia are an integral part of the law of the land.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_10",
+    "title": "FDRE Constitution",
+    "article": "Article 10",
+    "topic": "Fundamental Rights and Freedoms",
+    "keywords": [
+      "human rights",
+      "democratic rights",
+      "inviolable rights",
+      "inalienable rights",
+      "citizenship"
+    ],
+    "content": "Human and Democratic Rights 1. Human rights and freedoms, emanating from the nature of mankind, are inviolable and inalienable. 2. Human and democratic rights of citizens and peoples shall be respected.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_11",
+    "title": "FDRE Constitution",
+    "article": "Article 11",
+    "topic": "Separation of State and Religion",
+    "keywords": [
+      "secularism",
+      "state religion",
+      "religious freedom",
+      "non-interference",
+      "constitutional principle"
+    ],
+    "content": "Separation of State and Religion 1. State and religion are separate. 2. There shall be no state religion. 3. The state shall not interfere in religious matters and religion shall not interfere in state affairs.",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
+    "id": "fdre_const_article_12",
+    "title": "FDRE Constitution",
+    "article": "Article 12",
+    "topic": "Government Accountability and Transparency",
+    "keywords": [
+      "transparency",
+      "public official",
+      "accountability",
+      "elected representative",
+      "recall"
+    ],
+    "content": "Conduct and Accountability of Government 1. The conduct of affairs of government shall be transparent. 2. Any public official or an elected representative is accountable for any failure in official duties. 3. In case of loss of confidence, the people may recall an elected representative. The particulars of recall shall be determined by law. CHAPTER THREE FUNDAMENTAL RIGHTS AND FREEDOMS",
+    "source": "FDRE Constitution 1995 - Official English PDF"
+  },
+  {
     "id": "fdre_const_article_13",
     "title": "FDRE Constitution",
     "article": "Article 13",
-    "topic": "Fundamental Rights and Freedoms",
+    "topic": "Application and Interpretation of Human Rights",
     "keywords": [
-      "fundamental rights",
-      "freedoms",
-      "human rights"
+      "Human rights",
+      "Constitutional interpretation",
+      "Legal enforcement",
+      "International conventions",
+      "Fundamental freedoms"
     ],
     "content": "Scope of Application and Interpretation 1. All Federal and State legislative, executive and judicial organs at all levels shall have the responsibility and duty to respect and enforce the provisions of this Chapter. 2. The fundamental rights and freedoms specified in this Chapter shall be interpreted in a manner conforming to the principles of the Universal Declaration of Human Rights, International Covenants on Human Rights and International instruments adopted by Ethiopia. PART ONE HUMAN RIGHTS",
     "source": "FDRE Constitution 1995 - Official English PDF"
@@ -16,10 +198,13 @@
     "id": "fdre_const_article_14",
     "title": "FDRE Constitution",
     "article": "Article 14",
-    "topic": "Right to Life",
+    "topic": "Fundamental Rights to Life and Liberty",
     "keywords": [
       "right to life",
-      "life"
+      "security of person",
+      "liberty",
+      "inviolable rights",
+      "inalienable rights"
     ],
     "content": "Rights to life, the Security of Person and Liberty Every person has the inviolable and inalienable right to life the security of person and liberty.",
     "source": "FDRE Constitution 1995 - Official English PDF"
@@ -30,99 +215,13 @@
     "article": "Article 15",
     "topic": "Right to Life",
     "keywords": [
+      "human rights",
       "right to life",
-      "human dignity"
+      "criminal law",
+      "capital punishment",
+      "legal deprivation"
     ],
     "content": "Right to Life Every person has the right to life. No person may be deprived of his life except as a punishment for a serious criminal offence determined by law.",
-    "source": "FDRE Constitution 1995 - Official English PDF"
-  },
-  {
-    "id": "fdre_const_article_16",
-    "title": "FDRE Constitution",
-    "article": "Article 16",
-    "topic": "Security of Person",
-    "keywords": [
-      "security of person",
-      "personal security"
-    ],
-    "content": "The Right of the Security of Person Every one has the right to protection against bodily harm.",
-    "source": "FDRE Constitution 1995 - Official English PDF"
-  },
-  {
-    "id": "fdre_const_article_17",
-    "title": "FDRE Constitution",
-    "article": "Article 17",
-    "topic": "Right to Liberty",
-    "keywords": [
-      "right to liberty",
-      "liberty",
-      "freedom"
-    ],
-    "content": "Right to Liberty 1. No one shall be deprived of his or her liberty except on such grounds and in accordance with such procedure as are established by law. 2. No person may be subjected to arbitrary arrest, and no person may be detained without a charge or conviction against him.",
-    "source": "FDRE Constitution 1995 - Official English PDF"
-  },
-  {
-    "id": "fdre_const_article_18",
-    "title": "FDRE Constitution",
-    "article": "Article 18",
-    "topic": "Prohibition Against Inhuman Treatment",
-    "keywords": [
-      "inhuman treatment",
-      "cruel treatment",
-      "human dignity"
-    ],
-    "content": "Prohibition against Inhuman Treatment 1. Everyone has the right to protection against cruel, inhuman or degrading treatment or punishment. 2. No one shall be held in slavery or servitude. Trafficking in human beings for whatever purpose is prohibited. 3. No one shall be required to perform forced or compulsory labour. 4. For the purpose of sub-",
-    "source": "FDRE Constitution 1995 - Official English PDF"
-  },
-  {
-    "id": "fdre_const_article_19",
-    "title": "FDRE Constitution",
-    "article": "Article 19",
-    "topic": "Rights of Arrested Persons",
-    "keywords": [
-      "arrested person",
-      "rights of arrested persons"
-    ],
-    "content": "Right of Persons Arrested 1. Persons arrested have the right to be informed promptly, in a language they understand, of the reasons for their arrest and of any charge against them. 2. Persons arrested have the right to remain silent. Upon arrest, they have the right to be informed promptly, in a language they understand, that any statement they make may be used as evidence against them in court. 3. Persons arrested have the right to be brought before a court within 48 hours of their arrest. Such time shall not include the time reasonably required for the journey from the place of arrest to the court. On appearing before a court, they have the right to be given prompt and specific explanation of the reasons for their arrest due to the alleged crime committed. 4. All persons have an inalienable right to petition the court to order their physical release where the arresting police officer or the law enforcer fails to bring them before a court within the prescribed time and to provide reasons for their arrest. Where the interest of justice requires, the court may order the arrested person to remain in custody or, when requested remand him for a time strictly required to carry out the necessary investigation. In determining the additional time necessary for investigation, the court shall ensure that the responsible law enforcement authorities carry out the investigation respecting the arrested person’s right to a speedy trial. 5. Persons arrested shall not be compelled to make confessions or admissions which could be used in evidence against them. Any evidence obtained under coercion shall not be admissible. 6. Persons arrested have the right to be released on bail. In exceptional circumstances prescribed by law, the court may deny bail or demand adequate guarantee for the conditional release of the arrested person.",
-    "source": "FDRE Constitution 1995 - Official English PDF"
-  },
-  {
-    "id": "fdre_const_article_20",
-    "title": "FDRE Constitution",
-    "article": "Article 20",
-    "topic": "Rights of Accused Persons",
-    "keywords": [
-      "accused persons",
-      "fair trial",
-      "defense rights"
-    ],
-    "content": "Rights of Persons Accused 1. Accused persons have the right to a public trial by an ordinary court of law within a reasonable time after having been charged. The court may hear cases in a closed session only with a view to protecting the right to privacy of the parties concerned, public morals and national security. 2. Accused persons have the right to be informed with sufficient particulars of the charge brought against them and to be given the charge in writing. 3. During proceedings accused persons have the right to be presumed innocent until proved guilty according to law and not to be compelled to testify against themselves. 4. Accused persons have the right to full access to any evidence presented against them, to examine witnesses testifying against them, to adduce or to have evidence produced in their own defence, and to obtain the attendance of and examination of witnesses on their behalf before the court. 5. Accused persons have the right to be represented by legal counsel of their choice, and, if they do not have sufficient means to pay for it and miscarriage of justice would result, to be provided with legal representation at state expense. 6. All persons have the right of appeal to the competent court against an order or a judgment of the court which first heard the case. 7. They have the right to request for the assistance of an interpreter at state expense where the court proceedings are conducted in a language they do not understand.",
-    "source": "FDRE Constitution 1995 - Official English PDF"
-  },
-  {
-    "id": "fdre_const_article_25",
-    "title": "FDRE Constitution",
-    "article": "Article 25",
-    "topic": "Right to Equality",
-    "keywords": [
-      "right to equality",
-      "equality",
-      "equal protection"
-    ],
-    "content": "Right to Equality All persons are equal before the law and are entitled without any discrimination to the equal protection of the law. In this respect, the law shall guarantee to all persons equal and effective protection without discrimination on grounds of race, nation, nationality, or other social origin, colour, sex, language, religion, political or other opinion, property, birth or other status.",
-    "source": "FDRE Constitution 1995 - Official English PDF"
-  },
-  {
-    "id": "fdre_const_article_29",
-    "title": "FDRE Constitution",
-    "article": "Article 29",
-    "topic": "Freedom of Expression",
-    "keywords": [
-      "freedom of expression",
-      "speech",
-      "media freedom"
-    ],
-    "content": "Right of Thought, Opinion and Expression 1. Everyone has the right to hold opinions without interference. 2. Everyone has the right to freedom of expression without any interference. This right shall include freedom to seek, receive and impart information and ideas of all kinds, regardless of frontiers, either orally, in writing or in print, in the form of art, or through any media of his choice. 3. Freedom of the press and other mass media and freedom of artistic creativity is guaranteed. Freedom of the press shall specifically include the following elements: (a) Prohibition of any form of censorship. (b) Access to information of public interest. 4. In the interest of the free flow of information, ideas and opinions which are essential to the functioning of a democratic order, the press shall, as an institution, enjoy legal protection to ensure its operational independence and its capacity to entertain diverse opinions. 5. Any media financed by or under the control of the State shall be operated in a manner ensuring its capacity to entertain diversity in the expression of opinion. 6. These rights can be limited only through laws which are guided by the principle that freedom of expression and information cannot be limited on account of the content or effect of the point of view expressed. Legal limitations can be laid down in order to protect the well-being of the youth, and the honour and reputation of individuals. Any propaganda for war as well as the public expression of opinion intended to injure human dignity shall be prohibited by law. 7. Any citizen who violates any legal limitations on the exercise of these rights may be held liable under the law.",
     "source": "FDRE Constitution 1995 - Official English PDF"
   }
 ]

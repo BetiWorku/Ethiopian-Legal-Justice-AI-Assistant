@@ -1,101 +1,35 @@
 import json
 import re
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
 from pypdf import PdfReader
+from google import genai
 
 
-PDF_PATH = "data/documents/Ethiopia_Constitution_English.pdf"
-OUTPUT_PATH = "data/fdre_constitution_english.json"
+load_dotenv()
+
+API_KEY = os.getenv(
+    "GEMINI_API_KEY"
+)
+
+client = genai.Client(
+    api_key=API_KEY
+)
+
+MODEL_NAME = "gemini-3.1-flash-lite"
 
 
-SELECTED_ARTICLES = [
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "25",
-    "29"
-]
+PDF_PATH = Path(
+    "data/documents/Ethiopia_Constitution_English.pdf"
+)
 
+OUTPUT_PATH = Path(
+    "data/fdre_constitution_english.json"
+)
 
-ARTICLE_TOPICS = {
-
-    "13": "Fundamental Rights and Freedoms",
-    "14": "Right to Life",
-    "15": "Right to Life",
-    "16": "Security of Person",
-    "17": "Right to Liberty",
-    "18": "Prohibition Against Inhuman Treatment",
-    "19": "Rights of Arrested Persons",
-    "20": "Rights of Accused Persons",
-    "25": "Right to Equality",
-    "29": "Freedom of Expression"
-
-}
-
-
-ARTICLE_KEYWORDS = {
-
-    "13": [
-        "fundamental rights",
-        "freedoms",
-        "human rights"
-    ],
-
-    "14": [
-        "right to life",
-        "life"
-    ],
-
-    "15": [
-        "right to life",
-        "human dignity"
-    ],
-
-    "16": [
-        "security of person",
-        "personal security"
-    ],
-
-    "17": [
-        "right to liberty",
-        "liberty",
-        "freedom"
-    ],
-
-    "18": [
-        "inhuman treatment",
-        "cruel treatment",
-        "human dignity"
-    ],
-
-    "19": [
-        "arrested person",
-        "rights of arrested persons"
-    ],
-
-    "20": [
-        "accused persons",
-        "fair trial",
-        "defense rights"
-    ],
-
-    "25": [
-        "right to equality",
-        "equality",
-        "equal protection"
-    ],
-
-    "29": [
-        "freedom of expression",
-        "speech",
-        "media freedom"
-    ]
-
-}
+MAX_ARTICLES = 15
 
 
 
@@ -105,19 +39,14 @@ def extract_text_from_pdf(pdf_path):
 
     full_text = ""
 
-
     for page in reader.pages:
 
         text = page.extract_text()
 
-
         if text:
-
             full_text += text + "\n"
 
-
     return full_text
-
 
 
 
@@ -127,173 +56,257 @@ def split_articles(text):
 
     existing_articles = set()
 
+    pattern = (
+        r"(Article\s+\d+)"
+        r"(.*?)(?=Article\s+\d+|$)"
+    )
 
-    pattern = r"(Article\s+\d+)"
-
-
-    sections = re.split(pattern, text)
-
-
-
-    for i in range(1, len(sections), 2):
-
-
-        article_title = sections[i]
-
-        content = sections[i + 1]
+    matches = re.findall(
+        pattern,
+        text,
+        re.DOTALL
+    )
 
 
+    for article_title, content in matches:
 
-        article_number = (
-
+        number_match = re.search(
+            r"\d+",
             article_title
+        )
 
-            .replace("Article", "")
+        if not number_match:
+            continue
 
-            .strip()
 
+        article_number = number_match.group()
+
+
+        if article_number in existing_articles:
+            continue
+
+
+        existing_articles.add(
+            article_number
         )
 
 
-
-        if article_number in SELECTED_ARTICLES:
-
-
-
-            # prevent duplicate articles
-
-            if article_number in existing_articles:
-
-                continue
+        clean_content = re.sub(
+            r"\s+",
+            " ",
+            content
+        ).strip()
 
 
-
-            existing_articles.add(article_number)
-
-
-
-            articles.append({
-
-
-                "id": f"fdre_const_article_{article_number}",
-
-
-                "title": "FDRE Constitution",
-
-
-                "article": article_title.strip(),
-
-
-                "topic": ARTICLE_TOPICS.get(
-
-                    article_number,
-
-                    ""
-
-                ),
-
-
-
-                "keywords": ARTICLE_KEYWORDS.get(
-
-                    article_number,
-
-                    [
-
-                        f"Article {article_number}"
-
-                    ]
-
-                ),
-
-
-
-                "content": content.strip(),
-
-
-
-                "source": "FDRE Constitution 1995 - Official English PDF"
-
-
-            })
-
+        articles.append(
+            {
+                "number": article_number,
+                "title": article_title.strip(),
+                "content": clean_content
+            }
+        )
 
 
     return articles
 
 
 
+def generate_metadata(content):
+
+    prompt = f"""
+
+You are a legal information extraction assistant.
+
+Analyze the following FDRE Constitution article.
+
+Return ONLY valid JSON.
+
+Format:
+
+{{
+ "topic": "short legal topic",
+ "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3",
+    "keyword4",
+    "keyword5"
+ ]
+}}
+
+Article:
+
+{content}
+
+"""
+
+
+    response = client.models.generate_content(
+        model=MODEL_NAME,
+        contents=prompt
+    )
+
+
+    result = response.text.strip()
+
+
+    if result.startswith("```"):
+
+        result = (
+            result
+            .replace("```json", "")
+            .replace("```", "")
+            .strip()
+        )
+
+
+    try:
+
+        return json.loads(result)
+
+    except Exception:
+
+        return {
+            "topic": "Constitutional Provision",
+            "keywords": [
+                "law",
+                "rights"
+            ]
+        }
+
+
+
+def create_json(articles):
+
+    dataset = []
+
+
+    for article in articles:
+
+        print(
+            f"Processing Article {article['number']}..."
+        )
+
+
+        metadata = generate_metadata(
+            article["content"]
+        )
+
+
+        dataset.append(
+            {
+                "id":
+                f"fdre_const_article_{article['number']}",
+
+                "title":
+                "FDRE Constitution",
+
+                "article":
+                article["title"],
+
+                "topic":
+                metadata.get(
+                    "topic",
+                    ""
+                ),
+
+                "keywords":
+                metadata.get(
+                    "keywords",
+                    []
+                ),
+
+                "content":
+                article["content"],
+
+                "source":
+                "FDRE Constitution 1995 - Official English PDF"
+            }
+        )
+
+
+    return dataset
+
 
 
 def save_json(data, output_path):
 
+    output_path.parent.mkdir(
+        exist_ok=True
+    )
+
 
     with open(
-
         output_path,
-
         "w",
-
         encoding="utf-8"
-
     ) as file:
 
-
         json.dump(
-
             data,
-
             file,
-
             ensure_ascii=False,
-
             indent=2
-
         )
-
-
-
 
 
 
 if __name__ == "__main__":
 
-
-    print("Reading PDF...")
-
-
-    text = extract_text_from_pdf(PDF_PATH)
+    print(
+        "Reading PDF..."
+    )
 
 
-
-    print("Extracting Selected Articles...")
-
-
-
-    articles = split_articles(text)
-
+    text = extract_text_from_pdf(
+        PDF_PATH
+    )
 
 
     print(
-
-        f"Found {len(articles)} articles"
-
+        "Extracting all articles..."
     )
 
+
+    articles = split_articles(
+        text
+    )
+
+
+    print(
+        f"Found total {len(articles)} articles"
+    )
+
+
+    articles = articles[:MAX_ARTICLES]
+
+
+    print(
+        f"Processing only {len(articles)} articles"
+    )
+
+
+    print(
+        "Generating Gemini metadata..."
+    )
+
+
+    data = create_json(
+        articles
+    )
 
 
     save_json(
-
-        articles,
-
+        data,
         OUTPUT_PATH
-
     )
 
 
+    print(
+        "✅ JSON created successfully!"
+    )
+
 
     print(
-
-        "JSON created successfully!"
-
+        f"Saved: {OUTPUT_PATH}"
     )
