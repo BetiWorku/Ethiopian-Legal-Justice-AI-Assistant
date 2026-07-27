@@ -103,6 +103,50 @@ A hybrid extraction method was selected:
               RAG Question Answering
                 (Gemini LLM)
 ---
+## Three-Page Extraction Evaluation
+
+| Page | Method | Language | Article Numbers | Readability | Major Errors | Rating |
+|---|---|---|---|---|---|---|
+| Clear page | Tesseract OCR | Amharic | Yes | High | Minor character errors | 4/5 |
+| Low-quality page | Tesseract OCR | Amharic | Partial | Medium | Character confusion, noise | 3/5 |
+| Article structure page | Tesseract OCR | Amharic | Yes | High | Minor formatting issues | 4/5 |
+
+## OCR Cleaning Example
+
+Before Cleaning:
+
+አንቀጽ 25
+የእኩልነት መብት
+PAGE: 12
+========
+
+
+After Cleaning:
+
+አንቀጽ 25
+የእኩልነት መብት
+
+ሁሉም ሰዎች በሕግ ፊት እኩል ናቸው...
+
+## Source Code
+
+The extraction implementation includes:
+
+- PDF text extraction using PyMuPDF
+- OCR processing using Tesseract
+- Image preprocessing
+- Article-level text extraction
+- JSON chunk generation
+
+Generated output:
+
+data/chunks/article_chunks.json
+
+ ## Screenshoots
+ a. article_chunks.json
+![alt text](image-2.png) 
+b.OCR Output
+ ![alt text](image-1.png)
 
 # Justification
 
