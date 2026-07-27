@@ -212,11 +212,12 @@ Reason:
 
 Selected Model:
 
-**multilingual-e5-base**
+multilingual-e5-base (Sentence Transformer)
 
 Reason:
-- Supports multilingual legal documents.
-- Better semantic retrieval for Amharic and English.
+- Supports Amharic and English legal documents.
+- Provides multilingual semantic search capability.
+- Suitable for legal question retrieval.
 
 ---
 
@@ -224,7 +225,10 @@ Reason:
 
 Selected:
 
-**FAISS (Facebook AI Similarity Search)**
+data/vectors/
+FAISS index
+retriever.py
+embedding.py
 
 Reason:
 

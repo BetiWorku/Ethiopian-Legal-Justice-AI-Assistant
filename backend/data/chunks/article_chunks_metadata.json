@@ -1,857 +1,1807 @@
 [
     {
-        "chunk_id": 1,
-        "article": "Article 1",
-        "title": "የኢትዮጵያ መንግሥት ስያሜ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 2,
+        "id": "fdre_constitution_article_1_chunk_001",
         "text": "አንቀጽ 1\nየኢትዮጵያ መንግሥት ስያሜ\n\nይህ ሕገመንግሥት ፌዴራላዊና ዴሞክራሲያዊ የመንግሥት አወቃቀር ይደነግጋል፡፡\n\nበዚህ መሰረት የኢትዮጵያ መንግሥት የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ\n\nበሚል ስም ይጠራል፡፡",
-        "length": 137
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 1",
+            "article_title": "የኢትዮጵያ መንግሥት ስያሜ",
+            "topic": "የኢትዮጵያ መንግሥት ስያሜ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 2,
+            "page_end": 2,
+            "source": "FDRE Constitution, Article 1",
+            "status": "active",
+            "chunk_index": 1
+        }
     },
     {
-        "chunk_id": 2,
-        "article": "Article 3",
-        "title": "የኢትዮጵያ ሰንደቅ ዓላማ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 3,
+        "id": "fdre_constitution_article_3_chunk_002",
         "text": "አንቀጽ 3\nየኢትዮጵያ ሰንደቅ ዓላማ\n1. የኢትዮጵያ ሰንደቅ ዓላማ ከላይ አረንጓዴ፣ ከመሐል ቢጫ፣ ከታች ቀይ ሆኖ በመሐሉ\nብሔራዊ ዓርማ ይኖረዋል፡፡ ሦስቱም ቀለማት እኩል ሆነው በአግድም ይቀመጣሉ፡፡\n2. ከሰንደቅ ዓላማው ላይ የሚቀመጠው ብሔራዊ ዓርማ የኢትዮጵያ ብሔሮች፣\nብሔረሰቦች፣ ሕዝቦች እና ሃይማኖቶች በእኩልነትና በአንድነት ለመኖር ያላቸውን\nተስፋ የሚያንጸባርቅ ይሆናል፡፡\n3. የፌዴራሉ አባሎች የየራሳቸው ሰንደቅ ዓላማና ዓርማ ሊኖራቸው ይችላል፡፡\nዝርዝሩን በየራሳቸው ምክር ቤት ይወሰስናሌ።",
-        "length": 316
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 3",
+            "article_title": "የኢትዮጵያ ሰንደቅ ዓላማ",
+            "topic": "የኢትዮጵያ ሰንደቅ ዓላማ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 3,
+            "page_end": 3,
+            "source": "FDRE Constitution, Article 3",
+            "status": "active",
+            "chunk_index": 2
+        }
     },
     {
-        "chunk_id": 3,
-        "article": "Article 4",
-        "title": "የኢትዮጵያ ብሔራዊ መዝሙር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 3,
+        "id": "fdre_constitution_article_4_chunk_003",
         "text": "አንቀጽ 4\nየኢትዮጵያ ብሔራዊ መዝሙር\nየኢትዮጵያ ብሔራዊ መዝሙር የሕገ መንግሥቱን ዓላማዎችና የኢትዮጵያ ሕዝቦች\nበዴሞክራሲ ሥርዓት አብረው ለመኖር ያላቸውን እምነት፣ እንዲሁም የወደፊት የጋራ\nዕድላቸውን የጫሟያንጸባርቅ ሆኖ በሕግ ይወሰናል፡፡",
-        "length": 152
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 4",
+            "article_title": "የኢትዮጵያ ብሔራዊ መዝሙር",
+            "topic": "የኢትዮጵያ ብሔራዊ መዝሙር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 3,
+            "page_end": 3,
+            "source": "FDRE Constitution, Article 4",
+            "status": "active",
+            "chunk_index": 3
+        }
     },
     {
-        "chunk_id": 4,
-        "article": "Article 5",
-        "title": "ስለ ቋንቋ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 3,
+        "id": "fdre_constitution_article_5_chunk_004",
         "text": "አንቀጽ 5\nስለ ቋንቋ\n1. ማናቸውም የኢትዮጵያ ቋንቋዎች በእኩልነት የመንግሥት እውቅና ይኖራቸዋል፡፡\n2. አማርኛ የፌዴራሉ መንግሥት የሥራ ቋንቋ ይሆናል፡፡\n3. የፌዴሬሽኑ አባሎች የየራሳቸውን የሥራ ቋንቋ በሕግ ይወስናሉ።",
-        "length": 140
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 5",
+            "article_title": "ስለ ቋንቋ",
+            "topic": "ስለ ቋንቋ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 3,
+            "page_end": 3,
+            "source": "FDRE Constitution, Article 5",
+            "status": "active",
+            "chunk_index": 4
+        }
     },
     {
-        "chunk_id": 5,
-        "article": "Article 6",
-        "title": "ስለ ዜግነት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 3,
+        "id": "fdre_constitution_article_6_chunk_005",
         "text": "አንቀጽ 6\nስለ ዜግነት\n1. ወላጆቹ/ወላጆቿ ወይም ከወላጆቹ/ከወላጆቿ አንደኛቸው ኢትዮጵያዊ/ኢትዮጵያዊት\nየሆነ/የሆነች የኢትዮጵያ ዜጋ ነው/ናት፡፡\n2. የውጭ ሀገር ዜጎች የኢትዮጵያ ዜግነት ሊያገኙ ይችሳሉ፡፡\n3. ዜግነትን በሚመለከት ዝርዝሩ በሕግ ይወሰናል፡፡",
-        "length": 164
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 6",
+            "article_title": "ስለ ዜግነት",
+            "topic": "ስለ ዜግነት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 3,
+            "page_end": 3,
+            "source": "FDRE Constitution, Article 6",
+            "status": "active",
+            "chunk_index": 5
+        }
     },
     {
-        "chunk_id": 6,
-        "article": "Article 8",
-        "title": "የሕዝብ ሉዓላዊነት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 4,
+        "id": "fdre_constitution_article_8_chunk_006",
         "text": "አንቀጽ 8\nየሕዝብ ሉዓላዊነት\n\n. የኢትዮጵያ ብሔሮች፣ ብሔረሰቦች፣ ሕዝቦች የኢትዮጵያ ሉዓላዊ ሥልጣን ባለቤቶች\nናቸው፡፡\n. ይህ ሕገ መንግሥት የሉዓላዊነታቸው መግለጫ ነው፡፡\n\n3. ሉዓላዊነታቸውም የሚገለጸው በዚህ ሕገ መንግሥት መሰረት በሚመርጧቸው\n\nተወካዮቻቸውና በቀጥታ በሚያደርጉት ዴሞክራሲያዊ ተሳትፎ አማካይነት\nይሆናል፡፡",
-        "length": 207
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 8",
+            "article_title": "የሕዝብ ሉዓላዊነት",
+            "topic": "የሕዝብ ሉዓላዊነት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 4,
+            "page_end": 4,
+            "source": "FDRE Constitution, Article 8",
+            "status": "active",
+            "chunk_index": 6
+        }
     },
     {
-        "chunk_id": 7,
-        "article": "Article 9",
-        "title": "የሕገ መንግሥት የበላይነት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 4,
+        "id": "fdre_constitution_article_9_chunk_007",
         "text": "አንቀጽ 9\nየሕገ መንግሥት የበላይነት\n\n. ሕገ መንግሥቱ የሀገሪቱ የበላይ ሕግ ነው፡፡ ማንኛውም ሕግ፣ ልማዳዊ አሠራር፣\nእንዲሁም የመግሥት አካል ወይም ባለሥልጣን ውሳኔ ከዚህ ሕገ መንግሥት ጋር\nየሜቃረን ከሆነ ተፈጻሟነት አይኖረውጦም፡፡\n. ማንኛውም ዜጋ፣ የመንግሥት አካላት፣ የፖለቲካ ድርጅቶች፣ ሌሎች ማኅበራት\nእንዲሁም ባለሥልጣኖቻቸው፣ ሕገ መንግሥቱን የማሰከበርና ለሕገ መንግሥቱ\nተገገር የመሆን ኃላፊነት አለባቸው፡፡\n. በዚህ ሕገ መንግሥት ከተደነገገው ውጭ በማናቸውም አኳኋን የመንግሥት ሥልጣን\nመያዝ የተከለከለ ነው፡፡\n. ኢትዮጵያ ያጸደቀቻቸው ዓለም አቀፍ ስምምነቶች የሀገሪቱ ሕግ አካል ናቸው፡፡",
-        "length": 382
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 9",
+            "article_title": "የሕገ መንግሥት የበላይነት",
+            "topic": "የሕገ መንግሥት የበላይነት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 4,
+            "page_end": 4,
+            "source": "FDRE Constitution, Article 9",
+            "status": "active",
+            "chunk_index": 7
+        }
     },
     {
-        "chunk_id": 8,
-        "article": "Article 10",
-        "title": "ሰብዓዊና ዴሞክራሲያዊ መብቶች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 4,
+        "id": "fdre_constitution_article_10_chunk_008",
         "text": "አንቀጽ 10\nሰብዓዊና ዴሞክራሲያዊ መብቶች\n. ሰብዓዊ መብቶችና ነፃነቶች ከሰው ልጅ ተፈጥሮ የሚመነሬጩ የማይጣሱና የማይገፈፉ\nናቸው፡፡\n. የዜጎች እና የሕዝቦች ሰብዓዊና ዴሞክራሲያዊ መብቶች ይከበራሉ፡፡",
-        "length": 127
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 10",
+            "article_title": "ሰብዓዊና ዴሞክራሲያዊ መብቶች",
+            "topic": "ሰብዓዊና ዴሞክራሲያዊ መብቶች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 4,
+            "page_end": 4,
+            "source": "FDRE Constitution, Article 10",
+            "status": "active",
+            "chunk_index": 8
+        }
     },
     {
-        "chunk_id": 9,
-        "article": "Article 11",
-        "title": "የመንግሥትና የሃይማኖት መሊያየት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 4,
+        "id": "fdre_constitution_article_11_chunk_009",
         "text": "አንቀጽ 11\n\nየመንግሥትና የሃይማኖት መሊያየት\n4\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 108
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 11",
+            "article_title": "የመንግሥትና የሃይማኖት መሊያየት",
+            "topic": "የመንግሥትና የሃይማኖት መሊያየት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 4,
+            "page_end": 4,
+            "source": "FDRE Constitution, Article 11",
+            "status": "active",
+            "chunk_index": 9
+        }
     },
     {
-        "chunk_id": 10,
-        "article": "Article 12",
-        "title": "የመንግሥት አሠራርና ተጠያቂነት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 5,
+        "id": "fdre_constitution_article_12_chunk_010",
         "text": "አንቀጽ 12\n\nየመንግሥት አሠራርና ተጠያቂነት\n. የመንግሥት አሠራር ለሕዝብ ግልጽ በሆነ መንገድ መከናወን አለበት፡፡\n. ማንኛውም ኃላፊና የሕዝብ ተመራጭ ኃላፊነቱን ሲያጓድል ተጠያቂ ይሆናል፡፡\n. ሕዝብ በመረጠው ተወካይ ላይ እምነት ባጣ ጊዜ ከቦታው ለማንሳት ይትላል፡፡\nዝርዝሩ በሕግ ይወሰናል፡፡\n\nምዕራፍ ሶስት\nመሰረታዊ መብቶችና ነፃነቶች",
-        "length": 215
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 12",
+            "article_title": "የመንግሥት አሠራርና ተጠያቂነት",
+            "topic": "የመንግሥት አሠራርና ተጠያቂነት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 5,
+            "page_end": 5,
+            "source": "FDRE Constitution, Article 12",
+            "status": "active",
+            "chunk_index": 10
+        }
     },
     {
-        "chunk_id": 11,
-        "article": "Article 13",
-        "title": "ተፈጻሚነትና አተረጓጎም",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 5,
+        "id": "fdre_constitution_article_13_chunk_011",
         "text": "አንቀጽ 13\nተፈጻሚነትና አተረጓጎም\n. በማንኛውም ደረጃ የሚገኙ የፌዴራል መንግሥትና የክልል ሕግ አውጪ፣ ሕግ\nአስፈጻሟ እና የዳኝነት አካሎች በዚህ ምዕራፍ የተካተቱትን ድንጋጌዎች የማክበርና\nየማስከበር ኃላፊነትና ግዴታ አለባቸው፡፡\n. በዚህ ምዕራፍ የተዘረዘሩት መሰረታዊ የመብቶችና የነፃነቶች ድንጋጌዎች ኢትዮጵያ\nከተቀበለቻቸው ዓለም አቀፍ የሰብዓዊ መብቶች ሕግጋት፣ ዓለም አቀፍ የሰብዓዊ\nመብቶች ስምምነቶችና ዓለም አቀፍ ሠነዶች መርሆዎች ጋር በተጣጣመ መንገድ\nይተረጎማሉ፡፡\nNEA አንድ\nሰብዓዊ መብቶች",
-        "length": 319
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 13",
+            "article_title": "ተፈጻሚነትና አተረጓጎም",
+            "topic": "ተፈጻሚነትና አተረጓጎም",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 5,
+            "page_end": 5,
+            "source": "FDRE Constitution, Article 13",
+            "status": "active",
+            "chunk_index": 11
+        }
     },
     {
-        "chunk_id": 12,
-        "article": "Article 14",
-        "title": "የሕይወት፣ የአካል ደህንነትና የነፃነት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 5,
+        "id": "fdre_constitution_article_14_chunk_012",
         "text": "አንቀጽ 14\nየሕይወት፣ የአካል ደህንነትና የነፃነት መብት\n\nማንኛውም ሰው ሰብዓዊ በመሆኑ የማይደፈርና የማይገሰስ በሕይወት የመኖር፣\nየአካል ደህንነትና፣ የነፃነት መብት አለው፡፡",
-        "length": 112
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 14",
+            "article_title": "የሕይወት፣ የአካል ደህንነትና የነፃነት መብት",
+            "topic": "የሕይወት፣ የአካል ደህንነትና የነፃነት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 5,
+            "page_end": 5,
+            "source": "FDRE Constitution, Article 14",
+            "status": "active",
+            "chunk_index": 12
+        }
     },
     {
-        "chunk_id": 13,
-        "article": "Article 17",
-        "title": "የነፃነት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 6,
+        "id": "fdre_constitution_article_17_chunk_013",
         "text": "አንቀጽ 17\n\nየነፃነት መብት\n\n. በሕግ ከተደነገገው ሥርዓት ውጭ ማንኛውም ሰው ወንድም ሆነ ሴት ነፃነቱን/ቷን\nአያጣም/አታጣም፡፡\n. ማንኛውም ሰው በሕግ ከተደነገገው ሥርዓት ውጭ ሊያዝ፣ ክስ ሳይቀርብበት ወይም\nሳይፈረድበት ሊታሰር አይችልም፡፡",
-        "length": 154
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 17",
+            "article_title": "የነፃነት መብት",
+            "topic": "የነፃነት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 6,
+            "page_end": 6,
+            "source": "FDRE Constitution, Article 17",
+            "status": "active",
+            "chunk_index": 13
+        }
     },
     {
-        "chunk_id": 14,
-        "article": "Article 18",
-        "title": "ኢሰብዓዊ አያያዝ ስለመከልከሉ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 6,
+        "id": "fdre_constitution_article_18_chunk_014",
         "text": "አንቀጽ 18\n\nኢሰብዓዊ አያያዝ ስለመከልከሉ\n. ማንኛውም ሰው ጭካኔ ከተሞላበት፣ ኢሰብዓዊ ከሆነ ወይም ክብሩን ከሚያዋርድ\nአያያዝ ወይም ቅጣት የመጠበቅ መብት አለውጦ፡፡\n. ማንኛውም ሰው በባርነት ወይም በግዴታ አገልጋይነት ሊያዝ አይችልም፡፡\nለማንኛውም ዓላማ በሰው የመነገድ ተግባር የተከለከለ ነው፡፡\n. ማንኛውም ሰው በኃይል ተገዶ ወይም ግዴታን ለማሟላት ማንኛውንም ሥራ\nእንዲሠራ ማድረግ የተከለከለ ነው፡፡\n. በዚህ አንቀጽ ንዑስ",
-        "length": 273
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 18",
+            "article_title": "ኢሰብዓዊ አያያዝ ስለመከልከሉ",
+            "topic": "ኢሰብዓዊ አያያዝ ስለመከልከሉ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 6,
+            "page_end": 6,
+            "source": "FDRE Constitution, Article 18",
+            "status": "active",
+            "chunk_index": 14
+        }
     },
     {
-        "chunk_id": 15,
-        "article": "Article 20",
-        "title": "የተከሰሱ ሰዎች መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 7,
+        "id": "fdre_constitution_article_20_chunk_015",
         "text": "አንቀጽ 20\nየተከሰሱ ሰዎች መብት\n\n7\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 101
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 20",
+            "article_title": "የተከሰሱ ሰዎች መብት",
+            "topic": "የተከሰሱ ሰዎች መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 7,
+            "page_end": 7,
+            "source": "FDRE Constitution, Article 20",
+            "status": "active",
+            "chunk_index": 15
+        }
     },
     {
-        "chunk_id": 16,
-        "article": "Article 21",
-        "title": "በጥበቃ ስር ያሉና በፍርድ የታሰሩ ሰዎች መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 8,
+        "id": "fdre_constitution_article_21_chunk_016",
         "text": "አንቀጽ 21\n\nበጥበቃ ስር ያሉና በፍርድ የታሰሩ ሰዎች መብት\n\n. በጥበቃ ስር ያሉና በፍርድ የታሰሩ ሰዎች ሰብዓዊ ክብራቸውን በሚጠብቁ ሁኔታዎች\nየመያዝ መብት አላቸው፡፡\n. ከትዳር ጓደኞቻቸው፣ ከቅርብ ዘመዶቻቸው፣ ከጓደኞቻቸው፣ ከሃይማኖት\nአማካሪዎቻቸው፣ ከሐኪሞቻቸው ኣና ከሕግ አማካሪዎቻቸው ጋር ለመገናኘትና\nእንዲጎበጂቸውም ዕድል የማግኘት መብት አላቸው፡፡",
-        "length": 227
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 21",
+            "article_title": "በጥበቃ ስር ያሉና በፍርድ የታሰሩ ሰዎች መብት",
+            "topic": "በጥበቃ ስር ያሉና በፍርድ የታሰሩ ሰዎች መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 8,
+            "page_end": 8,
+            "source": "FDRE Constitution, Article 21",
+            "status": "active",
+            "chunk_index": 16
+        }
     },
     {
-        "chunk_id": 17,
-        "article": "Article 22",
-        "title": "የወንጀል ሕግ ወደኋላ ተመልሶ የማይሠራ ስለ መሆኑ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 8,
+        "id": "fdre_constitution_article_22_chunk_017",
         "text": "አንቀጽ 22\n\nየወንጀል ሕግ ወደኋላ ተመልሶ የማይሠራ ስለ መሆኑ\n\n. ማንኛውም ሰው የወንጀል ክስ ሲቀርብበት የተከሰሰበት ድርጊት በተፈጸመበት ጊዜ\nድርጊቱን መፈጸሙ ወይም አለመፈጸሙ ወንጀል መሆኑ በሕግ የተደነገገ ካልሆነ\n\nበስተቀር ሊቀጣ አይችልም፡፡ እንዲሁም ወንጀሉን በፈጸመበት ጊዜ ለወንጀሉ\n8\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 265
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 22",
+            "article_title": "የወንጀል ሕግ ወደኋላ ተመልሶ የማይሠራ ስለ መሆኑ",
+            "topic": "የወንጀል ሕግ ወደኋላ ተመልሶ የማይሠራ ስለ መሆኑ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 8,
+            "page_end": 8,
+            "source": "FDRE Constitution, Article 22",
+            "status": "active",
+            "chunk_index": 17
+        }
     },
     {
-        "chunk_id": 18,
-        "article": "Article 23",
-        "title": "በአንድ ወንጀል ድጋሚ ቅጣት ስለመከልከሉ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 9,
+        "id": "fdre_constitution_article_23_chunk_018",
         "text": "አንቀጽ 23\nበአንድ ወንጀል ድጋሚ ቅጣት ስለመከልከሉ\n\nማንኛውም ሰው በወንጀል ሕግና ሥርዓት መሰረት ተከሶ የመጨረሻ በሆነ ውሳሄ\nጥፋተኛነቱ በተረጋገጠበት ወይም በነፃ በተለቀቀበት ወንጀል እንደገና አይከሰስም\nወይም አይቀጣም፡፡",
-        "length": 143
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 23",
+            "article_title": "በአንድ ወንጀል ድጋሚ ቅጣት ስለመከልከሉ",
+            "topic": "በአንድ ወንጀል ድጋሚ ቅጣት ስለመከልከሉ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 9,
+            "page_end": 9,
+            "source": "FDRE Constitution, Article 23",
+            "status": "active",
+            "chunk_index": 18
+        }
     },
     {
-        "chunk_id": 19,
-        "article": "Article 24",
-        "title": "የክብርና የመልካም ስም መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 9,
+        "id": "fdre_constitution_article_24_chunk_019",
         "text": "አንቀጽ 24\nየክብርና የመልካም ስም መብት\n\n. ማንኛውም ሰው ሰብዓዊ ክብሩና መልካም ስሙ የመከበር መበት አለው፡፡\n\n. ማንኛውም ሰው የራሱን ስብዕና ከሌሎች ዜጎች መብቶች ጋር በተጣጣመ ሁኔታ\n\nበነፃ የማሳደግ መብት አለፁው፡፡\n\n. ማንኛውም ሰው በማንኛውም ስፍራ በሰብዓዊነቱ እውቅና የማግኘት መብት አለው፡፡",
-        "length": 195
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 24",
+            "article_title": "የክብርና የመልካም ስም መብት",
+            "topic": "የክብርና የመልካም ስም መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 9,
+            "page_end": 9,
+            "source": "FDRE Constitution, Article 24",
+            "status": "active",
+            "chunk_index": 19
+        }
     },
     {
-        "chunk_id": 20,
-        "article": "Article 25",
-        "title": "የእኩልነት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 9,
+        "id": "fdre_constitution_article_25_chunk_020",
         "text": "አንቀጽ 25\n\nየእኩልነት መብት\n\nሁሉም ሰዎች በሕግ ፊት እኩል ናችው፤ በመካከላቸውም ማንኛውም ዓይነት ልዩነት\nሳይደረግ በሕግ እኩል ጥበቃ ይደረግላቸዋል፡፡ በዚህ ረገድ በዘር፣ ANAC:\nብሔረሰብ፣ በቀለም፣ በፆታ፣ በቋንቋ፣ በሃይማኖት፣ በፖለቲካ፣ በማኅበራዊ አመጣጥ፣\nበሀብት፣ በትውልድ ወይም በሌላ አቋም ምክንያት ልዩነት ሳይደረግ ሰዎች ሁሉ\nእኩልና ተጨባጭ የሕግ ዋስትና የማግኘት መብት አላቸው፡፡",
-        "length": 253
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 25",
+            "article_title": "የእኩልነት መብት",
+            "topic": "የእኩልነት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 9,
+            "page_end": 9,
+            "source": "FDRE Constitution, Article 25",
+            "status": "active",
+            "chunk_index": 20
+        }
     },
     {
-        "chunk_id": 21,
-        "article": "Article 26",
-        "title": "የግል ሕይወት የመከበርና የመጠበቅ መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 9,
+        "id": "fdre_constitution_article_26_chunk_021",
         "text": "አንቀጽ 26\nየግል ሕይወት የመከበርና የመጠበቅ መብት\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 110
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 26",
+            "article_title": "የግል ሕይወት የመከበርና የመጠበቅ መብት",
+            "topic": "የግል ሕይወት የመከበርና የመጠበቅ መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 9,
+            "page_end": 9,
+            "source": "FDRE Constitution, Article 26",
+            "status": "active",
+            "chunk_index": 21
+        }
     },
     {
-        "chunk_id": 22,
-        "article": "Article 27",
-        "title": "የሃይማኖት፣ የእምነትና የአመለካከት ነፃነት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 10,
+        "id": "fdre_constitution_article_27_chunk_022",
         "text": "አንቀጽ 27\n\nየሃይማኖት፣ የእምነትና የአመለካከት ነፃነት\n. ማንኛውም ሰው የማሰብ፣ የሕሊና እና የሃይማኖት ነፃነት አለው፡፤፡ ይህ መብት\nማንኛውም ሰው የመረጠውን ሃይማኖት ወይም እምነት የመያዝ ወይም የመቀበል፣\nሃይማኖቱንና እምነቱን ለብቻ ወይም ከሌሎች ጋር በመሆን በይፋ ወይም በግል\nየማምለክ፣ የመከተል፣ የመተግበር፣ የማስተማር ወይም የመግለጽ መብትን\nያካትታል፡፡\n. በ",
-        "length": 237
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 27",
+            "article_title": "የሃይማኖት፣ የእምነትና የአመለካከት ነፃነት",
+            "topic": "የሃይማኖት፣ የእምነትና የአመለካከት ነፃነት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 10,
+            "page_end": 10,
+            "source": "FDRE Constitution, Article 27",
+            "status": "active",
+            "chunk_index": 22
+        }
     },
     {
-        "chunk_id": 23,
-        "article": "Article 28",
-        "title": "በስብዕና ላይ ስለሟፈጸሙ ወንጀሎች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 11,
+        "id": "fdre_constitution_article_28_chunk_023",
         "text": "አንቀጽ 28\n\nበስብዕና ላይ ስለሟፈጸሙ ወንጀሎች\n. ኢትዮጵያ ባጸደቀቻቸው ዓለም አቀፍ ስምምነቶችና በሌሎች የኢትዮጵያ ሕጎች\nበሰው ልጅ ላይ የተፈጸሙ ወንጀሎች ተብለው የተወሰኑትን ወንጀሎች፤ የሰው ዘር\nየማጥፋት፣ ያለፍርድ የሞት ቅጣት እርምጃ የመውሰድ፣ በአስገዳጅ ሰውን የመሰወር፣\nወይም ኢሰብዓዊ የድብደባ ድርጊቶችን በፈጸመ- ሰዎች ላይ ክስ ማቅረብ በይርጋ\nአይታገድም፡፡ በሕግ አውጪው ክፍልም ሆነ በማንኛውም የመንግሥት አካል\nውሳኔዎች በምሕረት ወይም በይቅርታ አይታለፉም፡፡\n. ከዚህ በላይ የተደነገገው እንደተጠበቀ ሆኖ፣ በዚህ አንቀጽ ንዑስ",
-        "length": 345
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 28",
+            "article_title": "በስብዕና ላይ ስለሟፈጸሙ ወንጀሎች",
+            "topic": "በስብዕና ላይ ስለሟፈጸሙ ወንጀሎች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 11,
+            "page_end": 11,
+            "source": "FDRE Constitution, Article 28",
+            "status": "active",
+            "chunk_index": 23
+        }
     },
     {
-        "chunk_id": 24,
-        "article": "Article 29",
-        "title": "የአመለካከት እና ሀሳብን በነፃ የመያዝና የመግለጽ መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 11,
+        "id": "fdre_constitution_article_29_chunk_024",
         "text": "አንቀጽ 29\nየአመለካከት እና ሀሳብን በነፃ የመያዝና የመግለጽ መብት\n\n. ማንኛውም ሰው ያለማንም ጣልቃ ገብነት የመሰለውን አመለካከት ለመያዝ\nይችላል፡፡\n. ማንኛውም ሰው ያለማንም ጣልቃ ገብነት ሀሳቡን የመግለጽ ነፃነት አለው፡፡ ይህ\nነፃነት በሀገር ውስጥም ሆነ ከሀገር ውጭ ወሰን ሳይደረግበት በቃልም ሆነ በጽሑፍ\nወይም በሕትመት፣ በሥነ ጥበብ መልክ ወይም በመረጠው በማንኛውም የማሰራጫ\nዘዴ፣ ማንኛውንም ዓይነት መረጃና ሀሳብ የመሰብሰብ፣ የመቀበልና የማሰራጨት\nነፃነቶችን ያካትታል፡፡\n. የፕሬስና የሌሎች መገናኛ ብዙኃን፣ እንዲሁም የሥነ ጥበብ ፈጠራ ነፃነት\nተረጋግጧል፡፡ የፕሬስ ነፃነት በተለይ የሚከተሉትን መብቶች ያጠቃልላል፤\nሀ/ የቅድሚያ ምርመራ በማንኛውም መልኩ የተከለከለ መሆኑን፣\nለ/ የሕዝብን ጥቅም የሚመለከት መረጃ የማግኘት ዕድልን፡፡\n. ለዴሞክራሲያዊ ሥርዓት አስፈላጊ የሆኑ መረጃዎች፣ ሀሳቦችና አመለካከቶች በነፃ\nመንሸራሸራቸውን ለማረጋገጥ ሲባል ፕሬስ በተቋምነቱ የአሠራር ነፃነትና የተለያዩ\nአስተያየቶች የማስተናገድ ችሎታ እንዲኖረው የሕግ ጥበቃ ይደረግለታል፡፡\n\n11\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 700
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 29",
+            "article_title": "የአመለካከት እና ሀሳብን በነፃ የመያዝና የመግለጽ መብት",
+            "topic": "የአመለካከት እና ሀሳብን በነፃ የመያዝና የመግለጽ መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 11,
+            "page_end": 11,
+            "source": "FDRE Constitution, Article 29",
+            "status": "active",
+            "chunk_index": 24
+        }
     },
     {
-        "chunk_id": 25,
-        "article": "Article 30",
-        "title": "የመሰብሰብ፣ ሰላማዊ ሰልፍ የማድረግ ነፃነትና አቤቱታ የማቅረብ መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 12,
+        "id": "fdre_constitution_article_30_chunk_025",
         "text": "አንቀጽ 30\nየመሰብሰብ፣ ሰላማዊ ሰልፍ የማድረግ ነፃነትና አቤቱታ የማቅረብ መብት\n\n. ማንኛውም ሰው ከሌሎች ጋር በመሆን መሣሪያ ሳይዝ በሰላም የመሰብሰብ፣ ሰላማዊ\nሰልፍ የማድረግ ነፃነትና፣ አቤቱታ የማቅረብ መብት አለው፤፡ ከቤት ውጭ የሟደረጉ\nስብሰባዎችና ሰላማዊ ሰልፎች በሚንቀሳቀሱባቸው ቦታዎች በሕዝብ እንቅስቃሴ ላይ\nችግር እንዳይፈጥሩ ለማድረግ ወይም በመካሄድ ላይ ያለ ስብሰባ ወይም ሰላማዊ\nሰልፍ ሰላምን፥፣ ዴማክራሲያዊ መብቶችንና የሕዝብን የሞራል ሁኔታ እንዳይጥሱ\nለማስጠበቅ አግባብ ያላቸው ሥርዓቶች ሊደነገጉ ይችላሉ፡፡\n\n2. ይህ መብት የወጣቶችን ደህንነት፣ የሰውን ክብርና መልካም ስምን ለመጠበቅ፣\nየጦርነት ቅስቀሳዎች እንዲሁም ሰብዓዊ ክብርን የሚነኩ የአደባባይ መግለጫዎችን\nለመከላከል ሲባል በሚወጡ ሕጎች መሰረት ተጠያቂ ከመሆን አያድንም፡፡",
-        "length": 478
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 30",
+            "article_title": "የመሰብሰብ፣ ሰላማዊ ሰልፍ የማድረግ ነፃነትና አቤቱታ የማቅረብ መብት",
+            "topic": "የመሰብሰብ፣ ሰላማዊ ሰልፍ የማድረግ ነፃነትና አቤቱታ የማቅረብ መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 12,
+            "page_end": 12,
+            "source": "FDRE Constitution, Article 30",
+            "status": "active",
+            "chunk_index": 25
+        }
     },
     {
-        "chunk_id": 26,
-        "article": "Article 31",
-        "title": "የመደራጀት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 12,
+        "id": "fdre_constitution_article_31_chunk_026",
         "text": "አንቀጽ 31\nየመደራጀት መብት\n\nማንኛውም ሰው ለማንኛውም ዓላማ በማኅበር የመደራጀት መብት አለው፡፡ ሆኖም\nአግባብ ያለውን ሕግ በመጣስ ወይም ሕገ መንግሥታዊ ሥርዓቱን በሕገ ወጥ መንገድ\nለማፍረስ የተመሰረቱ ወይም የተጠቀሱትን ተግባራት የሚያራምዱ ድርጅቶች\nየተከለከሉ ይሆናሉ፡፡፡\n\n12\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 256
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 31",
+            "article_title": "የመደራጀት መብት",
+            "topic": "የመደራጀት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 12,
+            "page_end": 12,
+            "source": "FDRE Constitution, Article 31",
+            "status": "active",
+            "chunk_index": 26
+        }
     },
     {
-        "chunk_id": 27,
-        "article": "Article 32",
-        "title": "የመዘዋወር ነፃነት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 13,
+        "id": "fdre_constitution_article_32_chunk_027",
         "text": "አንቀጽ 32\nየመዘዋወር ነፃነት\n\n. ማንኛውም ኢትዮጵያዊ ወይም በሕጋዊ መንገድ ሀገሪቱ ውስጥ የሚገኝ የውጭ ዜጋ\nበመረጠው የሀገሪቱ አካባቢ የመዘዋወርና የመኖሪያ ቦታ የመመስረት፣ እንዲሁም\nበፈለገው ጊዜ ከሀገር የመውጣት ነፃነት አለው፡፡\n. ማንኛውም ኢትዮጵያዊ ወደ ሀገሩ የመመለስ መብት አለው፡፡",
-        "length": 187
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 32",
+            "article_title": "የመዘዋወር ነፃነት",
+            "topic": "የመዘዋወር ነፃነት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 13,
+            "page_end": 13,
+            "source": "FDRE Constitution, Article 32",
+            "status": "active",
+            "chunk_index": 27
+        }
     },
     {
-        "chunk_id": 28,
-        "article": "Article 33",
-        "title": "የዜግነት መብቶች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 13,
+        "id": "fdre_constitution_article_33_chunk_028",
         "text": "አንቀጽ 33\nየዜግነት መብቶች\n. ማንኛውም ኢትዮጵያዊ/ኢትዮጵያዊት ከፈቃዱ/ከፈቃዷ ውጭ ኢትዮጵያዊ\nዜግነቱን/ዜግነትዋን ሊገፈፍ ወይም ልትገፈፍ  አይችልም/አትችልም፡፡\nኢትዮጵያዊ/ኢትዮጵያዊት ዜጋ ከሌላ ሀገር ዜጋ ጋር የሚፈጽመው/የምትፈጽመው\nጋብቻ ኢትዮጵያዊ ዜግነቱን/ዜግነትዋን አያስቀርም፡፡\n. ማንኛውም ኢትዮጵያዊ ዜጋ የኢትዮጵያ ዜግነት በሕግ የሚያስገኘውን መብት፣\nጥበቃና ጥቅም የማግኘት መብት አለው፡፡\n. ማንኛውም ዜጋ ኢትዮጵያዊ ዜግነቱን የመለወጥ መብት አለው፡፡\n. ኢትዮጵያ ከአጸደቃቸው ዓለም አቀፍ ስምምነቶች ጋር በማይቃረን መንገድ በሚወጣ\nሕግ እና በሟደነገግ ሥርዓት መሰረት የኢትዮጵያ ዜግነት ለውጭ ሀገር ሰዎች\nሊሰጥ ይችላል፡፡",
-        "length": 406
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 33",
+            "article_title": "የዜግነት መብቶች",
+            "topic": "የዜግነት መብቶች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 13,
+            "page_end": 13,
+            "source": "FDRE Constitution, Article 33",
+            "status": "active",
+            "chunk_index": 28
+        }
     },
     {
-        "chunk_id": 29,
-        "article": "Article 34",
-        "title": "የጋብቻ፣ የግልና የቤተሰብ መብቶች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 13,
+        "id": "fdre_constitution_article_34_chunk_029",
         "text": "አንቀጽ 34\nየጋብቻ፣ የግልና የቤተሰብ መብቶች\n. በሕግ ከተወሰነው የጋብቻ ዕድሜ የደረሱ ወንዶችና ሴቶች በዘር፣ በብሔር፣\nበብሔረሰብ ወይም በሃይማኖት ልዩነት ሳይደረግባቸው የማግባትና ቤተሰብ\nየመመስረት መብት አላቸው፡፡ በጋብቻ አፈጻጸም፣ በጋብቻው ዘመንና በፍቺ ጊዜ\nእኩል መብት አላቸው፡፡ በፍቺም ጊዜ የልጆችን መብትና ጥቅም አንዲከበር\nየሚያደርጉ ድንጋጌዎች ይደነገጋሉ፡፡\n. ጋብቻ በተጋቢዎች ነፃና ሙሉ ፈቃድ ላይ ብቻ ይመሰረታል፡፡\n. ቤተሰብ የገብረተሰብ የተፈጥሮ መሰረታዊ መነሻ ነው፡፡ ከኅገብረተሰብና ከመንግሥት\nጥበቃ የማግኘት መብት አለው፡፡\n\n13\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 430
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 34",
+            "article_title": "የጋብቻ፣ የግልና የቤተሰብ መብቶች",
+            "topic": "የጋብቻ፣ የግልና የቤተሰብ መብቶች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 13,
+            "page_end": 13,
+            "source": "FDRE Constitution, Article 34",
+            "status": "active",
+            "chunk_index": 29
+        }
     },
     {
-        "chunk_id": 30,
-        "article": "Article 35",
-        "title": "የሴቶች መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 14,
+        "id": "fdre_constitution_article_35_chunk_030",
         "text": "አንቀጽ 35\nየሴቶች መብት\n\n. ሴቶች ይሕ ሕገ መንግሥት በአረጋገጣቸው መብቶችና ጥበቃዎች በመጠቀም ረገድ\nከወንዶች ጋር እኩል መብት አላቸው፡፡\n. ሴቶች በዚህ ሕገ መንግሥት በተደነገገው መሰረት በጋብቻ ከወንዶች ጋር እኩል\nመብት አላቸው፡፡\n. ሴቶች በበታችነትና በልዩነት በመታየታቸው የደረሰባቸውን የታሪክ ቅርስ ከግምት\nውስጥ በማስገባት ይህ ቅርስ እንዲታረምላቸው በተጨማሪ የድጋፍ እርምጃዎች\nተጠቃሟ የመሆን መብት አላቸው፡፡ በዚህ በኩል የሚወሰዱት እርምጃዎች ዓላማ\nበፖለቲካዊ፣ በማኅበራዊና በኢኮኖሚያዊ መስኮች እንዲሁም በመንግሥት እና በግል\nተቋሞች ውስጥ ሴቶች ከወንዶች ጋር በእኩልነት ተወዳዳሪና ተሳታፊ እንዲሆኑ\nለማድረግ እንዲቻል ልዩ ትኩረት ለመስጠት ነው፡፡\n\n. ሴቶች ከጎጂ ባሕል ተጽዕኖ የመላቀቅ መብታቸውን መንግሥት WANG አለበት፡፡\n\nሴቶችን የሚጨቁኑ ወይም በአካላቸው ወይም በአዕምሮአቸው ላይ ጉዳት\n\nየሟያስከትሉ ሕጎች፣ ወጎችና ልማዶች የተከለከሉ ናቸው፡፡\n\n. ሀ ሴቶች የወሊድ ፈቃድ ከሙሉ የደመወዝ ክፍያ ጋር የማግኘት መብት\nአላቸው፡፡ የወሊድ ፈቃድ ርዝመት ሴቷ የምትሠራውን ሥራ ሁኔታ፣ የሴቷን\nጤንነት፣ የሕፃኑንና የቤተሰቡን ደህንነት ከግምት ውስጥ በማስገባት በሕግ\nይወሰናል፡፡\n\nለ/ የወሊድ ፈቃድ በሕግ በሚወሰነው መሰረት ከሙሉ የደመወዝ ክፍያ ጋር\nየሚሰጥ የእርግዝና ፈቃድን ሊጨምር ይችላል፡፡\n\n. ሴቶች በብሔራዊ የልማት ፖሊሲዎች ዕቅድና በፕሮጀክቶች ዝግጅትና አፈጻጸም፣\n\nበተለይ የሴቶችን ጥቅም በሜነኩ ፕሮጀክቶች ሀሳባቸውን በተሟላ ሁኔታ እንዲሰጡ\n\nየመጠየቅ መብት አላቸው፡፡\n\n14\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 971
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 35",
+            "article_title": "የሴቶች መብት",
+            "topic": "የሴቶች መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 14,
+            "page_end": 14,
+            "source": "FDRE Constitution, Article 35",
+            "status": "active",
+            "chunk_index": 30
+        }
     },
     {
-        "chunk_id": 31,
-        "article": "Article 36",
-        "title": "የሕፃናት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 15,
+        "id": "fdre_constitution_article_36_chunk_031",
         "text": "አንቀጽ 36\nየሕፃናት መብት\n\n. ማንኛውም ሕፃን የሚከተሉት መብቶች አሉት፤\n\nሀ/ በሕይወት የመኖር፣\n\nለ/ ስምና ዜግነት የማግኘት፣\n\nሐ/ ወላጆቹን ወይም በሕግ የማሳደግ መብት ያላቸውን ሰዎች የማወቅና\nየእነሱንም እንክብካቤ የማግኘት፥\n\nመ/ ጉልበቱን ከሚበዘብዙ ልማዶች የመጠበቅ፣ በትምህርቱ፣ በጤናውና በደህንነቱ\nላይ ጉዳት የሚያደርሱ ሥራዎች እንዲሠራ ያለመገደድ ወይም ከመሥራት\nየመጠበቅ፣\n\nሠ/ በትምህርት ቤቶች ወይም በሕፃናት ማሳደጊያ ተቋሞች ውስጥ በአካሉ\nከሚፈጸም ወይም ከጭካኔና ኢሰብዓዊ ከሆነ ቅጣት ነፃ የመሆን፡፡\n\n. ሕፃናትን የሟመለከቱ እርምጃዎች በሚወሰዱበት ጊዜ በመንግሥታዊ ወይም በግል\n\nየበጎ አድራጎት ተቋሞች፣ በፍርድ ቤቶች፣ በአስተዳደር ባለሥልጣኖች ወይም በሕግ\n\nአውጪ አካላት የሕፃናት ደህንነት በቀደምትነት መታሰብ አለበት፡፡\n\n. ወጣት አጥፊዎች፣ በማረሚያ ወይም በመቋቋሚያ ተቋሞች የሚገኙ፣ በመንግሥት\n\nእርዳታ የሟያድጉ ወጣቶች፣ በመንግሥት ወይም በግል AAA ማውታን ተቋሞች\n\nውስጥ የሚገኙ ወጣቶች ከአዋቂዎች ተለይተው መያዝ አለባቸው፡፡\n\n. ከጋብቻ ውጭ የተለወዱ ሕፃናት በጋብቻ ከተወለዱ ሕፃናት ጋር እኩል መብት\n\nአላቸው፡፡\n\n15\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 749
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 36",
+            "article_title": "የሕፃናት መብት",
+            "topic": "የሕፃናት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 15,
+            "page_end": 15,
+            "source": "FDRE Constitution, Article 36",
+            "status": "active",
+            "chunk_index": 31
+        }
     },
     {
-        "chunk_id": 32,
-        "article": "Article 37",
-        "title": "ፍትሕ የማግኘት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 16,
+        "id": "fdre_constitution_article_37_chunk_032",
         "text": "አንቀጽ 37\nፍትሕ የማግኘት መብት\n. ማንኛውም ሰው በፍርድ ሊወሰን የሚገባውን ጉዳይ ለፍርድ ቤት ወይም ለሌላ በሕግ\nየዳኝነት ስልጣን ለተሰጠው አካል የማቅረብና ውሳኔ ወይም ፍርድ የማግኘት መብት\nአለው፡፡\n. በዚህ አንቀጽ ንዑስ",
-        "length": 144
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 37",
+            "article_title": "ፍትሕ የማግኘት መብት",
+            "topic": "ፍትሕ የማግኘት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 16,
+            "page_end": 16,
+            "source": "FDRE Constitution, Article 37",
+            "status": "active",
+            "chunk_index": 32
+        }
     },
     {
-        "chunk_id": 33,
-        "article": "Article 38",
-        "title": "የመምረጥና የመመረጥ መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 16,
+        "id": "fdre_constitution_article_38_chunk_033",
         "text": "አንቀጽ 38\nየመምረጥና የመመረጥ መብት\n. ማንኛውም ኢትዮጵያዊ ዜጋ በቀለም፣ በዘር፣ በብሔር፣ በብሔረሰብ፣ በዖታ፣ በቋንቋ፣\nበሃይማኖት፣ በፖለቲካ ወይም በሌላ አመለካከት ወይም በሌላ አቋም ላይ የተመሰረተ\nልዩነት ሳይደረግበት የሚከተሉት መብቶች አሉት፤\nሀ/ በቀጥታ እና በነፃነት በመረጣቸው ተወካዮች አማካኝነት በሕዝብ ጉዳይ\nአስተዳደር የመሳተፍ፣\nለ/ ዕድሜው 18 ዓመት ሲሞላ በሕግ መሰረት የመምረጥ፣\nch] በማናቸውም የመንግሥት ደረጃ በየጊዜው በሚካሄድ ምርጫ የመምረጥና\nየመመረጥ፡፡ ምርጫው ሁሉ አቀፍ፣ በሁሉም እኩልነት ላይ የተመሰረተና\nበሟስጥር ድምፅ አሰጣጥ መራጩ ፈቃዱን በነፃነት የሚገልጽበት ዋስትና\nየሚሰጥ መሆን አለበት፡፡\n. በፖለቲካ ድርጅቶች፣ በሠራተኞች፣ በንግድ፣ በአሠሪዎችና በሙያ ማኀበራት\nለተሳትፎ ድርጅቱ የሚጠይቀውን ጠቅላላና ልዩ የአባልነት መስፈርት የጫያሟላ\nማንኛውም ሰው በፍላጎቱ አባል የመሆን መብቱ የተከበረ መሆን አለበት፡፡\n. በዚህ አንቀጽ ንዑስ",
-        "length": 555
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 38",
+            "article_title": "የመምረጥና የመመረጥ መብት",
+            "topic": "የመምረጥና የመመረጥ መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 16,
+            "page_end": 16,
+            "source": "FDRE Constitution, Article 38",
+            "status": "active",
+            "chunk_index": 33
+        }
     },
     {
-        "chunk_id": 34,
-        "article": "Article 39",
-        "title": "የብሔሮች፣ ብሔረሰቦች፣ ሕዝቦች መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 17,
+        "id": "fdre_constitution_article_39_chunk_034",
         "text": "አንቀጽ 39\nየብሔሮች፣ ብሔረሰቦች፣ ሕዝቦች መብት\n\n. ማንኛውም የኢትዮጵያ ብሔር፣ ብሔረሰብ፣ ሕዝብ የራሱን ዕድል በራሱ የመወሰን\n\nእስከመገንጠል ያለው መብቱ በማናቸውም መልኩ ያለ ገደብ የተጠበቀ ነው፡፡\n\n. ማንኛውም የኢትዮጵያ ብሔር፣ ብሔረሰብ፣ ሕዝብ በቋንቋው የመናገር፣ የመጻፍ፣\n\nቋንቋውን የማሳደግ እና ባሕሉን የመግለጽ፣ የማዳበርና የማስፋፋት እንዲሁም\n\nታሪኩን የመንከባከብ መብት አለው፡፡\n\n. ማንኛውም የኢትዮጵያ ብሔርረ፣ ብሔረሰብ፣ ሕዝብ ራሱን የማስተዳደር ሙሉ መብት\n\nአለው፡፡ ይህ መብት ብሔሩ፣ ብሔረሰቡ፣ ሕዝቡ በሰፈረበት መልክዓ ምድር ራሱን\n\nየሚያስተዳድርበት መንግሥታዊ ተቋማት የማቋቋም እንዲሁም በክልልና በፌዴራል\nአስተዳደሮች ውስጥ ሚዛናዊ ውክልና የማግኘት መብትን ያጠቃልላል፡፡\n\n. የብሔር፣ ብሔረሰቦች፣ ሕዝቦች የራስን ዕድል በራስ የመወሰን እስከ መገንጠል\n\nመብት ከሥራ ላይ የሚውለው፤\n\nሀ/ የመገንጠል ጥያቄ በብሔር፣ በብሔረሰቡ ወይም በሕዝቡ የሕግ አውጪ ምክር\n\nቤት በሁለት ሦስተኛ የድምፅ ድጋፍ ተቀባይነት ማግኘቱ ሲረጋገጥ፣\n\nለ/ የፌዴራሉ መንግሥት PNAC? የብሔረሰቡ ወይም የሕዝቡ ምክር ቤት ውሳኔ\nበደረሰው በሦስት ዓመት ጊዜ ውስጥ ለጠያቂው ብሔር፣ ብሔረሰብ ወይም\nሕዝብ ሕዝበ ውሳኔ ሲያደራጅ፣\n\nሐ/ የመገንጠሉ ጥያቄ በሕዝበ ውሳኔው በአብላጫ ድምፅ ሲደገፍ፣\n\nመ/ የዴዴራሉ መንግሥት መገንጠሉን ለመረጠው ብሔር፣ ብሔረሰብ ወይም\n\nሕዝብ ምክር ቤት ሥልጣኑን ሲያስረክብ፣\n\nሠ/ በሕግ በሚወሰነው መሰረት የንብረት ክፍፍል ሲደረግ ነው፡፡\n. በዚህ ሕገ መንግሥት ውስጥ “ብሔር፣ ብሔረሰብ፣ ሕዝብ\" ማለት ከዚህ ቀጥሎ\nየተገለፀውን ባህርይ የሚያሳይ ማኀበረሰብ ነው፡፡ ሰፋ ያለ የጋራ ጠባይ\nየሚያንጸባርቅ ባሕል ወይም ተመሳሳይ ልምዶች ያላቸው፣ ሊግባቡበት የሚችሉበት\nየጋራ ቋንቋ ያላቸው፣ የጋራ ወይም የተዛመደ ሕልውና አለን ብለው የሚያምኑ፣፥\nየሥነ ልቦና አንድነት ያላቸውና በአብዛኛው በተያያዘ መልክዓ ምድር የሚኖሩ\nናቸው፡፡\n\n17\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 1193
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 39",
+            "article_title": "የብሔሮች፣ ብሔረሰቦች፣ ሕዝቦች መብት",
+            "topic": "የብሔሮች፣ ብሔረሰቦች፣ ሕዝቦች መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 17,
+            "page_end": 17,
+            "source": "FDRE Constitution, Article 39",
+            "status": "active",
+            "chunk_index": 34
+        }
     },
     {
-        "chunk_id": 35,
-        "article": "Article 40",
-        "title": "የንብረት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 18,
+        "id": "fdre_constitution_article_40_chunk_035",
         "text": "አንቀጽ 40\nየንብረት መብት\n. ማንኛውም የኢትዮጵያ ዜጋ የግል ንብረት ባለቤት መሆኑ/መሆኗ ይከበርለታል/\nይከበርላታል፡፡ ይህ መብት የሕዝብን ጥቅም ለመጠበቅ በሌላ ሁኔታ በሕግ\nእስካልተወሰነ ድረስ ንብረት የመያዝና በንብረት የመጠቀም ወይም የሌሎችን ዜጎች\nመብቶች እስካልተቃረነ ድረስ ንብረትን የመሸጥ፣ የማውረስ ወይም በሌላ መንገድ\nየማስተላለፍ መብቶችን ያካትታል፡፡\n. ለዚህ አንቀጽ ዓላማ \"የግል ንብረት” ማለት ማንኛውም ኢትዮጵያዊ ዜጋ ወይም\nሕጋዊ ሰውነት በሕግ የተሰጣቸው ኢትዮጵያዊ ማኅበራት ወይም አግባብ በአላቸው\nሁኔታዎች በሕግ በተለየ በጋራ የንብረት ባለቤት እንዲሆኑ የተፈቀደላቸው\nማኅበረሰቦች በጉልበታቸው፣ በመፍጠር ችሎታቸው ወይም በካፒታላቸው ያፈሩት\nተጨባጭ የሆነና የተጨባጭነት ጠባይ ሳይኖረው ዋጋ ያለው ውጤት ነው፡፡\n. የገጠርም ሆነ የከተማ መሬትና የተፈጥሮ ሀብት ባለቤትነት መብት የመንግሥትና\nየሕዝብ ብቻ Your መሬት የማይሸጥ የማይለወጥ የኢትዮጵያ ብሔሮች፣\nብሔረሰቦችና ሕዝቦች የጋራ ንብረት ነው፡፡\n. የኢትዮጵያ አርሶ አደሮች መሬት በነፃ የማግኘትና ከመሬታቸው ያለመነቀል\nመብታቸው የተከበረ ነው፡፡ አፈጻጸሙን በተመለከተ ዝርዝር ሕግ ይወጣል፡፡\n. የኢትዮጵያ ዘላኖች ለግጦሽም ሆነ ለእርሻ የሚጠቀሙበት ሙሬት በነፃ የማግኘት፣\nየመጠቀምና ከመሬታቸው ያለመፈናቀል መብት አላቸው፡፡ ዝርዝር አፈጻጸሙ\nበሕግ ይወሰናል፡፡\n. የመሬት ባለቤትነት የኢትዮጵያ ብሔሮች፣ ብሔረሰቦችና ሕዝቦች መሆኑ\nእንደተጠበቀ ሆኖ መንግሥት ለግል ባለሀብቶች በሕግ በሚወሰን ክፍያ በመሬት\nየመጠቀም መብታቸውን ያስከብርላቸዋል፡፡ ዝርዝሩ በሕግ ይወሰናል፡፡\n. ማንም ኢትዮጵያዊ MANE ወይም በገንዘቡ በመሬት ላይ ለሚገነባው ቋሚ\nንብረት ወይም ለሚያደርገው ቋሚ መሻሻል ሙሉ መብት አለው፡፡ ይህ መብት\nየመሸጥ፣ የመለወጥ፣ የማውረስ፣ የመሬት ተጠቃሚነቱ ሲቋረጥ ንብረቱን የማንሳት፣\nባለቤትነቱን የማዛወር ወይም የካሳ ክፍያ የመጠየቅ መብትን ያካትታል፡፡ ዝርዝር\nአፈጻጸሙ በሕግ ይወስናል፡፡\n\n18\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 1208
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 40",
+            "article_title": "የንብረት መብት",
+            "topic": "የንብረት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 18,
+            "page_end": 18,
+            "source": "FDRE Constitution, Article 40",
+            "status": "active",
+            "chunk_index": 35
+        }
     },
     {
-        "chunk_id": 36,
-        "article": "Article 41",
-        "title": "የኢኮኖሚ፣ የማኅበራዊና የባሕል መብቶች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 19,
+        "id": "fdre_constitution_article_41_chunk_036",
         "text": "አንቀጽ 41\n\nየኢኮኖሚ፣ የማኅበራዊና የባሕል መብቶች\n. ማንኛውም ኢትዮጵያዊ በሀገሪቱ ውስጥ በማንኛውም የኢኮኖሟሚ እንቅስቃሴ\nየመሰማራትና ለመተዳደሪያው የመረጠውን ሥራ የመሥራት መብት አለው፡፡\n. ሁሉም ኢትዮጵያዊ መተዳደሪያውን፣ ሥራውንና ሙያውን የመምረጥ መብት\nአለው፡፡\n. የኢትዮጵያ ዜጎች ሁሉ በመንግሥት ገንዘብ በሚካሄዱ ማኅበራዊ አገልግሎቶች\nበአኩልነት የመጠቀም መብት አላቸው፡፡\n. መንግሥት PMT? የትምህርትና ሌሎች የማኅበራዊ አገልግሎቶችን ለሕዝብ\nለማቅረብ በየጊዜው እየጨመረ የሚሄድ ሀብት ይመድባል፡፡\n. መንግሥት የአካል እና የአዕምሮ ጉዳተኞችን፣ አረጋዊያንንና ያለወላጅ ወይም\nያለአሳዳጊ የቀሩ ሕፃናትን ለማቋቋምና ለመርዳት የሀገሪቱ የኢኮኖሟ አቅም\nበፈቀደው ደረጃ እንክብካቤ ያደርጋል፡፡\n. መንግሥት ለሥራ አጦችና ለችግረኞች ሥራ ለመፍጠር የሚያስችል ፖሊሲ\nይከተላል፤ እንዲሁም በሚያካሄደው የሥራ ዘርፍ ውስጥ የሥራ ዕድል ለመፍጠር\nየሥራ ፕሮግራሞችን ያወጣል፣ ፕሮጀክቶችን ያካሄዳል፡፡\n. መንግሥት ዜጎች ጠቃሚ ሥራ የማግኘት ዕድላቸው እየሰፋ እንዲሄድ ለማድረግ\nአስፈላጊ እርምጃዎችን ይወስዳል፡፡\n. ገበሬዎችና ዘላን ኢትዮጵያውያን በየጊዜው ኣየተሻሻለ የሚሄድ ኑሮ ለመኖር\nየሚያስችላቸውና ለምርት ካደረጉት አስተዋጽኦ ጋር ተመጣጣኝ የሆነ ተገቢ ዋጋ\nለምርት ውጤቶቻችው የማግኘት መብት አላቸው፡፡ መንግሥት የኢኮኖሚ፣\nየማኅበራዌና የልማት ፖሊሲዎችን በሚተልምበት ጊዜ በዚህ ዓላማ መመራት\nአለበት፡፡\n. መንግሥት የባሕልና የታሪክ ቅርሶችን የመንከባከብና ለሥነጥበብና ለስፖርት\nመስፋፋት አስተዋፅኦ የማድረግ ኃላፊነት አለበት፡፡\n\n19\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 990
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 41",
+            "article_title": "የኢኮኖሚ፣ የማኅበራዊና የባሕል መብቶች",
+            "topic": "የኢኮኖሚ፣ የማኅበራዊና የባሕል መብቶች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 19,
+            "page_end": 19,
+            "source": "FDRE Constitution, Article 41",
+            "status": "active",
+            "chunk_index": 36
+        }
     },
     {
-        "chunk_id": 37,
-        "article": "Article 42",
-        "title": "የሠራተኞች መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 20,
+        "id": "fdre_constitution_article_42_chunk_037",
         "text": "አንቀጽ 42\n\nየሠራተኞች መብት\n\n. ሀ/ የፋብሪካና የአገልግሉት ሠራተኞች፣ ገበሬዎች፣ የእርሻ ሠራተኞች፣ ሌሎች\nየገጠር ሠራተኞች፣ ከተወሰነ የኃላፊነት ደረጃ በታች ያሉና የሥራ ጠባያቸው\nየሚፈቅድላቸው የመንግሥት ሠራተኞች የሥራና የኢኮኖሚ ሁኔታዎችን\nለማሻሻል በማኅበር የመደራጀት መብት አላቸው፡፡ ይህ መብት የሠራተኛ\nማኅበራትንና ሌሎች ማኅበራትን የማደራጀት፣ ከአሠሪዎችና ጥቅማቸውን\nከሚነኩ ሌሎች ድርጅቶች ጋር የመደራደር መብትን ያካትታል፡፡\n\nለ/ በንዑስ አንቀጽ (VD) የተመለከቱት የሠራተኛ ክፍሎች ሥራ ማቆምን ጨምሮ\nቅሬታቸውን የማሰማት መብት አላቸው፡፡\n\nሐ/ በንዑስ አንቀጽ በነ ኣና (ለነ) መሰረት እውቅና ባገኙት መብቶች ለመጠቀም\nየሚችሉት የመንግሥት ሠራተኞች በሕግ ይወሰናለ፡፡፡\n\nመ/ ሴቶች ሠራተኞች ለተመሳሳይ ሥራ ተመሳሳይ ክፍያ የማግኘት መብታቸው\nየተጠባቀ ነው፡፡\n\n. ሠራተኞች በአግባቡ የተወሰነ የሥራ ሰዓት ዕረፍት፣ የመዝናኛ ጊዜ፣ በየጊዜው\n\nከክፍያ ጋር የሚሰጡ የዕረፍት ቀኖች፣ ደመወዝ የሚከፈልባቸው የሕዝብ በዓላት\n\nእንዲሁም ጤናማና አደጋ የማያደርስ የሥራ አካባቢ የማግኘት መብት አላቸው፡፡\n\n. እነዚህን መብቶች ተግባራዊ ለማድረግ የሚወጡ HAT በዚህ አንቀጽ ንዑስ",
-        "length": 691
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 42",
+            "article_title": "የሠራተኞች መብት",
+            "topic": "የሠራተኞች መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 20,
+            "page_end": 20,
+            "source": "FDRE Constitution, Article 42",
+            "status": "active",
+            "chunk_index": 37
+        }
     },
     {
-        "chunk_id": 38,
-        "article": "Article 43",
-        "title": "የልማት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 20,
+        "id": "fdre_constitution_article_43_chunk_038",
         "text": "አንቀጽ 43\nየልማት መብት\n\n. የኢትዮጵያ ሕዝቦች በአጠቃላይም ሆነ በኢትዮጵያ ያሉ ብሔሮች፣ ብሔረሰቦች፣\n\nሕዝቦች በተናጠል የኑሮ ሁኔታቸውን የማሻሻልና የማያቋርጥ እድገት የማግኘት\n\nመብታቸው የተጠበቀ ነው፡፡\n\n. ዜጎች በብሔራዊ ልማት የመሳተፍ በተለይም አባል የሆኑበትን ማኅበረሰብ\n\nየሚመለከቱት ፖሊሲዎችና ፕሮጀክቶች ላይ ሀሳባቸውን እንዲሰጡ የመጠየቅ\n\nመብት አላቸው፡፡\n\n20\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 317
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 43",
+            "article_title": "የልማት መብት",
+            "topic": "የልማት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 20,
+            "page_end": 20,
+            "source": "FDRE Constitution, Article 43",
+            "status": "active",
+            "chunk_index": 38
+        }
     },
     {
-        "chunk_id": 39,
-        "article": "Article 44",
-        "title": "የአካባቢ ደህንነት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 21,
+        "id": "fdre_constitution_article_44_chunk_039",
         "text": "አንቀጽ 44\nየአካባቢ ደህንነት መብት\n\n1. ሁሉም ሰዎች ንጹህና ጤናማ በሆነ አካባቢ የመኖር መብት አላቸው፡፡\n\n2. መንግሥት በሚያካሄዳቸው ፕሮግራሞች ምክንያት የተፈናቀሉ ወይም ኑሮአቸው\nየተነካባቸው ሰዎች ሁሉ በመንግሥት በቂ ዕርዳታ ወደ ሌላ አካባቢ መዘዋወርን\nጨምሮ ተመጣጣኝ የሆነ የገንዘብ ወይም ሌላ አማራጭ ማካካሻ የማግኘት መብት\nኣላቸው፡፡\n\nምዕራፍ አራት\nየመንግሥት አወቃቀር",
-        "length": 243
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 44",
+            "article_title": "የአካባቢ ደህንነት መብት",
+            "topic": "የአካባቢ ደህንነት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 21,
+            "page_end": 21,
+            "source": "FDRE Constitution, Article 44",
+            "status": "active",
+            "chunk_index": 39
+        }
     },
     {
-        "chunk_id": 40,
-        "article": "Article 46",
-        "title": "የፌዴራል ክልሎች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 21,
+        "id": "fdre_constitution_article_46_chunk_040",
         "text": "አንቀጽ 46\nየፌዴራል ክልሎች\n\n1. የፌዴራሉ መንግሥት በክልሎች የተዋቀረ ነው፡፡\n2. ክልሎች የሚዋቀሩት በሕዝብ አሰፋፈር፣ ቋንቋ፣ ማንነት እና ፈቃድ ላይ በመመስረት\n\nነው፥፣",
-        "length": 111
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 46",
+            "article_title": "የፌዴራል ክልሎች",
+            "topic": "የፌዴራል ክልሎች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 21,
+            "page_end": 21,
+            "source": "FDRE Constitution, Article 46",
+            "status": "active",
+            "chunk_index": 40
+        }
     },
     {
-        "chunk_id": 41,
-        "article": "Article 47",
-        "title": "የፌዴራል መንግሥት አባላት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 21,
+        "id": "fdre_constitution_article_47_chunk_041",
         "text": "አንቀጽ 47\nየፌዴራል መንግሥት አባላት\n1. የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ አባላት የሚከተሉት ናቸው፣\n1) የትግራይ ክልል\n2) የአፋር ክልል\n\n21\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 177
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 47",
+            "article_title": "የፌዴራል መንግሥት አባላት",
+            "topic": "የፌዴራል መንግሥት አባላት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 21,
+            "page_end": 21,
+            "source": "FDRE Constitution, Article 47",
+            "status": "active",
+            "chunk_index": 41
+        }
     },
     {
-        "chunk_id": 42,
-        "article": "Article 48",
-        "title": "የአከላለል ለውጦች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 22,
+        "id": "fdre_constitution_article_48_chunk_042",
         "text": "አንቀጽ 48\nየአከላለል ለውጦች\n\n1. የክልሎችን ወሰን በሚመለከት ጥያቄ የተነሳ እንደሆነ ጉዳዩ በሟመለከታቸው\nክልሎች ስምምነት ይፈጸማል፡፡ የሚመለከታቸው ክልሎች መስማማት ካልቻሉ\n\nየፌዴሬሽኑ ምክር ቤት የሕዝብን አሰፋፈርና ፍላጎት መሰረት በማድረግ ይወሰናል፡፡\n22\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 245
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 48",
+            "article_title": "የአከላለል ለውጦች",
+            "topic": "የአከላለል ለውጦች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 22,
+            "page_end": 22,
+            "source": "FDRE Constitution, Article 48",
+            "status": "active",
+            "chunk_index": 42
+        }
     },
     {
-        "chunk_id": 43,
-        "article": "Article 49",
-        "title": "ርዕሰ ከተማ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 23,
+        "id": "fdre_constitution_article_49_chunk_043",
         "text": "አንቀጽ 49\n\nርዕሰ ከተማ\n. የፌዴራሉ መንግሥት ርፅሰ ከተማ አዲስ አበባ ነው፡፡\n. የአዲስ አበባ ከተማ አስተዳደር ራሱን በራሱ የማስተዳደር ሙሉ ሥልጣን\nይኖረዋል፡፡ ዝርዝሩ በሕግ ይወሰናል፡፡\n. የአዲስ አበባ ከተማ አስተዳደር ተጠሪነቱ ለፌዴራሉ መንግሥት ይሆናል፡፡\n. የአዲስ አበባ ነዋሪዎች በዚህ ሕገ መንግሥት በተደነገገው መሰረት በፌዴራሉ\nየሕዝብ ተወካዮች ምክር ቤት ይወከላለ፡፡፡\n. የኦሮሚያ ክልል፣ የአገልግሎት አቅርቦት ወይም የተፈጥሮ ሀብት አጠቃቀምንና\nየመሳሰሉትን ጉዳዮች በተመለከተ፣ እንዲሁም አዲስ አበባ በኦሮሚያ ክልል መሀል\nየሚገኝ በመሆኑ የሟጫነሱ ሁለቱን የሚያስተሳስሩ አስተዳደራዊ ጉዳዮችን በተመለከተ\nያለው ልዩ ጥቅም ይጠበቅለታል፡፡ ዝርዝሩ በሕግ ይወሰናል፡፡\n\nምዕራፍ አምስት\n\nየሥልጣን አወቃቀር እና ክፍፍል",
-        "length": 464
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 49",
+            "article_title": "ርዕሰ ከተማ",
+            "topic": "ርዕሰ ከተማ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 23,
+            "page_end": 23,
+            "source": "FDRE Constitution, Article 49",
+            "status": "active",
+            "chunk_index": 43
+        }
     },
     {
-        "chunk_id": 44,
-        "article": "Article 50",
-        "title": "ስለ ሥልጣን አካላት አወቃቀር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 23,
+        "id": "fdre_constitution_article_50_chunk_044",
         "text": "አንቀጽ 50\n\nስለ ሥልጣን አካላት አወቃቀር\n. የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ በፌዴራል መንግሥትና በክልሎች\nየተዋቀረ ነው፡፡\n. የፌዴራሉ መንግሥትና ክልሎች የሕግ አውጪነት፣ የሕግ አስፈጻሚነትና የዳኝነት\nሥልጣን አላቸውጦ፡፡\n. የፌዴራሉ መንግሥት ከፍተኛ የሥልጣን አካል የፌዴራሉ መንግሥት የሕዝብ\nተወካዮች ምክር ቤት ነው፡፡ ተጠሪነቱም ለሀገሪቱ ሕዝብ ነው፡፡ የክልል ከፍተኛ\nየሥልጣን አካል የክልሉ ምክር ቤት ነው፤ ተጠሪነቱም ለወከለው ክልል ሕዝብ\n\nነው፡፥\n. ክልሎች፤ በክልልነትና ክልሎች አስፈላጊ ሆነው በሟያገኙአቸው የአስተዳደር\nእርከኖች ይዋቀራሉ፡፡ ሕዝቡ በዝቅተኛ የአስተዳደር እርከኖች በቀጥታ ይሳተፍ\n\nዘንድ ለዝቅተኛ እርከኖች በቂ ሥልጣን ይሰጣል፡፡\n23\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 506
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 50",
+            "article_title": "ስለ ሥልጣን አካላት አወቃቀር",
+            "topic": "ስለ ሥልጣን አካላት አወቃቀር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 23,
+            "page_end": 23,
+            "source": "FDRE Constitution, Article 50",
+            "status": "active",
+            "chunk_index": 44
+        }
     },
     {
-        "chunk_id": 45,
-        "article": "Article 52",
-        "title": "የክልል ሥልጣንና ተግባር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 25,
+        "id": "fdre_constitution_article_52_chunk_045",
         "text": "አንቀጽ 52\nየክልል ሥልጣንና ተግባር\n\n1. በሕገ መንግሥቱ ለፌዴራሉ መንግሥት በተለይ ወይም ለፌዴራሉ መንግሥትና\nለክልሎች በጋራ በግልጽ ያልተሰጠ ሥልጣን የክልል ሥልጣን ይሆናል፡፡\n\n2. በዚህ አንቀጽ ንዑስ",
-        "length": 131
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 52",
+            "article_title": "የክልል ሥልጣንና ተግባር",
+            "topic": "የክልል ሥልጣንና ተግባር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 25,
+            "page_end": 25,
+            "source": "FDRE Constitution, Article 52",
+            "status": "active",
+            "chunk_index": 45
+        }
     },
     {
-        "chunk_id": 46,
-        "article": "Article 53",
-        "title": "የፌዴራል መንግሥት ምክር ቤቶች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 26,
+        "id": "fdre_constitution_article_53_chunk_046",
         "text": "አንቀጽ 53\nየፌዴራል መንግሥት ምክር ቤቶች\n\nየፌዴራሉ መንግሥት ሁለት ምክር ቤቶች ይኖሩታል፤ እነዚህም የሕዝብ ተወካዮች\n\nምክር ቤት እና የፌዴሬሽን ምክር ቤት ናቸው፡፡\n\nክፍል አንድ\nየሕዝብ ተወካዮች ምክር ቤት",
-        "length": 134
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 53",
+            "article_title": "የፌዴራል መንግሥት ምክር ቤቶች",
+            "topic": "የፌዴራል መንግሥት ምክር ቤቶች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 26,
+            "page_end": 26,
+            "source": "FDRE Constitution, Article 53",
+            "status": "active",
+            "chunk_index": 46
+        }
     },
     {
-        "chunk_id": 47,
-        "article": "Article 54",
-        "title": "የሕዝብ ተወካዮች ምክር ቤት አባላት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 26,
+        "id": "fdre_constitution_article_54_chunk_047",
         "text": "አንቀጽ 54\nየሕዝብ ተወካዮች ምክር ቤት አባላት\n. የሕዝብ ተወካዮች ምክር ቤት አባላት፤ ሁሉ አቀፍ፣ ነፃ፣ ቀጥተኛ፣ ትክክለኛ በሆነና\nድምጽ በሟስጥር በሚሰጥበት ሥርዓት በየአምስት ዓመቱ በሕዝብ ይመረጣሉ፡፡\n\n26\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 212
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 54",
+            "article_title": "የሕዝብ ተወካዮች ምክር ቤት አባላት",
+            "topic": "የሕዝብ ተወካዮች ምክር ቤት አባላት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 26,
+            "page_end": 26,
+            "source": "FDRE Constitution, Article 54",
+            "status": "active",
+            "chunk_index": 47
+        }
     },
     {
-        "chunk_id": 48,
-        "article": "Article 55",
-        "title": "የሕዝብ ተወካዮች ምክር ቤት ሥልጣንና ተግባር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 27,
+        "id": "fdre_constitution_article_55_chunk_048",
         "text": "አንቀጽ 55\nየሕዝብ ተወካዮች ምክር ቤት ሥልጣንና ተግባር\n. የሕዝብ ተወካዮች ምክር ቤት በዚህ ሕገ መንግሥት መሰረት ለፌዴራሉ መንግሥት\nበተሰጠው የሥልጣን ክልል ሕጎችን ያወጣል፡፡\n. በዚህ አንቀጽ ንዑስ",
-        "length": 129
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 55",
+            "article_title": "የሕዝብ ተወካዮች ምክር ቤት ሥልጣንና ተግባር",
+            "topic": "የሕዝብ ተወካዮች ምክር ቤት ሥልጣንና ተግባር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 27,
+            "page_end": 27,
+            "source": "FDRE Constitution, Article 55",
+            "status": "active",
+            "chunk_index": 48
+        }
     },
     {
-        "chunk_id": 49,
-        "article": "Article 93",
-        "title": "አስፈጻሟው የሚያወጣውን የአስቸኳይ ጊዜ አዋጅ ተመልክቶ ይወስናል፡፡",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 28,
+        "id": "fdre_constitution_article_93_chunk_049",
         "text": "አንቀጽ 93 በተመለከተው መሰረት የአስቸኳይ ጊዜ አዋጅ ያውጃል፤ የሕግ\nአስፈጻሟው የሚያወጣውን የአስቸኳይ ጊዜ አዋጅ ተመልክቶ ይወስናል፡፡\n\n. የሚኒስትሮች ምክር ቤት በሟያቀርብለት የሕግ ረቂቅ መሰረት የጦርነት አዋጅ\nያውጃጀል፡፡\n\n10.የሀገሪቱን = አጠቃላይ የኢኮኖሚ፣ የማኅበራዊ፣ የልማት ፖሊሲዎችንና\n\nስትራቴጂዎችን፤ የፋይናንስና የገንዘብ ፖሊሲን ያጸድቃል፤ ገንዘብን፤ የብሔራዊ\n\n28\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 323
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 93",
+            "article_title": "አስፈጻሟው የሚያወጣውን የአስቸኳይ ጊዜ አዋጅ ተመልክቶ ይወስናል፡፡",
+            "topic": "አስፈጻሟው የሚያወጣውን የአስቸኳይ ጊዜ አዋጅ ተመልክቶ ይወስናል፡፡",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 28,
+            "page_end": 28,
+            "source": "FDRE Constitution, Article 93",
+            "status": "active",
+            "chunk_index": 49
+        }
     },
     {
-        "chunk_id": 50,
-        "article": "Article 56",
-        "title": "የፖለቲካ ሥልጣን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 29,
+        "id": "fdre_constitution_article_56_chunk_050",
         "text": "አንቀጽ 56\nየፖለቲካ ሥልጣን\n\nበምክር ቤቱ አብላጫ መቀመጫ ያገኘ የፖለቲካ ድርድት ወይም ጣምራ ድርጅቶች\nየፌዴራሉን መንግሥት የሕግ አስፈጻሚ አካል ያደራጃል/ያደራጃሉ፤ ይመራል/\nይመራለ፡፡፡\n\n29\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 201
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 56",
+            "article_title": "የፖለቲካ ሥልጣን",
+            "topic": "የፖለቲካ ሥልጣን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 29,
+            "page_end": 29,
+            "source": "FDRE Constitution, Article 56",
+            "status": "active",
+            "chunk_index": 50
+        }
     },
     {
-        "chunk_id": 51,
-        "article": "Article 57",
-        "title": "ስለሕግ አጸዳደቅ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 30,
+        "id": "fdre_constitution_article_57_chunk_051",
         "text": "አንቀጽ 57\nስለሕግ አጸዳደቅ\n\nምክር ቤቱ መክሮ የተስማማበት ሕግ ለሀገሪቱ ፕሬዚዳንት ለፊርማ ይቀርባል፤\nፕሬዚዳንቱ በአሥራ አምስት ቀናት ውስጥ ይፈርማል፡፡ ፕሬዚዳንቱ በአሥራ\nአምስት ቀናት ውሰጥ ካልፈረመ ሕጉ በሥራ ላይ ይውወላል፡፡",
-        "length": 148
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 57",
+            "article_title": "ስለሕግ አጸዳደቅ",
+            "topic": "ስለሕግ አጸዳደቅ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 30,
+            "page_end": 30,
+            "source": "FDRE Constitution, Article 57",
+            "status": "active",
+            "chunk_index": 51
+        }
     },
     {
-        "chunk_id": 52,
-        "article": "Article 58",
-        "title": "የምክር ቤቱ ስብሰባና የሥራ ዘመን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 30,
+        "id": "fdre_constitution_article_58_chunk_052",
         "text": "አንቀጽ 58\nየምክር ቤቱ ስብሰባና የሥራ ዘመን\n\n. ከምክር ቤቱ አባላት ከግማሽ በላይ ከተገኙ ምልዓተ ጉባዔ ይኖራል፡፡\n. የምክር ቤቱ የሥራ ጊዜ ከመስከረም ወር የመጨረሻ ሳምንት NAG እስከ AL ሠላሳ\nነው፤ በመካከሉም ምክር ቤቱ በሚወስነው ጊዜ የአንድ ወር ዕረፍት ይኖረዋል፡፡\n\n. የሕዝብ ተወካዮች ምክር ቤት የሚመረጠው ለአምስት ዓመታት ነው፤ የሥራ ዘመኑ\n\nከማብቃቱ ከአንድ ወር በፊት አዲስ ምርጫ ተካሂዶ ይጠናቀቃል፡፡\n\n. ምክር ቤቱ ዕረፍት ላይ በሚሆንበት ጊዜ የምክር ቤቱ አፈጉባዔ ስብሰባ ሲጠራ\nይችላል፡፡ ከምክር ቤቱ አባላት ከግማሽ በላይ ስብሰባ እንዲጠራ ከጠየቁ\nአፈጉባዔው ስብሰባ የመጥራት ግዴታ አለበት፡፡\n\n. የሕዝብ ተወካዮች ምክር ቤት ስብሰባዎች በግልጽ ይካሄዳሉ፤ ሆኖም በምክር ቤቱ\nአባላት ወይም በፌዴራል የሕግ አስፈጻሚ አካል በዝግ ስብሰባ እንዲደረግ\nከተጠየቀና ከምክር ቤቱ አባላት 17770 በላይ ከደገፉት ዝግ ስብሰባ ሊደረግ\nይችላል፡፡",
-        "length": 547
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 58",
+            "article_title": "የምክር ቤቱ ስብሰባና የሥራ ዘመን",
+            "topic": "የምክር ቤቱ ስብሰባና የሥራ ዘመን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 30,
+            "page_end": 30,
+            "source": "FDRE Constitution, Article 58",
+            "status": "active",
+            "chunk_index": 52
+        }
     },
     {
-        "chunk_id": 53,
-        "article": "Article 59",
-        "title": "የምክር ቤቱ ውሳኔዎችና የሥነ-ሥርዓት ደንቦች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 30,
+        "id": "fdre_constitution_article_59_chunk_053",
         "text": "አንቀጽ 59\nየምክር ቤቱ ውሳኔዎችና የሥነ-ሥርዓት ደንቦች\n\n. በዚህ ሕገ መንግሥት በግልጽ በተለይ ካልተደነገገ በስተቀር ማናቸውም ውሳኔዎች\n\nየሚተላለፉት በምክር ቤቱ አባላት የአብላጫ ድምጽ gare:\n\n. ምክር ቤቱ ስለ አሠራሩና ስለ ሕግ አወጣጡ ሂደት ደንቦችን ያወጣል፡፡",
-        "length": 173
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 59",
+            "article_title": "የምክር ቤቱ ውሳኔዎችና የሥነ-ሥርዓት ደንቦች",
+            "topic": "የምክር ቤቱ ውሳኔዎችና የሥነ-ሥርዓት ደንቦች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 30,
+            "page_end": 30,
+            "source": "FDRE Constitution, Article 59",
+            "status": "active",
+            "chunk_index": 53
+        }
     },
     {
-        "chunk_id": 54,
-        "article": "Article 60",
-        "title": "ስለምክር ቤቱ መበተን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 30,
+        "id": "fdre_constitution_article_60_chunk_054",
         "text": "አንቀጽ 60\nስለምክር ቤቱ መበተን\n\n30\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 102
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 60",
+            "article_title": "ስለምክር ቤቱ መበተን",
+            "topic": "ስለምክር ቤቱ መበተን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 30,
+            "page_end": 30,
+            "source": "FDRE Constitution, Article 60",
+            "status": "active",
+            "chunk_index": 54
+        }
     },
     {
-        "chunk_id": 55,
-        "article": "Article 61",
-        "title": "የፌዴሬሸን ምክር ቤት ኣባላት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 31,
+        "id": "fdre_constitution_article_61_chunk_055",
         "text": "አንቀጽ 61\nየፌዴሬሸን ምክር ቤት ኣባላት\n. የፌዴሬሽን ምክር ቤት በፌዴራሉ መንግሥት አባል ክልሎች የሜገኙት ብሔሮች፣\nብሔረሰቦች፣ ሕዝቦች የሚልኩዋቸው አባላት የሚወከሉበት ምክር ቤት ነው፡፡\n. እያንዳንዱ ብሔር፣ ብሔረሰብ ሕዝብ ቢያንስ አንድ ተወካይ ይኖረዋል፤\nበተጨማሪም የብሔር ወይም ብሔረሰቡ አንድ ሚሊዮን ሕዝብ አንድ ተጨማሪ\nወኪል ይኖረዋል፡፡\n. የፌዴሬሽን ምክር ቤት አባላት በክልል ምክር ቤቶች ይመረጣሉ፤ የክልል ምክር\nቤቶች በራሳቸው ወይም በቀጥታ በሕዝብ ልንዲመረጡ በማድረግ የፌዴሬሽን ምክር\n\nቤት አባል እንዲወከል ያደርጋሉ፡፡\n31\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 423
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 61",
+            "article_title": "የፌዴሬሸን ምክር ቤት ኣባላት",
+            "topic": "የፌዴሬሸን ምክር ቤት ኣባላት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 31,
+            "page_end": 31,
+            "source": "FDRE Constitution, Article 61",
+            "status": "active",
+            "chunk_index": 55
+        }
     },
     {
-        "chunk_id": 56,
-        "article": "Article 62",
-        "title": "የፌዴሬሽኑ ምክር ቤት ሥልጣንና ተግባር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 32,
+        "id": "fdre_constitution_article_62_chunk_056",
         "text": "አንቀጽ 62\nየፌዴሬሽኑ ምክር ቤት ሥልጣንና ተግባር\n\n. ምክር ቤቱ ሕገ መንግሥቱን የመተርጎም ሥልጣን ይኖረዋል፡፡\n\nየሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔን ያደራጃል፡፡\n\nየብሔሮች፣ ብሔረሰቦች፣ ሕዝቦች የራስን ዕድል በራስ የመወሰን አስከ መገንጠል\nመብትን በተመለከተ በሚነሱ ጥያቄዎች ላይ በሕገ መንግሥቱ መሰረት ይወስናል፡፡\nበሕገ መንግሥቱ የተደነገገው የሕዝቦች እኩልነትና በሕዝቦች መፈቃቀድ ላይ\nየተመሰረተ አንድነት ስር እንዲሰድና እንዲዳብር ያደርጋል፡፡\n\nከሕዝብ ተወካዮች ምክር ቤት ጋር በጣምራ የተሰጡትን ሥልጣኖች ያከናውናል፡፡\nበክልሎች መካከል ለሚነሱ አለመግባባቶች መፍትሄ ይፈልጋል፡፡\n\nየክልሎችና የፌዴራሉ መንግሥት የጋራ ተብለው የተመደቡ ገቢዎች በሁለቱ\nመካከል የሚከፋፈሉበትን፤ እንዲሁም የፌዴራሉ መንግሥት ለክልሎች ድጎማ\nየሚሰጥበትን ቀመር ይወስናል፡፡\n\nበሕዝብ ተወካዮች ምክር ቤት ሕግ ሊወጣላቸው የሚገቡ የፍትሐብሔር ጉዳዮችን\nይለያል፡፡\n\nማንኛውም ክልል ይህን ሕገ መንግሥት በመጣስ ሕገ መንግሥታዊ ሥርዓቱን አደጋ\nላይ የጣለ እንደሆነ የፌዴራሉ መንግሥት ጣልቃ እንዲገባ ያዛል፡፡\n\n10.የምክር ቤቱን የተለያዩ ቋሚና ጊዜያዊ ኮሚቴዎች ያቋቁማል፡፡\n11.ምክር ቤቱ የራሱን አፈጉባዔና ምክትል አፈጉባዔ ይመርጣል፤ የራሱን የሥራ\n\n1.\n\nአፈጻጸምና የውሰጥ አስተዳደር ደንብ ያወጣል፡፡",
-        "length": 755
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 62",
+            "article_title": "የፌዴሬሽኑ ምክር ቤት ሥልጣንና ተግባር",
+            "topic": "የፌዴሬሽኑ ምክር ቤት ሥልጣንና ተግባር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 32,
+            "page_end": 32,
+            "source": "FDRE Constitution, Article 62",
+            "status": "active",
+            "chunk_index": 56
+        }
     },
     {
-        "chunk_id": 57,
-        "article": "Article 63",
-        "title": "የፌዴሬሽን ምክር ቤት ኣባላት መብት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 32,
+        "id": "fdre_constitution_article_63_chunk_057",
         "text": "አንቀጽ 63\nየፌዴሬሽን ምክር ቤት ኣባላት መብት\nማንኛውም የፌዴሬሽኑ ምክር ቤት አባል በማናቸውም የምክር ቤቱ ስብሰባ ላይ\nበሚሰጠው አስተያየት ወይም ድምጽ ምክንያት አይከሰስም፤ አስተዳደራዊ\nእርምጃም አይወሰድበትም፡፡\n\n2. ማንኛውም የፌዴሬሽኑ ምክር ቤት አባል ከባድ ወንጀል ሲፈጽም AL ከፍንጅ\n\nካልተያዘ በስተቀር ያለ ምክር ቤቱ ፈቃድ አይያዝም፤ በወንጀልም አይከሰስም፡፡\n\n32\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 318
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 63",
+            "article_title": "የፌዴሬሽን ምክር ቤት ኣባላት መብት",
+            "topic": "የፌዴሬሽን ምክር ቤት ኣባላት መብት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 32,
+            "page_end": 32,
+            "source": "FDRE Constitution, Article 63",
+            "status": "active",
+            "chunk_index": 57
+        }
     },
     {
-        "chunk_id": 58,
-        "article": "Article 64",
-        "title": "ውሳኔዎችና የሥነ ሥርዓት ደንቦች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 33,
+        "id": "fdre_constitution_article_64_chunk_058",
         "text": "አንቀጽ 64\nውሳኔዎችና የሥነ ሥርዓት ደንቦች\n1. የፌዴሬሽኑ ምክር ቤት ምልዓተ ጉባዔ የሚኖረው ከአባላቱ ሁለት ሦስተኛው የተገኙ\nእንደሆነ ነው፡፡ ማናቸውም ውሳኔ የሚያልፈው ስብሰባ ላይ ከተገኙት የምክር ቤቱ\nአባላት ከግማሽ በላይ ድምፅ ሲደገፍ ብቻ ነው፡፡\n2. ANAT ድምፅ መስጠት የሜችሉት በአካል ሲገኙ ብቻ ነው፡፡",
-        "length": 202
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 64",
+            "article_title": "ውሳኔዎችና የሥነ ሥርዓት ደንቦች",
+            "topic": "ውሳኔዎችና የሥነ ሥርዓት ደንቦች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 33,
+            "page_end": 33,
+            "source": "FDRE Constitution, Article 64",
+            "status": "active",
+            "chunk_index": 58
+        }
     },
     {
-        "chunk_id": 59,
-        "article": "Article 66",
-        "title": "የምክር ቤቱ አፈ ጉባዔ ሥልጣን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 33,
+        "id": "fdre_constitution_article_66_chunk_059",
         "text": "አንቀጽ 66\nየምክር ቤቱ አፈ ጉባዔ ሥልጣን\n\n1. የፌዴሬሽኑ ምክር ቤት አፈ ጉባዔ የምክር ቤቱን ስብሰባዎች ይመራል፡፡\n2. ምክር ቤቱን በመወከል ጠቅላላ የአስተዳደር ሥራዎችን ይመራል፡፡\n3. ምክር ቤቱ በአባሎቹ ላይ የወሰነውን የዲስፕሊን እርምጃ ያስፈጽማል፡፡",
-        "length": 165
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 66",
+            "article_title": "የምክር ቤቱ አፈ ጉባዔ ሥልጣን",
+            "topic": "የምክር ቤቱ አፈ ጉባዔ ሥልጣን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 33,
+            "page_end": 33,
+            "source": "FDRE Constitution, Article 66",
+            "status": "active",
+            "chunk_index": 59
+        }
     },
     {
-        "chunk_id": 60,
-        "article": "Article 67",
-        "title": "ስብሰባና የሥራ ዘመን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 33,
+        "id": "fdre_constitution_article_67_chunk_060",
         "text": "አንቀጽ 67\nስብሰባና የሥራ ዘመን\n1. የፌዴሬሽኑ ምክር ቤት ቢያንስ በዓመት ሁለት ጊዜ ይሰበሰባል፡፡\n2. የፌዴሬሽኑ ምክር ቤት የሥራ ዘመን አምስት ዓመት ይሆናል፡፡",
-        "length": 105
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 67",
+            "article_title": "ስብሰባና የሥራ ዘመን",
+            "topic": "ስብሰባና የሥራ ዘመን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 33,
+            "page_end": 33,
+            "source": "FDRE Constitution, Article 67",
+            "status": "active",
+            "chunk_index": 60
+        }
     },
     {
-        "chunk_id": 61,
-        "article": "Article 68",
-        "title": "በሁለቱም ምክር ቤቶች አባል መሆን የማይቻል ስለመሆኑ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 33,
+        "id": "fdre_constitution_article_68_chunk_061",
         "text": "አንቀጽ 68\nበሁለቱም ምክር ቤቶች አባል መሆን የማይቻል ስለመሆኑ\n\nማንኛውም ሰው በአንድ ጊዜ የሕዝብ ተወካዮች ምክር ቤት እና የፌዴሬሽኑ ምክር\nቤት አባል ሊሆን አይችልም፡፡\n\nምዕራፍ ሰባት\nስለ ሪፐብሊኩ ፕሬዚዳንት",
-        "length": 136
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 68",
+            "article_title": "በሁለቱም ምክር ቤቶች አባል መሆን የማይቻል ስለመሆኑ",
+            "topic": "በሁለቱም ምክር ቤቶች አባል መሆን የማይቻል ስለመሆኑ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 33,
+            "page_end": 33,
+            "source": "FDRE Constitution, Article 68",
+            "status": "active",
+            "chunk_index": 61
+        }
     },
     {
-        "chunk_id": 62,
-        "article": "Article 69",
-        "title": "ስለ ፕሬዚዳንቱ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 33,
+        "id": "fdre_constitution_article_69_chunk_062",
         "text": "አንቀጽ 69\nስለ ፕሬዚዳንቱ\nፕሬዚዳንቱ የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ ርዕሰ ብሔር ነው፡፡\n33\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 144
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 69",
+            "article_title": "ስለ ፕሬዚዳንቱ",
+            "topic": "ስለ ፕሬዚዳንቱ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 33,
+            "page_end": 33,
+            "source": "FDRE Constitution, Article 69",
+            "status": "active",
+            "chunk_index": 62
+        }
     },
     {
-        "chunk_id": 63,
-        "article": "Article 71",
-        "title": "የፕሬዚዳንቱ ሥልጣንና ተግባር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 34,
+        "id": "fdre_constitution_article_71_chunk_063",
         "text": "አንቀጽ 71\n\nየፕሬዚዳንቱ ሥልጣንና ተግባር\n. የሕዝብ ተወካዮችን ምክር ቤትና የፌዴሬሸኑን ምክር ቤት ዓመታዊ የጋራ ስብሰባ\nይከፍታል፡፡\n. በዚህ ሕገ መንግሥት መሰረት የሕዝብ ተወካዮች ምክር ቤት ያጸደቃቸውን ሕጎችና\nዓለም አቀፍ ስምምነቶች በነጋሪት ጋዜጣ ያውጃል፡፡\n. ሀገሪቷን በውጭ ሀገሮች የሚወክሉትን አምባሳደሮችና ሌሎች መልዕክተኞች\nበጠቅላይ ሚኒስትሩ አቅራቢነት ይሾማል፡፡\n. የውጭ ሀገር አምባሳደሮችንና የልዩ መልዕክተኞችን የሹመት ደብዳቤ ይቀበላል፡፡\n. በሕግ መሰረት ኒሻኖችና ሽልማቶችን ይሰጣል፡፡\n. በጠቅላይ ሚኒስትሩ አቅራቢነት በሕግ በተወሰነው መሰረት ከፍተኛ የውትድርና\nማዕረጎችን ይሰጣል፡፡\n. በሕግ መሰረት ይቅርታ ያደርጋል፡፡\n\n34\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 491
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 71",
+            "article_title": "የፕሬዚዳንቱ ሥልጣንና ተግባር",
+            "topic": "የፕሬዚዳንቱ ሥልጣንና ተግባር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 34,
+            "page_end": 34,
+            "source": "FDRE Constitution, Article 71",
+            "status": "active",
+            "chunk_index": 63
+        }
     },
     {
-        "chunk_id": 64,
-        "article": "Article 72",
-        "title": "ስለ አስፈጻሚነት ሥልጣን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 35,
+        "id": "fdre_constitution_article_72_chunk_064",
         "text": "አንቀጽ 72\nስለ አስፈጻሚነት ሥልጣን\n. የኢትዮጵያ ፌዴራል መንግሥት ከፍተኛ የአስፈጻሚነት ሥልጣን የተሰጠው\nለጠቅላይ ሚኒስትሩና ለሜኒስትሮች ምክር ቤት ነው፡፡\n. ጠቅላይ ሚኒስትሩና የሚኒስትሮች ምክር ቤት ለሕዝብ ተወካዮች ምክር ቤት\nተጠሪዎች ናቸው፡፡ የሚኒስትሮች ምክር ቤት አባላት በመንግሥት ተግባራቸው\nበጋራ ለሜሟሰጡት ውሳኔ የጋራ ኃላፊነት አለባቸው፡፡\n. በዚህ ሕገ መንግሥት መሰረት በሌላ አኳኋን ካልተወሰነ በስተቀር የጠቅላይ\nሜሂኒስትሩ የሥራ ዘመን የሕዝብ ተወካዮች ምክር ቤት የሥራ ዘመን ነው፡፡",
-        "length": 321
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 72",
+            "article_title": "ስለ አስፈጻሚነት ሥልጣን",
+            "topic": "ስለ አስፈጻሚነት ሥልጣን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 35,
+            "page_end": 35,
+            "source": "FDRE Constitution, Article 72",
+            "status": "active",
+            "chunk_index": 64
+        }
     },
     {
-        "chunk_id": 65,
-        "article": "Article 73",
-        "title": "የጠቅላይ ሚኒስትሩ አሰያየም",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 35,
+        "id": "fdre_constitution_article_73_chunk_065",
         "text": "አንቀጽ 73\nየጠቅላይ ሚኒስትሩ አሰያየም\n. ጠቅላይ ሚኒስትሩ ከሕዝብ ተወካዮች ምክር ቤት አባላት መካከል ይመረጣል፡፡\n. በሕዝብ ተወካዮች ምክር ቤት አብላጫ መቀመጫ ያገኘው የፖለቲካ ድርጅት\nወይም ያገ'ኙት የፖለቲካ ድርጅቶች የመንግሥት ሥልጣን ይረከባል/ይረከባሉ፡፡",
-        "length": 168
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 73",
+            "article_title": "የጠቅላይ ሚኒስትሩ አሰያየም",
+            "topic": "የጠቅላይ ሚኒስትሩ አሰያየም",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 35,
+            "page_end": 35,
+            "source": "FDRE Constitution, Article 73",
+            "status": "active",
+            "chunk_index": 65
+        }
     },
     {
-        "chunk_id": 66,
-        "article": "Article 74",
-        "title": "የጠቅላይ ሚኒስትሩ ሥልጣንና ተግባር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 35,
+        "id": "fdre_constitution_article_74_chunk_066",
         "text": "አንቀጽ 74\nየጠቅላይ ሚኒስትሩ ሥልጣንና ተግባር\n. ጠቅላይ ሚኒስትሩ የሀገሪቱ ርዕሰ መስተዳድር፣ የሚኒስትሮች ምክር ቤት ሰብሳቢና\nየጦር ኃይሎች ጠቅላይ አዛዥ ነው፡፡\n. ጠቅላይ ሚኒስትሩ የሚኒስትሮች ምክር ቤት አባሎችን ከሁለቱ ምክር ቤቶች አባላት\nወይም ለሥራው ብቃት ካላቸው ሌሎች ግለሰቦች መካከል ለሕዝብ ተወካዮች ምክር\nቤት በእሪጩነት አቅርቦ ሸ-መታቸውን ያስጸድቃል፡፡\n. የሕዝብ ተወካዮች ምክር ቤት ያወጣቸው ሕጎች፣ ፖሊሲዎች፣ መመሪያዎችና\nውሳኔዎች ተግባራዊ መሆናቸውን ይከታተላል፣ ያረጋግጣል፡፡\n\n4. የሚኒስትሮች ምክር ቤትን ይመራል፣ ያስተባብራል፣ ይወክላል፡፡\n5. የሚኒስትሮች ምክር ቤት ያወጣቸውን ፖሊሲዎች፣ ደንቦች፣ መመሪያዎችና\n\nውሳኔዎች ተፈጻሟነት ይከታተላል፡፡\n. የሀገሪቱን የውጭ ፖሊሲ በበላይነት ያስፈጽማል፡፡\n\n35\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 545
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 74",
+            "article_title": "የጠቅላይ ሚኒስትሩ ሥልጣንና ተግባር",
+            "topic": "የጠቅላይ ሚኒስትሩ ሥልጣንና ተግባር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 35,
+            "page_end": 35,
+            "source": "FDRE Constitution, Article 74",
+            "status": "active",
+            "chunk_index": 66
+        }
     },
     {
-        "chunk_id": 67,
-        "article": "Article 75",
-        "title": "ስለ ምክትል ጠቅላይ ሚኒስትር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 36,
+        "id": "fdre_constitution_article_75_chunk_067",
         "text": "አንቀጽ 75\nስለ ምክትል ጠቅላይ ሚኒስትር\n1. ምክትል ጠቅላይ ማኒስትሩ፣\nሀ/ በጠቅላይ LATE ተለይተው የሚሰጡትን ተግባሮች ያከናውናል፣\nለ/ ጠቅላይ ሚኒስትሩ በማይኖርበት ጊዜ ተክቶት ይሠራል፡፡\n2. ምክትል ጠቅላይ ሚኒስትሩ ተጠሪነቱ ለጠቅላይ ሚኒስትሩ ይሆናል፡፡\nኣንቀጽ 76\nየሚኒስትሮች ምክር ቤት\n\n1. የሚኒስትሮች ምክር ቤት፤ ጠቅላይ ሜሚኒስትር፣ ምክትል ጠቅላይ ማኒስትረር፣\n\nሚኒስትሮችና በሕግ በሚወሰን መሰረት ሌሎች አባሎች የሚገኙበት ምክር ቤት\n\nነው፡፡\n2. የሚኒስትሮች ምክር ቤት ተጠሪነቱ ለጠቅላይ ሚኒስትሩ ነው፡፡\n3. የሚኒስትሮች ምክር ቤት ለሟወስነው ውሳኔ ለሕዝብ ተወካዮች ምክር ቤት ተጠሪ\nነው፡፡\nኣንቀጽ 77\nየሚኒስትሮች ምክር ቤት ሥልጣንና ተግባር\n\n36\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 507
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 75",
+            "article_title": "ስለ ምክትል ጠቅላይ ሚኒስትር",
+            "topic": "ስለ ምክትል ጠቅላይ ሚኒስትር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 36,
+            "page_end": 36,
+            "source": "FDRE Constitution, Article 75",
+            "status": "active",
+            "chunk_index": 67
+        }
     },
     {
-        "chunk_id": 68,
-        "article": "Article 78",
-        "title": "ስለ ነፃ የዳኝነት አካል",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 37,
+        "id": "fdre_constitution_article_78_chunk_068",
         "text": "አንቀጽ 78\nስለ ነፃ የዳኝነት አካል\n1. ነፃ የዳኝነት አካል በዚህ ሕገ መንግሥት ተቋቁሟል፡፡\n2. የፌዴራሉ መንግሥት ከፍተኛ የዳኝነት አካል የፌዳራሉ ጠቅላይ ፍርድ ቤት\n\nይሆናል፡፡ የሕዝብ ተወካዮች ምክር ቤት አስፈላጊ ሆኖ ሲያገኘው የፌዴራል ከፍተኛ\n37\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 240
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 78",
+            "article_title": "ስለ ነፃ የዳኝነት አካል",
+            "topic": "ስለ ነፃ የዳኝነት አካል",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 37,
+            "page_end": 37,
+            "source": "FDRE Constitution, Article 78",
+            "status": "active",
+            "chunk_index": 68
+        }
     },
     {
-        "chunk_id": 69,
-        "article": "Article 79",
-        "title": "የዳኝነት ሥልጣን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 38,
+        "id": "fdre_constitution_article_79_chunk_069",
         "text": "አንቀጽ 79\n\nየዳኝነት ሥልጣን\n. በፌዴራልም ሆነ በክልል የዳኝነት ሥልጣን የፍርድ ቤቶች ብቻ ነው፡፡\n. በየትኛውም ደረጃ የሜገኝ የዳኝነት አካል ከማንኛውም የመንግሥት አካል፣\nከማንኛውም ባለሥልጣን ሆነ ከማንኛውም ሌላ ተጽዕኖና ነፃ ነው፡፡\n. ዳኞች የዳኝነት ተግባራቸውን በሙሉ ነፃነት ያከናውናሉ፡፡ ከሕግ በስተቀር በሌላ\nሁኔታ አይመሩም፡፡\n. ማንኛውም ዳኛ ከዚህ በታች በተመለከቱት ሁኔታዎች ካልሆነ በስተቀር በሕግ\nከተወሰነው የጡረታ ዕድሜ ከመድረሱ በፊት ከፈቃዱ ውጭ ከዳኝነት ሥራው\nአይነሳም፤\n\nሀ/ የዳኞች አስተዳደር ጉባዔ በዳኞች የዲሲፕሊን ሕግ መሠረት ጥፋት ፈጽሟል\nወይም ጉልህ የሆነ የሥራ ችሎታና ቅልጥፍና አንሶታል ብሎ ሲወስን፣ ወይም\nለ/ በህመም ምክንያት ተግባሩን በተገቢው ሁኔታ ማከናወን አይችልም ብሎ ሲወስን፣\n\nእና\nሐ/ የጉባዔው ውሳኔ በሕዝብ ተወካዮች ምክር ቤት ወይም በክልል ምክር ቤቶች\n\nከግማሽ በላይ ድምፅ ሲጸድቅ፡፡\n38\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 614
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 79",
+            "article_title": "የዳኝነት ሥልጣን",
+            "topic": "የዳኝነት ሥልጣን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 38,
+            "page_end": 38,
+            "source": "FDRE Constitution, Article 79",
+            "status": "active",
+            "chunk_index": 69
+        }
     },
     {
-        "chunk_id": 70,
-        "article": "Article 80",
-        "title": "የፍርድ ቤቶች ጣምራነትና ሥልጣን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 39,
+        "id": "fdre_constitution_article_80_chunk_070",
         "text": "አንቀጽ 80\nየፍርድ ቤቶች ጣምራነትና ሥልጣን\n\n. የፌዴራል ጠቅላይ ፍርድ ቤት በፌዴራል ጉዳዮች ላይ የበላይና የመጨረሻ የዳኝነት\n\nሥልጣን ይኖረዋል፡፡\n\n. የክልል ጠቅላይ ፍርድ ቤት በክልሉ ጉዳይ ላይ የበላይና የመጨረሻ የዳኝነት\n\nሥልጣን ይኖረዋል፣፡፤ በተጨማሪ የፌዴራል የከፍተኛ ፍርድ ቤት የዳኝነት ሥልጣን\n\nይኖረዋል፡፡\n\n. በዚሀ አንቀጽ ንዑስ",
-        "length": 221
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 80",
+            "article_title": "የፍርድ ቤቶች ጣምራነትና ሥልጣን",
+            "topic": "የፍርድ ቤቶች ጣምራነትና ሥልጣን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 39,
+            "page_end": 39,
+            "source": "FDRE Constitution, Article 80",
+            "status": "active",
+            "chunk_index": 70
+        }
     },
     {
-        "chunk_id": 71,
-        "article": "Article 81",
-        "title": "ስለዳኞች አጂጂም",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 40,
+        "id": "fdre_constitution_article_81_chunk_071",
         "text": "አንቀጽ 81\nስለዳኞች አጂጂም\n\n1. የፌዴራል ጠቅላይ ፍርድ ቤት ፕሬዚዳንትና ምክትል ፕሬዚዳንት በፌዴራል\n\nመንግሥት ጠቅላይ ማኒስትር አቅራቢነት በሕዝብ ተወካዮች ምክር ቤት ይዞማሉ፡፡\n. ሌሎች የፌዴራል ጠቅላይ ፍርድ ቤት ዳኞችን በተመለከተ በፌዴራል የዳኞች\nአስተዳደር ጉባዔ የቀረቡለትን እጩዎች ጠቅላይ ሚኒስትሩ ለሕዝብ ተወካዮች\nምክርት ቤት አቅርቦ ያሾማል፡፡\n. የክልል ጠቅላይ ፍርድ ቤትና የክልል ከፍተኛ ፍርድ ቤት ዳኞች በክልሉ የዳኞች\nአስተዳደር ጉባዔ አቅራቢነት በክልሉ ምክር ቤት ይሾማሉ፡፡ የክልሉ የዳኞች\nአስተዳደር ጉባዔ የዳኞችን ሹመት ለምክር ቤቱ ከማቅረቡ በፊት የፌዴራሉ የዳኞች\nአስተዳደር ጉባዔ በእ፥ኔጩዎቹ ላይ ያለውን አስተያየት መጠየቅና አስተያየቱን ከራሱ\nአስተያየት ጋር በማያያዝ ለክልሉ ምክር ቤት የማቅረብ ኃላፊነት አለበት፡፡\nየፌዴራሉ የዳኞች አስተዳደር ጉባዔ አስተያየቱን በሦስት ወር ጊዜ ውስጥ ካላቀረበ\nየክልሉ ምክር ቤት ሹመቱን ያጸድቃል፡፡\n\n. የክልል የመጀመሪያ ደረጃ ፍርድ ቤት ዳኞች በክልሉ የዳኞች አስተዳደር ጉባዔ\n\nአቅራቢነት በክልሉ ምክር ቤት ይሾማለሉ፡፡\n\n. በየትኛውም ደረጃ የሚገኙ ዳኞች የዲሲፕሊንና የዝውውር ጉዳይ በሚመለከተው\n\nየዳኞች አስተዳደር ጉባዔ ይወሰናል፡፡",
-        "length": 705
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 81",
+            "article_title": "ስለዳኞች አጂጂም",
+            "topic": "ስለዳኞች አጂጂም",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 40,
+            "page_end": 40,
+            "source": "FDRE Constitution, Article 81",
+            "status": "active",
+            "chunk_index": 71
+        }
     },
     {
-        "chunk_id": 72,
-        "article": "Article 82",
-        "title": "የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ አወቃቀር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 40,
+        "id": "fdre_constitution_article_82_chunk_072",
         "text": "አንቀጽ 82\nየሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ አወቃቀር\n\n. የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ በዚህ ሕገ መንግሥት ተቋቁሟል፡፡\n\n. የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ አሥራ አንድ አባላት ይኖሩታል፡፡ አባላቱም\n\nየሚከተሉት ናቸው፤\n\nሀ/ የፌዴራል ጠቅላይ ፍርድ ቤት ፕሬዚዳንት፣ ሰብሳቢ፤\n\nለ/ የፌዴራል ጠቅላይ ፍርድ ቤት ምክትል ፕሬዚዳንት፣ ምክትል ሰብሳቢ፤\n\nሐ/ በሕዝብ ተወካዮች ምክር ቤት አቅራቢነት በሪፐብሉኩ ፕሬዚዳንት የሟሾሙ-\nበሙያ ብቃታቸውና በሥነ ምግባራቸው የተመሰከረላቸው ስድስት የሕግ\nባለሙያዎች፤\n\nመ/ የፌዴሬሽኑ ምክር ቤት ከአባላቱ መካከል የሚወክላቸው ሦስት ሰዎች፡፡\n\n40\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 457
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 82",
+            "article_title": "የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ አወቃቀር",
+            "topic": "የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ አወቃቀር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 40,
+            "page_end": 40,
+            "source": "FDRE Constitution, Article 82",
+            "status": "active",
+            "chunk_index": 72
+        }
     },
     {
-        "chunk_id": 73,
-        "article": "Article 83",
-        "title": "ሕገ መንግሥቱን ስለመተርጎም",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 41,
+        "id": "fdre_constitution_article_83_chunk_073",
         "text": "አንቀጽ 83\nሕገ መንግሥቱን ስለመተርጎም\n\n. የሕገ መንግሥታዊ ክርክር ጉዳይ ሲነሳ በፌዴሬሽኑ ምክር ቤት ውሳኔ ያገኛል፡፡\n\n. የፌዴሬሽን ምክር ቤት፣ የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ በሚያቀርብለት ሕገ\n\nመንግሥታዊ ጉዳይ ላይ በሠላሳ ቀናት ውስጥ ውሳኔ ይሰጣል፡፡",
-        "length": 169
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 83",
+            "article_title": "ሕገ መንግሥቱን ስለመተርጎም",
+            "topic": "ሕገ መንግሥቱን ስለመተርጎም",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 41,
+            "page_end": 41,
+            "source": "FDRE Constitution, Article 83",
+            "status": "active",
+            "chunk_index": 73
+        }
     },
     {
-        "chunk_id": 74,
-        "article": "Article 84",
-        "title": "የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ ሥልጣንና ተግባር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 41,
+        "id": "fdre_constitution_article_84_chunk_074",
         "text": "አንቀጽ 84\nየሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ ሥልጣንና ተግባር\n\n. የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ ሕገ መንግሥታዊ ጉዳዮችን የማጣራት\n\nሥልጣን ይኖረዋል፡፡ በሚያደርገው ማጣራት መሰረት ሕገ መንግሥቱን መተርጎም\n\nአስፈላጊ ሆኖ' ሲያገኘው ለፌዴሬሽን ምክር ቤት በጉዳዩ ላይ የውሳኔ ሃሳብ\nያቀርባል፡፡\n\n. በፌዴራሉ መንግስትም ሆነ በክልል ሕግ አውጪ ኣካላት የሚወጡ ሕጎች ከዚህ ሕገ\n\nመንግሥት ጋር ይቃረናሉ የሜል ጥያቄ ሲነሳና ጉዳዩም በሚመለከተው ፍርድ ቤት\n\nወይም በባለ ጉዳዩ ሲቀርብለት መርምሮ ለመጨረሻ ውሳኔ ለፌዴሬሽኑ ምክር ቤት\nያቀርባል፡፡\n\n. በፍርድ ቤቶች የሕገ መንግሥት ትርጉም ጥያቄ ሲነሳ፣\n\nሀ ሕገ መንግሥቱን መተርጎም አስፈላጊ ሆኖ ሳያገኘው ሲቀር ጉዳዩን\nለሚመለከተው ፍርድ ቤት ይመልሳል፤ በአጣሪ ጉባዔው ውሳኔ ቅር የተሰኘ\nባለጉዳይ ቅሬታውን ለፌዴሬሽኑ ምክር ቤት በይግባኝ ማቅረብ ይችላል፡፡\n\nለ/ የትርጉም ጥያቄ መኖሩን ያመነበት እንደሆነ በጉዳዩ ላይ የሚሰጠውን ሕገ\nመንግሥታዊ ትርጉም ለፌዴሬሽን ምክር ቤት ለመጨረሻ ውሳሄ ያቀርባል፡፡\n\n. የሚመራበትን ሥነ ሥርዓት አርቅቆ ለፌዴሬሽኑ ምክር ቤት ያቀርባል፣ ሲፈቀድም\n\nተግባራዊ ያደርጋል፡፡\n\n41\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 758
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 84",
+            "article_title": "የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ ሥልጣንና ተግባር",
+            "topic": "የሕገ መንግሥት ጉዳዮች አጣሪ ጉባዔ ሥልጣንና ተግባር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 41,
+            "page_end": 41,
+            "source": "FDRE Constitution, Article 84",
+            "status": "active",
+            "chunk_index": 74
+        }
     },
     {
-        "chunk_id": 75,
-        "article": "Article 85",
-        "title": ". ማንኛውም የመንግሥት አካል ሕገ መንግሥቱን፣ ሌሎች ሕጎችንና ፖሊሲዎችን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 42,
+        "id": "fdre_constitution_article_85_chunk_075",
         "text": "አንቀጽ 85\n\nዓላማዎች\n. ማንኛውም የመንግሥት አካል ሕገ መንግሥቱን፣ ሌሎች ሕጎችንና ፖሊሲዎችን\nሥራ ላይ ሲያውል በዚህ ምዕራፍ በተመለከቱት መርሆዎችና ዓላማዎች ላይ\nመመስረት አለበት፡፡\n. በዚህ ምዕራፍ ውስጥ “መንግሥት” ማለት እንደየሁኔታው የፌዴራል መንግሥት\nወይም የክልል መስተዳድሮች ማለት ይሆናል፡፡",
-        "length": 194
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 85",
+            "article_title": ". ማንኛውም የመንግሥት አካል ሕገ መንግሥቱን፣ ሌሎች ሕጎችንና ፖሊሲዎችን",
+            "topic": ". ማንኛውም የመንግሥት አካል ሕገ መንግሥቱን፣ ሌሎች ሕጎችንና ፖሊሲዎችን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 42,
+            "page_end": 42,
+            "source": "FDRE Constitution, Article 85",
+            "status": "active",
+            "chunk_index": 75
+        }
     },
     {
-        "chunk_id": 76,
-        "article": "Article 86",
-        "title": "የውጭ ግንኙነት መርሆዎች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 42,
+        "id": "fdre_constitution_article_86_chunk_076",
         "text": "አንቀጽ 86\nየውጭ ግንኙነት መርሆዎች\n. የኢትዮጵያን ሕዝቦች ጥቅም የሚያስጠብቅና የሀገሪቱን ሉዓሳዊነት የሚያስከብር\nየውጭ ግንኙነት ፖሊሲ ማራመድ፡፡\n. የመንግሥታትን ሉዓላዊነትና እኩልነት ማክበር፣ በሌሎች ሀገሮች ጉዳዮች ውስጥ\nጣልቃ አለመግባት፡፡\n. የሀገሪቱ የውጭ ግንኙነት ፖሊሲ በጋራ ጥቅምና በእኩልነት ላይ የተመሰረተ\nመሆኑን እንዲሁም በዓለም አቀፍ ደረጃ የሚደረጉ ስምምነቶች የኢትዮጵያን ጥቅም\nየሚያስከብሩ መሆናቸውን ማረጋገጥ፡፡\n. የኢትዮጵያን ሉዓላዊነት የሚያስከብሩና የሕዝቦቿን ጥቅም የማይፃረሩ ዓለም አቀፍ\nሕጎችና ስምምነቶችን ማክበር፡፡\n. ከጎረቤት ሀገሮችና ከሌሎችም የአፍሪካ ሀገሮች ጋር በየጊዜው እያደገ የሚሄድ\nኢኮኖሚያዊ ኅብረትና የሕዝቦች ወንድማማችነትን ማጎልበት፡፡\n. በሀገሮች መካከል የሚነሱ ግጭቶች ሰላማዊ በሆነ መንገድ እንዲፈቱ ጥረት\nማድረግ፡፡",
-        "length": 490
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 86",
+            "article_title": "የውጭ ግንኙነት መርሆዎች",
+            "topic": "የውጭ ግንኙነት መርሆዎች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 42,
+            "page_end": 42,
+            "source": "FDRE Constitution, Article 86",
+            "status": "active",
+            "chunk_index": 76
+        }
     },
     {
-        "chunk_id": 77,
-        "article": "Article 87",
-        "title": "የመከላከያ መርሆዎች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 42,
+        "id": "fdre_constitution_article_87_chunk_077",
         "text": "አንቀጽ 87\nየመከላከያ መርሆዎች\n\n. የሀገሪቱ የመከላከያ ሠራዊት የብሔሮች፣ የብሔረሰቦች እና የሕዝቦችን ማዛናዊ\nተዋፅዖ ያካተተ ይሆናል፡፡\n. የመከላከያ ሚኒስትር ሆኖ የሚሾመው ሲቪል ይሆናል፡፡\n\n42\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 204
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 87",
+            "article_title": "የመከላከያ መርሆዎች",
+            "topic": "የመከላከያ መርሆዎች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 42,
+            "page_end": 42,
+            "source": "FDRE Constitution, Article 87",
+            "status": "active",
+            "chunk_index": 77
+        }
     },
     {
-        "chunk_id": 78,
-        "article": "Article 88",
-        "title": "ፖለቲካ ነክ ዓላማዎች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 43,
+        "id": "fdre_constitution_article_88_chunk_078",
         "text": "አንቀጽ 88\n\nፖለቲካ ነክ ዓላማዎች\n. መንግሥት በዴሞክራሲያዊ መርሆዎች ላይ በመመስረት ሕዝቡ በሁሉም ደረጃዎች\nራሱን በራሱ የሚያስተዳድርበትን ሁኔታ ማመቻቸት አለበት፡፡\n. መንግሥት የብሔሮችን፣ የብሔረሰቦችን፣ የሕዝቦችን ማንነት የማክበርና በዚሁ ላይ\nበመመርኮዝ በመካከላቸው ኣኩልነት፣ አንድነትና ወንድማማችነትን የማጠናከር\nግዴታ አለበት፡፡",
-        "length": 216
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 88",
+            "article_title": "ፖለቲካ ነክ ዓላማዎች",
+            "topic": "ፖለቲካ ነክ ዓላማዎች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 43,
+            "page_end": 43,
+            "source": "FDRE Constitution, Article 88",
+            "status": "active",
+            "chunk_index": 78
+        }
     },
     {
-        "chunk_id": 79,
-        "article": "Article 89",
-        "title": "ኢኮኖሚ ነክ ዓላማዎች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 43,
+        "id": "fdre_constitution_article_89_chunk_079",
         "text": "አንቀጽ 89\nኢኮኖሚ ነክ ዓላማዎች\n. መንግሥት ሁሉም ኢትዮጵያውን የሀገሪቱ የተጠራቀመ ዕውቀትና ሀብት\nተጠቃሟዎች የማሆኑበትን መንገድ የመቀየስ ኃላፊነት አለበት፡፡\n. መንግሥት የኢትዮጵያውያንን የኢኮኖሚ ሁኔታዎች ለማሻሻል እኩል ዕድል\nእንዲኖራቸው ለማድረግና ሀብት ፍትሐዊ በሆነ መንገድ የሚከፋፈሉበትን ሁኔታ\nየማመቻቸት ግዴታ አለበት፡፡\n. የተፈጥሮና ሰው ሰራሽ አደጋ እንዳይደርስ መከላከልና አደጋው ሲደርስም ለተጎጂው\nእርዳታ በወቅቱ እንዲደርስ ማድረግ፡፡\n. በእድገት ወደ ኋላ ለቀሩ ብሔሮች፣ ብሔረሰቦች፣ ሕዝቦች መንግሥት ልዩ ድጋፍ\nያደርጋል፡፡\n. መንግሥት መሬትንና የተፈጥሮ ሀብትን በሕዝብ ስም በይዞታው ስር በማድረግ\nለሕዝቡ የጋራ ጥቅምና ኣድገት እንዲውሉ የማድረግ ኃላፊነት አለበት፡፡\n. የሀገር ልማት ፖሊሲዎችና ፕሮግራሞች በጫዘጋጁበት ወቅት መንግሥት ሕዝቡን\nበየደረጃው ማሳተፍ አለበት፡፡ የሕዝብንም የልማት እንቅስቃሴዎች መደገፍ\nአለበት፡፡\n. መንግሥት በሀገር ኢኮኖሚያዊና ማኅበራዊ ልማት እንቅስቃሴ ውስጥ ሴቶች\n\nከወንዶች ጋር በእኩልነት የሚሳተፉበትን ሁኔታ የማመቻቸት ኃላፊነት አለበት፡፡\n43\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 715
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 89",
+            "article_title": "ኢኮኖሚ ነክ ዓላማዎች",
+            "topic": "ኢኮኖሚ ነክ ዓላማዎች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 43,
+            "page_end": 43,
+            "source": "FDRE Constitution, Article 89",
+            "status": "active",
+            "chunk_index": 79
+        }
     },
     {
-        "chunk_id": 80,
-        "article": "Article 91",
-        "title": "ባሕል ነክ ዓላማዎች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 44,
+        "id": "fdre_constitution_article_91_chunk_080",
         "text": "አንቀጽ 91\nባሕል ነክ ዓላማዎች\n. መንግሥት መሰረታዊ መብቶችንና ሰብዓዊ ክብርን፣ ዲሞክራሲንና ሕገ መንግሥቱን\nየማይቃረኑ ባሕሎችና ልማዶች በእኩልነት እንዲጎለብቱና እንዲያድጉ የመርዳት\nኃሳፊነት አለበት፡፡\n. የሀገር የተፈጥሮ ሀብቶችንና የታሪክ ቅርሶችን መጠበቅ የመንግሥትና የሁሉም\nኢትዮጵያዊ ግዴታ ነው፡፡\n. መንግሥት አቅም በፈቀደ መጠን ኪነጥበብን፣ ሳይንስና ቴክኖሎጂን የማስፋፋት\nግዴታ አለበት፡፡",
-        "length": 255
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 91",
+            "article_title": "ባሕል ነክ ዓላማዎች",
+            "topic": "ባሕል ነክ ዓላማዎች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 44,
+            "page_end": 44,
+            "source": "FDRE Constitution, Article 91",
+            "status": "active",
+            "chunk_index": 80
+        }
     },
     {
-        "chunk_id": 81,
-        "article": "Article 92",
-        "title": "የአካባቢ ደህንነት ጥበቃ ዓሳማዎች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 44,
+        "id": "fdre_constitution_article_92_chunk_081",
         "text": "አንቀጽ 92\nየአካባቢ ደህንነት ጥበቃ ዓሳማዎች\n. መንግሥት ሁሉም ኢትዮጵያዊ ንጹህና ጤናማ አካባቢ እንዲኖረው የመጣር\nኃላፊነት አለበት፡፡\n. ማንኛውም የኢኮኖሚ ልማት እርምጃ የአካባቢውን ደህንነት የማያናጋ መሆን\nአለበት፡፡\n. የሕዝብን የአካባቢ ደህንነት የሚመለከት ፖሊሲና ፕሮግራም በሚነደፍበትና ሥራ\nላይ በሚውልበት ጊዜ የሚመለከተው ሕዝብ ሁሉ ሀሳቡን እንዲገልጽ መደረግ\nአለበት፡፡\n. መንግሥትና ዜጎች አካባቢያቸውን የመንከባከብ ግዴታ አለባቸው፡፡\n\n44\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 366
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 92",
+            "article_title": "የአካባቢ ደህንነት ጥበቃ ዓሳማዎች",
+            "topic": "የአካባቢ ደህንነት ጥበቃ ዓሳማዎች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 44,
+            "page_end": 44,
+            "source": "FDRE Constitution, Article 92",
+            "status": "active",
+            "chunk_index": 81
+        }
     },
     {
-        "chunk_id": 82,
-        "article": "Article 94",
-        "title": "የፋይናንስ ወጪን በሚመለከት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 46,
+        "id": "fdre_constitution_article_94_chunk_082",
         "text": "አንቀጽ 94\nየፋይናንስ ወጪን በሚመለከት\n\n. የፌዴራሉ መንግሥትና ክልሎች በሕግ የተሰጧቸውን ኃላፊነቶችና ተግባሮች\n\nለማከናወን የሚያስፈልጋቸውን ወጪ በየበኩላቸው ይሸፍናሉ፤ ሆኖም ማናቸውም\n\nክልል በውክልና ለሚፈጽመው ተግባር የሚያስፈልገው ወጪ ሌላ ስምምነት ከሌለ\n\nበቀር ውክልናውን በሰጠው ወገን ይሸፈናል፡፡\n46\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 276
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 94",
+            "article_title": "የፋይናንስ ወጪን በሚመለከት",
+            "topic": "የፋይናንስ ወጪን በሚመለከት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 46,
+            "page_end": 46,
+            "source": "FDRE Constitution, Article 94",
+            "status": "active",
+            "chunk_index": 82
+        }
     },
     {
-        "chunk_id": 83,
-        "article": "Article 96",
-        "title": "የፌዴራል መንግሥት የታክስና የግብር ሥልጣን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 47,
+        "id": "fdre_constitution_article_96_chunk_083",
         "text": "አንቀጽ 96\nየፌዴራል መንግሥት የታክስና የግብር ሥልጣን\n\n. የፌዴራል መንግሥት በወጪና ገቢ ዕቃዎች ላይ የጉምሩክ PLP? ታክስና ሌሎች\nክፍያዎች ይጥላል፣ ይሰበስባል፡፡\n\n. በፌዴራል መንግሥትና በዓለም አቀፍ ድርጅቶች ተቀጣሪዎች ላይ የሥራ ግብር\nይጥሳል፣ ይሰበስባል፡፡\n\n. በፌዴራል መንግሥት ባለቤትነት ሥር በሆኑ የልማት ድርጅቶች ላይ የንግድ ትርፍ\nINC? የሥራ WNC? የሽያጭና የኤክሳይስ ታክስ ይጥሳል፣ ይሰበስባል፡፡\n\n. በብሔራዊ የሎተሪ እና ሌሎች የዕድል ሙከራ ገቢዎች ላይ ታክስ ይጥላል፣\nይሰበስባል፡፡\n\n. በአየር፣ በባቡርና በባሕር ትራንስፖርት ገቢዎች ላይ ታክስ ይጥላል፣ ይሰበስባል፡፡\n. በፌዴራል መንግሥት ባለቤትነት ሥር በሚገኙ ቤቶችና ሌሎች ንብረቶች ገቢ ላይ\nግብር ይጥላል፣ ይሰበስባል፤ ኪራይ ይወስናል፡፡\n\n. የፌዴራል መንግሥት አካላት ከሚሰጧቸው ፈቃዶችና አገልግሎቶች የሚመነጩ\nክፍያዎችን ይወስናል፤ ይሰበስባል፡፡\n\n. የሞኖፖል ታክስ ይጥላል፣ ይሰበስባል፡፡\n\n. የፌዴራል የቴምብር ሽያጭ ቀረጥ ይጥሳላል፣ ይሰበስባል፡፡\n\n47\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 679
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 96",
+            "article_title": "የፌዴራል መንግሥት የታክስና የግብር ሥልጣን",
+            "topic": "የፌዴራል መንግሥት የታክስና የግብር ሥልጣን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 47,
+            "page_end": 47,
+            "source": "FDRE Constitution, Article 96",
+            "status": "active",
+            "chunk_index": 83
+        }
     },
     {
-        "chunk_id": 84,
-        "article": "Article 97",
-        "title": "የክልል መስተዳድሮች የታክስና የግብር ሥልጣን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 48,
+        "id": "fdre_constitution_article_97_chunk_084",
         "text": "አንቀጽ 97\nየክልል መስተዳድሮች የታክስና የግብር ሥልጣን\n\n1. ክልሎች፣ በክልል መስተዳድርና በድርጅት ተቀጣሪዎች ላይ የሥራ ግብር ይጥላሉ፣\nይሰበሰባሉ፡፡\n\n2. የመሬት መጠቀሚያ ክፍያ ይወስናሉ፣ ይሰበስባሉ፡፡\n\n3. በግል የሚያርሱና በኅብረት ሥራ ማኅበራት በተደራጁ ገበሬዎች ላይ PACK ሥራ\nገቢ ግብር ይጥላሉ፣ ይሰበስባሉ፡፡፡\n\n4. በክልሉ NTE ግለሰብ ነጋዴዎች ላይ የንግድ ትርፍ ግብርና የሽያጭ ታክስ\nይጥሳሉ፣ ይሰበስባሉ፡፡፡\n\n5. በክልሉ ውስጥ በውሀ ላይ ከሚደረግ ትራንስፖርት በሜገኝ ገቢ ላይ ግብር ይጥላሉ፣\nይሰበስባሉ፡፡\n\n6. በክልል መስተዳድር በግል ባለቤትነት ስር ካሱ ቤቶችና ሌሎች ንብረቶች በሚገኝ\nገቢ ላይ ግብር ይጥላሉ፣ ይሰበስባሉሌ፤ በባለቤትነታቸው ስር ባሉ ቤቶችና ሌሎች\nንብረቶች ላይ ኪራይ ያስከፍላሉ፡፡\n\n7. በክልል መስተዳድር ባለቤትነት ስር በሜሟገኙ የልማት ድርጅቶች ላይ የንግድ ትርፍ፣\nየሥራ ግብር፣ የሽያጭና ኤክሳይስ ታክስ ይጥላሉ፣ ይሰበስባሉ፡፡\n\n8. በ",
-        "length": 566
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 97",
+            "article_title": "የክልል መስተዳድሮች የታክስና የግብር ሥልጣን",
+            "topic": "የክልል መስተዳድሮች የታክስና የግብር ሥልጣን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 48,
+            "page_end": 48,
+            "source": "FDRE Constitution, Article 97",
+            "status": "active",
+            "chunk_index": 84
+        }
     },
     {
-        "chunk_id": 85,
-        "article": "Article 99",
-        "title": "ተለይተው ስላልተሰጡ የታክስ እና የግብር ሥልጣኖች",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 49,
+        "id": "fdre_constitution_article_99_chunk_085",
         "text": "አንቀጽ 99\nተለይተው ስላልተሰጡ የታክስ እና የግብር ሥልጣኖች\n\nበዚህ ሕገ መንግሥት ተለይተው ያልተሰጡ ታክስና ግብር የመጣል ሥልጣኖችን\nበሚመለከት የፌዴሬሽኑ ምክር ቤትና የሕዝብ ተወካዮች ምክር ቤት በጋራ\nስብሰባ በሁለት ሦስተኛ ድምፅ ይወሰናሉ፡፡\n\nኣንቀጽ 100\n\nየታክስና የግብር አጣጣል መርሆዎች\n\n. ክልሎችና የፌዴራሉ መንግሥት ታክስና ግብር በሚጥሉበት ጊዜ የሚጠየቀው\nታክስና ግብር ከምንሪጩ ጋር የተያያዘና በአግባቡ ተጠንቶ የተወሰነ መሆኑን\nማረጋገጥ አለባቸው፡፡\n. በመካከላቸው የሚኖረውን መልካም ግንኙነት የማይጎዳና ከሟቀርበው አገልግሎት\nጋር ተመጣጣንኀ መሆኑን ማረጋገጥ አለባቸው፡፡\n. ለትርፍ የቆመ ድርጅት ካልሆነ በስተቀር ክልሎች በፌዴራሉ መንግሥት ንብረት\nላይ፣ የፌዴራሉ መንግሥትም በክልሎች ንብረት AL ግብር ወይም ቀረጥ\nየማስከፈል ሥልጣን አይኖራቸውም፡፡",
-        "length": 490
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 99",
+            "article_title": "ተለይተው ስላልተሰጡ የታክስ እና የግብር ሥልጣኖች",
+            "topic": "ተለይተው ስላልተሰጡ የታክስ እና የግብር ሥልጣኖች",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 49,
+            "page_end": 49,
+            "source": "FDRE Constitution, Article 99",
+            "status": "active",
+            "chunk_index": 85
+        }
     },
     {
-        "chunk_id": 86,
-        "article": "Article 101",
-        "title": "ዋናው ኦዲተር",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 49,
+        "id": "fdre_constitution_article_101_chunk_086",
         "text": "አንቀጽ 101\n\nዋናው ኦዲተር\n. ዋናው ኦዲተር በጠቅላይ ሚኒስትሩ አቅራቢነት በሕዝብ ተወካዮች ምክር ቤት\nይሾማል፡፡\n. ዋናው ኦዲተር የፌዴራሉን የሚኒስቴርና ሌሎች መሥሪያ ቤቶች ሂሳቦች\nበመቆጣጠር በሕዝብ ተወካዮች ምክር ቤት የተመደበው ዓመታዊ በጀት፣ በበጀት\nዓመቱ ለተሠሩት ሥራዎች በሚገባ መዋሉን መርምሮ ለምክር ቤቱ ሪፖርት\nያቀርባል፡፡\n. ዋናው ኦዲተር የመሥሪያ ቤቱን በጀት በቀጥታ ለሕዝብ ተወካዮች ምክር ቤት\nአቅርቦ ያስጸድቃል፡፡\n. የዋናው ኦዲተር ዝርዝር ተግባር በሕግ ይወሰናል፡፡\n\n49\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 392
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 101",
+            "article_title": "ዋናው ኦዲተር",
+            "topic": "ዋናው ኦዲተር",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 49,
+            "page_end": 49,
+            "source": "FDRE Constitution, Article 101",
+            "status": "active",
+            "chunk_index": 86
+        }
     },
     {
-        "chunk_id": 87,
-        "article": "Article 102",
-        "title": "የምርጫ ቦርድ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 50,
+        "id": "fdre_constitution_article_102_chunk_087",
         "text": "አንቀጽ 102\nየምርጫ ቦርድ\n1. በፌዴራልና በክልል የምርጫ ክልሎች ነፃና ትክክለኛ ምርጫ በገለልተኝነት\nእንዲያካሂድ ከማንኛውም ተፅዕኖ ነፃ የሆነ ብሔራዊ የምርጫ ቦርድ ይቋቋማል፡፡\n2. የቦርዱ አባላት በጠቅላይ ሚኒስትሩ አቅራቢነት በሕዝብ ተወካዮች ምክር ቤት\nይሾማሉ፡፡ ዝርዝሩ በሕግ ይወሰናል፡፡",
-        "length": 188
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 102",
+            "article_title": "የምርጫ ቦርድ",
+            "topic": "የምርጫ ቦርድ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 50,
+            "page_end": 50,
+            "source": "FDRE Constitution, Article 102",
+            "status": "active",
+            "chunk_index": 87
+        }
     },
     {
-        "chunk_id": 88,
-        "article": "Article 103",
-        "title": "የሕዝብ ቆጠራ ኮሚሽን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 50,
+        "id": "fdre_constitution_article_103_chunk_088",
         "text": "አንቀጽ 103\nየሕዝብ ቆጠራ ኮሚሽን\n1. የሀገሪቱን የሕዝብ ቁጥር በየጊዜው የሚያጠናና ቆጠራ የሚያካሂድ የሕዝብ ቆጠራ\nኮሚሽን ይኖራል፡፡\n2. የኮሚሽኑ አባላት በጠቅላይ ሚኒስትሩ አቅራቢነት በሕዝብ ተወካዮች ምክር ቤት\nይዞማሉ፡፡\n3. ኮሚሽኑ ዋና ጸሐፊ፣ አስፈላጊ ባለሙያዎችና ድጋፍ ሰጪ ሠራተኞች ይኖሩታል፣\n4. የኮሚሽኑ ዓመታዊ በጀት በቀጥታ ለሕዝብ ተወካዮች ምክር ቤት ቀርቦ ይጸድቃል፡፡\n5. የሕዝብ ቆጠራ በየአሥር ዓመቱ ይካሄዳል፡፡ በውጤቱም መሰረት የምርጫ\nክልሎችን አከላለል የምርጫ ቦርድ በሚያቀርበው ረቂቅ መሠረት የፌዴሬሽኑ ምክር\nቤት ይወስናል፡፡\n6. የኮሚቫኑ ተጠሪነት ለሕዝብ ተወካዮች ምክር ቤት ነው፥፡፤ ስለ ሥራው አፈጻጸም\nበየጊዜው ለምክር ቤቱ ሪፖርት ያቀርባል፡፡",
-        "length": 432
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 103",
+            "article_title": "የሕዝብ ቆጠራ ኮሚሽን",
+            "topic": "የሕዝብ ቆጠራ ኮሚሽን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 50,
+            "page_end": 50,
+            "source": "FDRE Constitution, Article 103",
+            "status": "active",
+            "chunk_index": 88
+        }
     },
     {
-        "chunk_id": 89,
-        "article": "Article 104",
-        "title": "የሕገ መንግሥት ማሻሻያ ሀሳብን ስለማመንጨት",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 50,
+        "id": "fdre_constitution_article_104_chunk_089",
         "text": "አንቀጽ 104\nየሕገ መንግሥት ማሻሻያ ሀሳብን ስለማመንጨት\n\nአንድ የሕገ መንግሥት ማሻሻያ ሀሳብ የሕዝብ ተወካዮች ምክር ቤት በሁለት ሦስተኛ\nድምዕ የደገፈው፣ የፌዴሬሽኑ ምክር ቤት በሁለት ሦስተኛ ድምፅ የደገፈው ወይም\nከፌዴሬሽኑ አባል ክልሎች ውስጥ አንድ ሦስተኛው የክልል ምክር ቤቶች በድምፅ\nብልጫ የደገፉት ከሆነ ለውይይትና ለውሳኔ ለመላው ሕዝብና የሕገ መንግሥቱ መሻሻል\nለሚመለከታቸው ክፍሎች ይቀርባል፡፡\n\n50\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 339
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 104",
+            "article_title": "የሕገ መንግሥት ማሻሻያ ሀሳብን ስለማመንጨት",
+            "topic": "የሕገ መንግሥት ማሻሻያ ሀሳብን ስለማመንጨት",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 50,
+            "page_end": 50,
+            "source": "FDRE Constitution, Article 104",
+            "status": "active",
+            "chunk_index": 89
+        }
     },
     {
-        "chunk_id": 90,
-        "article": "Article 106",
-        "title": "የመጨረሻ ሕጋዊ እውቅና ስላለው ቅጂ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 51,
+        "id": "fdre_constitution_article_106_chunk_090",
         "text": "አንቀጽ 106\nየመጨረሻ ሕጋዊ እውቅና ስላለው ቅጂ\n\nየዚህ ሕገ መንግሥት የአማርኛ ቅጂ የመጨረሻው ሕጋዊ እውቅና ያለው ሰነድ ነው፡፡\n\n51\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 164
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 106",
+            "article_title": "የመጨረሻ ሕጋዊ እውቅና ስላለው ቅጂ",
+            "topic": "የመጨረሻ ሕጋዊ እውቅና ስላለው ቅጂ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 51,
+            "page_end": 51,
+            "source": "FDRE Constitution, Article 106",
+            "status": "active",
+            "chunk_index": 90
+        }
     },
     {
-        "chunk_id": 91,
-        "article": "Article 03",
-        "title": "የፖለቲካ ድርጅት በምዝገባ ላይ ተቃውሞ ካለው ተቃውሞውን ከነምክንያቱ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 144,
+        "id": "fdre_constitution_article_03_chunk_091",
         "text": "አንቀጽ 03 የተደነገገው እንደተጠበቀ ሆኖ ማንኛውም ሰው ወይም\nየፖለቲካ ድርጅት በምዝገባ ላይ ተቃውሞ ካለው ተቃውሞውን ከነምክንያቱ\nለምርጫ ጣቢያው አቤቱታ ሰሚ ኮሚቴ ሊያቀርብ ይችላል፡፡\n\n2. የምርጫ ጣቢያው አቤቱታ ሰሚ ኮሚቴ ከላይ በንዑስ አንቀፅ 1 የቀረበውን\n\nአቤቱታ ተመልክቶ ባለጉዳዩ መልስ እንዲሰጥ ካደረገ በኋላ ውሳኔ ይሰጣል፡፡\n\n43.ከምዝገባ ስለመሰረዝ\n\n1.\n\nማንኛውም ተመዝጋቢ በአዕምሮ ህመም ምክንያት ለመወሰን ብቃት የሌለው\nወይም በማጭበርበር የተመዘገበ ወይም የሞተ ወይም ሲፈረድበት ካልሆነ\nበስተቀር በሚቀርብ ተቃውሞ ከመራጭነት ምዝገባ አይሰረዝም፡፡\n\nመራጮች ሲፈረድባቸው፣ የአዕምሮ ሕመምተኞች ሲሆኑ ወይም ሲሞቱ ወይም\nአጭበርብረው ሲገኙ ፍርድ ቤቶች፣ ሆስፒታሎች እና እድሮች ሁሄታው\nእንደተከሰተ ወዲያውኑ ለቦርዱ የክልል ቅርንጫፍ ጽሀፈት ቤት ወይም\nለምርጫ ክልል ወይም ለየምርጫ ጣቢያ ሪፖርት የማድረግ ግዴታ አለባቸው።\nየክልል ቅርንጫፍ ጽህፈት ቤቶች ወይም የምርጫ ክልሎች ወይም የምርጫ\nጣቢያዎች ከላይ በንዑስ አንቀፅ 2 መሰረት መረጃ እንደ ደረሳቸው አስፈላጊውን\nእርምጃ መውሰድ አለባቸው።\n\nምዕራፍ ሶስት\nየዕጩዎች ምዝገባ\n\n44.የእጩ ምዝገባ ቦታ\nየእዕጩ ምዝገባ ቦርዱ በሚያወጣው የምርጫ የጊዜ ሰሌዳ ውስጥ ለእዕኔጩዎች ምዝገባ\nበተያዘው ጊዜ ውስጥ በምርጫ ክልሎች ይከናወናል፡፡\n\n45.ለዕጩነት ስለሚያበቁ መመዘኛዎች\n\n1.\n\nማንኛውም ሰው፡-\n\nሀ/ ኢትዮጵያዊ የሆነ፣\n\nለ/ የሚወዳደርበትን ብሔራዊ ክልል ወይም የአካባቢውን የስራ ቋንቋ\nየሚያውቅ ከሆነ፣\n\nሐ/ በምዝገባ ዕለት እድሜው 21 ዓመት ወይም ከዚያ በላይ የሆነው፣\n\nመ/ ከምርጫው እለት አስቀድሞ በምርጫ ክልሉ ውስጥ በመደበኛነት\nለሁለት አመት ከኖረ ወይም የትውልድ ቦታው በእጩ፡ነት ሊቀርብበት\nባፈለገበት ምርጫ ክልል ውስጥ ከሆነ ወይም ከተማው ወይም ወረዳው\nከአንድ በላይ የምርጫ ክልሎች የሚያቅፍ ከሆነ በከተማው ወይም\n\n144\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 1160
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 03",
+            "article_title": "የፖለቲካ ድርጅት በምዝገባ ላይ ተቃውሞ ካለው ተቃውሞውን ከነምክንያቱ",
+            "topic": "የፖለቲካ ድርጅት በምዝገባ ላይ ተቃውሞ ካለው ተቃውሞውን ከነምክንያቱ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 144,
+            "page_end": 144,
+            "source": "FDRE Constitution, Article 03",
+            "status": "active",
+            "chunk_index": 91
+        }
     },
     {
-        "chunk_id": 92,
-        "article": "Article 119",
-        "title": "ሥነ-ሥርዓት ሳይሟላ በቀጥታ ለመያዝም ሆነ ለመከስስ ፈቃደኛ ቢሆንም",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 307,
+        "id": "fdre_constitution_article_119_chunk_092",
         "text": "አንቀጽ 119 የተደነገገው\nሥነ-ሥርዓት ሳይሟላ በቀጥታ ለመያዝም ሆነ ለመከስስ ፈቃደኛ ቢሆንም\nየሚመለከተው የፍትህ አካል አባሉን መያዝም ሆነ መክስስ አይችልም።\n\n2. ለምክር ቤት አባል የተስጠው የህግ ከለላ አንዲነሳ የሚፈልግ አካል፡-\n\nሀ/ የመያዝና የመክሰስ ስልጣን ያለው የፌደራል የፍትህ አካል በሆነ ጊዜ ጥያቄው\nለምክር ቤቱ የሚቀርበው በፍትህ ሚኒስትሩ ወይም በፌደራል ጠቅላይ\nዓቃቤ ህግ ወይም በፌደራል የሥነ-ምግባርና የፀረ-ሙስና ኮሚሽን\nኮ“ሽነር!* በተፃፈ ደብዳቤ ይሆናል፤\n\nለ/ የመያዝና የመክሰስ ስልጣን ያለው የክልል መንግስት የፍትህ አካል በሆነ\nጊዜ ጥያቄው ለምክር ቤቱ የሚቀርበው በክልሉ ርዕስ መስተዳድር በተፃፈ\nደብዳቤ ይሆናል፡፡\n\n3. ማንኛውም የህግ ከለላ የማንሳት ጥያቄ ለአፈጉባዔው በጽሑፍ መቅረብ አለበት፡፡\n\n4. አፈጉባዔው የቀረበለትን የህግ ከለላን የማንሳት ጥያቄ በቀጥታ ለምክር ቤቱ\nሊያቀርበው ወይም ለህግ፣ ፍትህና አስተዳደር ጉዳዮች ቋሚ ኮሚቴ ሊመራው\nይችላል፡፡\n\n5. ምክር ቤቱ በአፈጉባዔው በኩል የቀረበለትን የህግ ከለላ የማንሳት ጥያቄ አንደ\nሁኔታው ተጣርቶ የውሳኔ ሃሳብ አንዲቀርብለት ለህግ፣ ፍትህና አስተዳደር\nጉዳዮች ቋሚ ኮሚቴ ሊመራው ወይም በቀጥታ ውሳኔ ሊሰጥበት ይችላል፡፡\n\n6. የሀግ ከለላ የማንሳት ጥያቀው የተመራለት የህግ፣ፍትህና አስተዳደር ጉዳዮች\nቋሜ ኮጫቴ ሪፖርት ሲያዘጋጅ አባሉ ወንጀል መፈፀሙን የማረጋገጥ ስልጣን\nየመደበኛ ፍርድ ቤት ሆኖ የኮሚቴው ድርሻ የህግ ከለላን ለማንሳት የሚያስችሉ\nበቂ አመላካች ሁኔታዎች መኖራቸውን ማረጋገጥ ይሆናል፡፡\n\n7. በዚህ አንቀፅ ንዑስ አንቀፅ (6/ የተጠቀሱት ሁኔታዎች መኖራቸውን ለመገንዘብ\nቋሚ ኮሜቴው አስፈላጊ የሰው ወይም የሰነድ ማስረጃዎች አንዲቀርብለት ወይም\n\n© በ22/62 (2008/ አ. ዓ43 መሰረት የፌደራል የሥነ-ምገባርና የፀረ-ሙስና ኮሚሽን ኮሚሸነር የመያዝና የመከሰስ ስልጣን የለውም፡፡\n\n307\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 1157
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 119",
+            "article_title": "ሥነ-ሥርዓት ሳይሟላ በቀጥታ ለመያዝም ሆነ ለመከስስ ፈቃደኛ ቢሆንም",
+            "topic": "ሥነ-ሥርዓት ሳይሟላ በቀጥታ ለመያዝም ሆነ ለመከስስ ፈቃደኛ ቢሆንም",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 307,
+            "page_end": 307,
+            "source": "FDRE Constitution, Article 119",
+            "status": "active",
+            "chunk_index": 92
+        }
     },
     {
-        "chunk_id": 93,
-        "article": "Article 200",
-        "title": "ላይ የተደነገገዉን ተግባራዊ ማደረግ ይጠበቅባቸዋል፡፡",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 350,
+        "id": "fdre_constitution_article_200_chunk_093",
         "text": "አንቀጽ 200\nላይ የተደነገገዉን ተግባራዊ ማደረግ ይጠበቅባቸዋል፡፡\n\n350\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 124
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 200",
+            "article_title": "ላይ የተደነገገዉን ተግባራዊ ማደረግ ይጠበቅባቸዋል፡፡",
+            "topic": "ላይ የተደነገገዉን ተግባራዊ ማደረግ ይጠበቅባቸዋል፡፡",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 350,
+            "page_end": 350,
+            "source": "FDRE Constitution, Article 200",
+            "status": "active",
+            "chunk_index": 93
+        }
     },
     {
-        "chunk_id": 94,
-        "article": "Article 471",
-        "title": "እንዳስፈላጊነቱ የአዲስ አበባ ከተማ አስተዳደርንና የድሬዳዋ ከተማ ካውንስልን",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 358,
+        "id": "fdre_constitution_article_471_chunk_094",
         "text": "አንቀጽ 471) መሠረት በክልልነት የታወቁት ሲሆኑ\nእንዳስፈላጊነቱ የአዲስ አበባ ከተማ አስተዳደርንና የድሬዳዋ ከተማ ካውንስልን\nLOD? GA?\n\n2. ህግ\" ማለት በፌዴራል ወይም በክልል ሕግ አውጪ አካሳት የሚወጡ አዋጆች\nእና በሌሎች የፌዴራልና የክልል የመንግሥት አካላት የሚወጡ ደንቦችና\nመመሪያዎች ሲሆኑ ኢትዮጵያ ያጸደቀቻቸውን አለምአቀፍ ስምምነቶቸችንም\nያካትታል፡፡\n\n5. ምክር ቤት ማለት ኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ የፌዴሬሽን\nምክር ቤት ነው፣\n\n4. “ሕገመንግሥት” ማለት ኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ\nሕገመንግሥት ነው፣\n\n358\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 429
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 471",
+            "article_title": "እንዳስፈላጊነቱ የአዲስ አበባ ከተማ አስተዳደርንና የድሬዳዋ ከተማ ካውንስልን",
+            "topic": "እንዳስፈላጊነቱ የአዲስ አበባ ከተማ አስተዳደርንና የድሬዳዋ ከተማ ካውንስልን",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 358,
+            "page_end": 358,
+            "source": "FDRE Constitution, Article 471",
+            "status": "active",
+            "chunk_index": 94
+        }
     },
     {
-        "chunk_id": 95,
-        "article": "Article 286",
-        "title": "አዋጅ ድንጋጌዎች በመተላለፍ የሚፈጸሙ የወንጀል ጥፋቶች ህትመተቹ",
-        "source": "Ethiopia_Constitution_Amharic.pdf",
-        "page": 516,
+        "id": "fdre_constitution_article_286_chunk_095",
         "text": "አንቀጽ 286/፲/ የተደነገገው እንደተጠበቀ ሆኖ የዚህን\nአዋጅ ድንጋጌዎች በመተላለፍ የሚፈጸሙ የወንጀል ጥፋቶች ህትመተቹ\nክተሰራጩብት ወይም ክተላለፉበት ቀን አንስቶ እስከ አንድ ዓመት ባለው ጊዜ\nውስጥ ክሶቹ ካልቀረቡ በይርጋ ቀሪ ይሆናሉ።\n\n2. በብሮድካስት አማካይነት ለሚፈፀም ጥፋት ጥፋቱ የተፈፀመበት ፕሮግራም\nከተላለፈበት ቀን ጀምሮ ባለው ስድስት ወር ጊዜ ውስጥ የወንጀል ክስ\nካልተመሰረተ ክሱ በይርጋ ቀሪ ይሆናል፡፡\n\nክፍል ስድስት\nልዩ ልዩ ድንጋጌዎች\n47. የአፈፃፀም ወሰን\n\n516\n\n=================================\nSOURCE: Ethiopia_Constitution_Amharic.pdf",
-        "length": 387
+        "metadata": {
+            "document_id": "fdre_constitution_amharic_1995",
+            "document_title": "FDRE Constitution",
+            "document_type": "constitution",
+            "article": "Article 286",
+            "article_title": "አዋጅ ድንጋጌዎች በመተላለፍ የሚፈጸሙ የወንጀል ጥፋቶች ህትመተቹ",
+            "topic": "አዋጅ ድንጋጌዎች በመተላለፍ የሚፈጸሙ የወንጀል ጥፋቶች ህትመተቹ",
+            "language": "am",
+            "jurisdiction": "Federal",
+            "page_start": 516,
+            "page_end": 516,
+            "source": "FDRE Constitution, Article 286",
+            "status": "active",
+            "chunk_index": 95
+        }
     }
 ]
