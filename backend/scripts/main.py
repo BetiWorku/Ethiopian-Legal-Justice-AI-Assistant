@@ -1,5 +1,4 @@
-from scripts.chatbot import chat
-
+from chatbot import chat
 print("Ethiopian Legal Assistant Chatbot")
 print("የኢትዮጵያ የሕግ ረዳት ቻትቦት")
 
