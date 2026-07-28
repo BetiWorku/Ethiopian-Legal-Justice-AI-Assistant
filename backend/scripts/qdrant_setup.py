@@ -14,7 +14,7 @@ PORT = 6333
 
 COLLECTION_NAME = "legal_documents"
 
-VECTOR_SIZE = 768   # multilingual-e5-base dimension
+VECTOR_SIZE = 384   # multilingual-e5-base dimension
 
 
 # ==========================

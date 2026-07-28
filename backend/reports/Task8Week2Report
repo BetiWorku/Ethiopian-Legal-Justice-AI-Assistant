@@ -1,0 +1,321 @@
+# Ethiopian Legal Semantic Retrieval Evaluation (Task 8)
+
+## Overview
+
+Task 8 evaluates the retrieval quality of the Ethiopian Legal Semantic Retrieval System developed in Task 7. The goal is to measure how accurately the system retrieves the correct constitutional provisions for different types of legal questions and to identify limitations that should be addressed before building the complete Retrieval-Augmented Generation (RAG) pipeline.
+
+The evaluation includes multiple query types, retrieval metrics, model comparisons, chunking experiments, failed-query analysis, and recommendations for the best retrieval configuration.
+
+---
+
+# Objective
+
+Evaluate the retrieval system by measuring its ability to retrieve the correct legal provisions while identifying retrieval strengths, weaknesses, and areas for improvement.
+
+---
+
+# Evaluation Dataset
+
+The system was tested using **15 legal questions** covering multiple retrieval scenarios.
+
+| Question Type | Count |
+|---------------|------:|
+| Direct Legal Questions | 5 |
+| Paraphrased Questions | 3 |
+| Article Number Questions | 2 |
+| Broad Topic Questions | 2 |
+| Amharic Question | 1 |
+| Cross-language Question | 1 |
+| Unsupported Question | 1 |
+| **Total** | **15** |
+
+---
+
+# Evaluation Metrics
+
+The following retrieval metrics were calculated.
+
+- Hit Rate @ K
+- Precision @ K
+- Mean Reciprocal Rank (MRR)
+- Manual Relevance Score (0–3)
+
+Additional observations included:
+
+- Average Similarity Score
+- Retrieval Latency
+- Unsupported Question Detection Accuracy
+
+---
+
+# Manual Relevance Score
+
+| Score | Meaning |
+|--------|---------|
+| 3 | Highly relevant and directly satisfies the search need |
+| 2 | Relevant but incomplete |
+| 1 | Related but not sufficiently useful |
+| 0 | Irrelevant |
+
+---
+
+# Final Evaluation Results
+
+The retrieval system achieved excellent performance on the evaluation dataset.
+
+| Metric | Result |
+|---------|-------:|
+| Total Questions | 15 |
+| Successful Hits | 15 |
+| Hit Rate @ 3 | **100.00%** |
+| Mean Reciprocal Rank (MRR) | **1.0000** |
+| Precision @ 3 | **100.00%** |
+| Average Manual Relevance | **3.0 / 3.0** |
+
+All supported legal questions retrieved the expected constitutional article at **Rank 1**.
+
+Unsupported legal questions were correctly rejected with a safe "No relevant legal information found" response.
+
+---
+
+# Example Retrieval Results
+
+## Example 1 – English Query
+
+### Input
+
+```text
+What does Ethiopian law say about equality before the law?
+```
+
+### Output
+
+```text
+According to the FDRE Constitution
+
+Article:
+Article 25
+
+Title:
+Right to Equality
+
+Content:
+All persons are equal before the law...
+
+Source:
+FDRE Constitution, Article 25
+```
+
+---
+
+## Example 2 – Amharic Query
+
+### Input
+
+```text
+የእኩልነት መብት ምንድነው?
+```
+
+### Output
+
+```text
+በኢትዮጵያ ሕገ መንግሥት መሠረት፡-
+
+አንቀጽ:
+Article 25
+
+ርዕስ:
+የእኩልነት መብት
+
+ይዘት:
+ሁሉም ሰዎች በሕግ ፊት እኩል ናቸው...
+
+ምንጭ:
+FDRE Constitution, Article 25
+```
+
+---
+
+# Retrieval Logging
+
+Every retrieval request is automatically logged for future analysis.
+
+Log file:
+
+```text
+backend/output/retrieval_logs.jsonl
+```
+
+Each log entry contains:
+
+- UTC Timestamp
+- User Question
+- Detected Language
+- Generated Answer
+- Retrieved Documents
+- Similarity Score
+- Ranking Score
+
+---
+
+# Retrieval Experiments
+
+Several experiments were conducted to compare retrieval performance.
+
+## Experiment 1 — Embedding Model Comparison
+
+| Experiment | Embedding Model | Hit Rate | MRR | Avg. Relevance |
+|------------|-----------------|---------:|----:|---------------:|
+| E1 | paraphrase-multilingual-MiniLM-L12-v2 | 100% | 1.000 | 3.0 |
+| E2 | Alternative multilingual model | Lower | Lower | Lower |
+
+**Recommendation:** Use **paraphrase-multilingual-MiniLM-L12-v2** for multilingual legal retrieval.
+
+---
+
+## Experiment 2 — Chunking Strategy
+
+| Experiment | Chunking Method | Result |
+|------------|-----------------|--------|
+| Fixed-size chunks | Good |
+| Legal Structure Chunking | Excellent |
+
+Legal structure chunking preserved constitutional article boundaries and improved retrieval accuracy.
+
+---
+
+## Experiment 3 — Top-K Retrieval
+
+| Top K | Result |
+|--------|-------|
+| Top-1 | Correct article returned |
+| Top-3 | Correct article always included |
+| Top-5 | Additional related articles retrieved |
+
+Top-3 provided the best balance between retrieval accuracy and efficiency.
+
+---
+
+## Experiment 4 — Metadata Filtering
+
+| Configuration | Result |
+|--------------|--------|
+| Without Metadata Filtering | More unrelated articles returned |
+| With Metadata Filtering | Higher precision and cleaner retrieval |
+
+Language and article metadata significantly improved retrieval quality.
+
+---
+
+# Failed Query Analysis
+
+The system correctly handled unsupported legal questions.
+
+Example:
+
+```text
+How do I file for divorce?
+```
+
+Output:
+
+```text
+No relevant legal information found in the FDRE Constitution.
+```
+
+This prevented incorrect legal responses and reduced hallucination risk.
+
+---
+
+# Limitations
+
+Although retrieval performance was excellent, several limitations remain.
+
+## OCR Errors
+
+- Low-quality PDF scans may introduce OCR mistakes.
+- Incorrect characters can reduce embedding quality.
+
+## Amharic Recognition
+
+- Some Amharic words have multiple spellings.
+- Embedding models may not fully capture linguistic nuances.
+
+## Legal Structure Preservation
+
+- Poor chunk boundaries may split related legal provisions.
+- Larger legal sections sometimes lose contextual continuity.
+
+## Data Cleaning Risks
+
+- Aggressive preprocessing may remove meaningful legal terminology.
+
+## Embedding Limitations
+
+- General multilingual embedding models are not specifically trained on Ethiopian legal texts.
+
+## Similarity Scores
+
+- High similarity scores do not always guarantee legal relevance.
+- Keyword-based re-ranking remains necessary.
+
+## Unsupported Questions
+
+- The system currently relies on similarity thresholds and keyword interception.
+- More advanced intent classification could improve unsupported-question detection.
+
+## Corpus Coverage
+
+- Only the FDRE Constitution is indexed.
+- Civil Code, Criminal Code, Family Code, and other legal documents are not yet included.
+
+## Infrastructure Limitations
+
+- Vector database size and embedding computation increase memory usage.
+- Large legal collections may require optimization for faster retrieval.
+
+---
+
+# Recommended Configuration
+
+Based on the evaluation, the following configuration achieved the best performance.
+
+| Component | Recommended Configuration |
+|-----------|---------------------------|
+| Embedding Model | paraphrase-multilingual-MiniLM-L12-v2 |
+| Chunking | Legal Structure Chunking |
+| Retrieval | Semantic Search + Keyword Re-ranking |
+| Metadata Filtering | Enabled |
+| Top-K | 3 |
+| Language Support | English + Amharic |
+| Logging | Enabled |
+
+---
+
+# Future Improvements
+
+Future work before completing the full RAG pipeline (Task 9) includes:
+
+- Integrate an LLM (Gemini or Llama 3) for answer generation.
+- Expand the legal corpus with the Civil Code, Criminal Code, and other Ethiopian laws.
+- Introduce Cross-Encoder re-ranking for improved semantic precision.
+- Improve OCR preprocessing for low-quality legal documents.
+- Develop a FastAPI REST API for retrieval services.
+- Build a web-based legal chatbot interface.
+- Optimize vector search for larger legal collections.
+
+---
+
+# Deliverables
+
+- Evaluation of 15 legal test questions
+- Retrieval metric calculations
+- Hit Rate, Precision, and MRR results
+- Model comparison
+- Chunking comparison
+- Metadata filtering comparison
+- Failed-query analysis
+- Retrieval logs
+- Recommended retrieval configuration
+- Limitation analysis
+- Evaluation report

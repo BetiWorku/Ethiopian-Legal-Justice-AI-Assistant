@@ -2,25 +2,37 @@ import json
 from pathlib import Path
 import pickle
 
-from sentence_transformers import SentenceTransformer
 import faiss
+import numpy as np
+from sentence_transformers import SentenceTransformer
 
 
 # ======================
-# Files
+# Paths
 # ======================
 
-CHUNKS_FILE = Path("data/chunks/article_chunks.json")
-VECTOR_DIR = Path("data/vectors")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+CHUNKS_FILE = BASE_DIR / "data" / "chunks" / "article_chunks_metadata.json"
+
+VECTOR_DIR = BASE_DIR / "data" / "vectors"
+
 VECTOR_DIR.mkdir(
     parents=True,
     exist_ok=True
 )
 
+
 INDEX_FILE = VECTOR_DIR / "legal.index"
+
 META_FILE = VECTOR_DIR / "metadata.pkl"
 
 
+
+# ======================
+# Load chunks
+# ======================
 
 print("Loading chunks...")
 
@@ -30,6 +42,7 @@ with open(
     "r",
     encoding="utf-8"
 ) as f:
+
     chunks = json.load(f)
 
 
@@ -41,24 +54,17 @@ print(
 
 
 # ======================
-# Prepare embedding text
+# Prepare text + metadata
 # ======================
 
 
 texts = []
 
+metadata = []
+
 
 for chunk in chunks:
 
-    article = chunk.get(
-        "article",
-        ""
-    )
-
-    title = chunk.get(
-        "title",
-        ""
-    )
 
     text = chunk.get(
         "text",
@@ -66,24 +72,132 @@ for chunk in chunks:
     )
 
 
-    combined_text = f"""
-Article: {article}
+    meta = chunk.get(
+        "metadata",
+        {}
+    )
 
-Title: {title}
+
+    if not text.strip():
+        continue
+
+
+
+    # Add metadata into embedding text
+    # This improves Amharic topic search
+
+    embedding_text = f"""
+
+Article:
+{meta.get("article","")}
+
+Title:
+{meta.get("article_title","")}
+
+Topic:
+{meta.get("topic","")}
 
 Content:
 {text}
+
 """
 
 
     texts.append(
-        combined_text
+        embedding_text
     )
 
 
 
+    # Save complete metadata
+
+    metadata.append({
+
+        "id": chunk.get(
+            "id",
+            ""
+        ),
+
+        "text": text,
+
+
+        "document_title": meta.get(
+            "document_title",
+            ""
+        ),
+
+
+        "document_type": meta.get(
+            "document_type",
+            ""
+        ),
+
+
+        "article": meta.get(
+            "article",
+            ""
+        ),
+
+
+        "article_title": meta.get(
+            "article_title",
+            ""
+        ),
+
+
+        "topic": meta.get(
+            "topic",
+            ""
+        ),
+
+
+        "language": meta.get(
+            "language",
+            "am"
+        ),
+
+
+        "jurisdiction": meta.get(
+            "jurisdiction",
+            ""
+        ),
+
+
+        "page_start": meta.get(
+            "page_start",
+            None
+        ),
+
+
+        "page_end": meta.get(
+            "page_end",
+            None
+        ),
+
+
+        "source": meta.get(
+            "source",
+            ""
+        ),
+
+
+        "chunk_index": meta.get(
+            "chunk_index",
+            0
+        )
+
+    })
+
+
+
+print(
+    f"Prepared {len(texts)} documents"
+)
+
+
+
 # ======================
-# Model
+# Embedding model
 # ======================
 
 
@@ -99,7 +213,7 @@ model = SentenceTransformer(
 
 
 # ======================
-# Embeddings
+# Create embeddings
 # ======================
 
 
@@ -110,19 +224,22 @@ print(
 
 embeddings = model.encode(
     texts,
+    batch_size=32,
     show_progress_bar=True,
     normalize_embeddings=True
 )
 
 
-embeddings = embeddings.astype(
-    "float32"
+
+embeddings = np.array(
+    embeddings,
+    dtype="float32"
 )
 
 
 
 # ======================
-# FAISS
+# Create FAISS
 # ======================
 
 
@@ -146,13 +263,8 @@ index.add(
 
 
 # ======================
-# Save
+# Save FAISS
 # ======================
-
-
-print(
-    "Saving index..."
-)
 
 
 faiss.write_index(
@@ -162,26 +274,35 @@ faiss.write_index(
 
 
 
+# ======================
+# Save metadata
+# ======================
+
+
 with open(
     META_FILE,
     "wb"
 ) as f:
 
     pickle.dump(
-        chunks,
+        metadata,
         f
     )
 
 
 
+print("============================")
+print("Embedding completed")
+print("============================")
+
 print(
-    "Embedding completed successfully!"
+    f"FAISS index: {INDEX_FILE}"
 )
 
 print(
-    f"Saved: {INDEX_FILE}"
+    f"Metadata: {META_FILE}"
 )
 
 print(
-    f"Saved: {META_FILE}"
+    f"Documents: {len(metadata)}"
 )

@@ -10,8 +10,8 @@ from qdrant_client.models import PointStruct
 # Configuration
 # ======================
 
-INDEX_FILE = Path("data/vectors/legal_e5.index")
-META_FILE = Path("data/vectors/e5_metadata.pkl")
+INDEX_FILE = Path("data/vectors/legal.index")
+META_FILE = Path("data/vectors/metadata.pkl")
 
 COLLECTION_NAME = "legal_documents"
 
@@ -45,7 +45,7 @@ print(
 
 
 # ======================
-# Load metadata
+# Load Metadata
 # ======================
 
 print("Loading metadata...")
@@ -63,7 +63,6 @@ print(
 )
 
 
-
 # ======================
 # Extract vectors
 # ======================
@@ -72,7 +71,6 @@ vectors = index.reconstruct_n(
     0,
     index.ntotal
 )
-
 
 
 # ======================
@@ -85,7 +83,6 @@ points = []
 for i, chunk in enumerate(chunks):
 
 
-    # Support both formats
     metadata = chunk.get(
         "metadata",
         {}
@@ -100,7 +97,14 @@ for i, chunk in enumerate(chunks):
 
     article_title = (
         metadata.get("article_title")
+        or chunk.get("article_title", "")
         or chunk.get("title", "")
+    )
+
+
+    topic = (
+        metadata.get("topic")
+        or chunk.get("topic", "")
     )
 
 
@@ -110,9 +114,17 @@ for i, chunk in enumerate(chunks):
     )
 
 
-    page = (
+    page_start = (
         metadata.get("page_start")
-        or chunk.get("page", None)
+        or chunk.get("page_start")
+        or chunk.get("page")
+    )
+
+
+    page_end = (
+        metadata.get("page_end")
+        or chunk.get("page_end")
+        or page_start
     )
 
 
@@ -122,90 +134,73 @@ for i, chunk in enumerate(chunks):
     )
 
 
+    # ======================
+    # Payload
+    # ======================
+
     payload = {
 
-
-        "chunk_id":
-        chunk.get(
-            "id",
-            f"chunk_{i+1}"
+        "chunk_id": chunk.get(
+            "chunk_id",
+            f"chunk_{i}"
         ),
 
 
-        "document_id":
-        metadata.get(
+        "document_id": chunk.get(
             "document_id",
-            "fdre_constitution_amharic_1995"
+            "fdre_constitution"
         ),
 
 
-        "document_title":
-        metadata.get(
+        "document_title": chunk.get(
             "document_title",
             "FDRE Constitution"
         ),
 
 
-        "document_type":
-        metadata.get(
+        "document_type": chunk.get(
             "document_type",
             "constitution"
         ),
 
 
-        "article":
-        article,
+        "article": article,
 
 
-        "article_title":
-        article_title,
+        "article_title": article_title,
 
 
-        "topic":
-        (
-            metadata.get("topic")
-            or article_title
-        ),
+        "topic": topic,
 
 
-        "language":
-        metadata.get(
+        "language": chunk.get(
             "language",
             "am"
         ),
 
 
-        "jurisdiction":
-        metadata.get(
+        "jurisdiction": chunk.get(
             "jurisdiction",
             "Federal"
         ),
 
 
-        "page_start":
-        page,
+        # FIXED PAGE DATA
+        "page_start": page_start,
+
+        "page_end": page_end,
 
 
-        "page_end":
-        (
-            metadata.get("page_end")
-            or page
-        ),
+        "source": source,
 
 
-        "source":
-        source,
-
-
-        "status":
-        metadata.get(
+        "status": chunk.get(
             "status",
             "active"
         ),
 
 
-        "text":
-        text
+        "text": text
     }
 
 
@@ -216,8 +211,7 @@ for i, chunk in enumerate(chunks):
 
             id=i + 1,
 
-            vector=
-            vectors[i].tolist(),
+            vector=vectors[i].tolist(),
 
             payload=payload
 
@@ -251,7 +245,7 @@ print(
 
 
 # ======================
-# Collection Statistics
+# Statistics
 # ======================
 
 info = client.get_collection(
