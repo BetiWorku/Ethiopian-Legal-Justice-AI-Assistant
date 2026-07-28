@@ -76,12 +76,12 @@ def clean_text(text):
     return re.sub(r"\s+", " ", text).strip()
 
 def detect_language(text):
-    if re.search(r"[\u1200-\u137F]", text):
+    if re.search(r"[\u1200-\u137F]", str(text)):
         return "am"
     return "en"
 
 def extract_article_number(question):
-    match = re.search(r"(article|art\.?|አንቀጽ)\s*(\d+)", question.lower())
+    match = re.search(r"(article|art\.?|አንቀጽ)\s*(\d+)", str(question).lower())
     if match:
         return match.group(2)
     return None
@@ -103,6 +103,10 @@ def translate_to_amharic(text):
         return text
 
 def format_pages(payload):
+    # Bulletproof check: Ensure payload is a dictionary before calling .get()
+    if not isinstance(payload, dict):
+        return "N/A"
+        
     start = payload.get("page_start")
     end = payload.get("page_end")
     if start and end:
@@ -114,7 +118,7 @@ def format_pages(payload):
 def get_keywords(text):
     if not text:
         return []
-    words = re.findall(r'\b\w+\b', text.lower())
+    words = re.findall(r'\b\w+\b', str(text).lower())
     keywords = set()
     for w in words:
         if w in STOP_WORDS or len(w) < 2:
@@ -132,6 +136,10 @@ def get_keywords(text):
 
 def keyword_boost(keywords, payload):
     score = 0
+    # Bulletproof check: Ensure payload is a dictionary
+    if not isinstance(payload, dict):
+        return 0
+        
     title = str(payload.get("article_title", "")).lower()
     text = str(payload.get("text", "")).lower()
     for kw in keywords:
@@ -149,7 +157,7 @@ def keyword_boost(keywords, payload):
 # ==============================
 
 def detect_article_from_question(question):
-    q = question.lower()
+    q = str(question).lower()
     
     # IMPORTANT: Check compound words (Bigrams) FIRST before single words!
     mappings = {
@@ -192,7 +200,9 @@ def detect_article_from_question(question):
 # ==============================
 
 def convert_point(point, question, keywords):
-    payload = point.payload or {}
+    # Ensure payload is strictly a dictionary before processing
+    payload = point.payload if isinstance(point.payload, dict) else {}
+    
     return {
         "question": question,
         "score": round(float(point.score), 4),
@@ -210,6 +220,8 @@ def convert_point(point, question, keywords):
 # ==============================
 
 def search_legal(question, top_k=TOP_K):
+    # Ensure question is always a string
+    question = str(question)
     language = detect_language(question)
     article_number = extract_article_number(question)
     

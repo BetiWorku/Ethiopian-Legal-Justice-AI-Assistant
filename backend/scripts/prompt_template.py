@@ -1,134 +1,53 @@
 def create_prompt(context, question, language):
 
-
-    # ==========================
-    # Convert retrieved documents into text
-    # ==========================
-
     legal_context = ""
 
-    for doc in context:
-
-        legal_context += f"""
-
-Article:
-{doc.get("article","Unknown")}
-
-Title:
-{doc.get("title","Unknown")}
-
-Source:
-{doc.get("source","Unknown")}
-
-Content:
-{doc.get("text","")}
-
-----------------------
-
+    for index, doc in enumerate(context, start=1):
+        if isinstance(doc, dict):
+            legal_context += f"""
+==============================
+Retrieved Legal Context {index}
+==============================
+Document: {doc.get("document", "FDRE Constitution")}
+Article: {doc.get("article", "Unknown")}
+Article Title: {doc.get("title", "Unknown")}
+Pages: {doc.get("pages", "Unknown")}
+Legal Text: {doc.get("text", "")}
 """
-
-
-    # ==========================
-    # Language Control
-    # ==========================
 
     if language == "am":
-
-        language_instruction = """
-Answer ONLY in Amharic language.
-Use Amharic script.
-Do not answer in English.
-"""
-
-        response_format = """
-መልስ:
-
-(የሕግ ማብራሪያ)
-
-ምንጭ:
-
-(የሕግ ሰነድ ምንጭ)
-
-ማስታወሻ:
-
-(የሕግ ማስጠንቀቂያ)
-"""
-
-
+        language_instruction = "Answer ONLY in Amharic language. Use Amharic script. Translate legal explanations naturally while keeping article numbers unchanged."
+        response_format = "መልስ:\n(በቀረበው የሕግ ማስረጃ ላይ ተመስርቶ የተሰጠ ማብራሪያ)"
     else:
-
-        language_instruction = """
-Answer ONLY in English language.
-Do not use Amharic.
-Even if the legal document is written in Amharic, translate the answer into English.
-"""
-
-        response_format = """
-Answer:
-
-(Legal explanation)
-
-Relevant Source:
-
-(Legal document source)
-
-Important Note:
-
-(Legal disclaimer)
-"""
-
-
-
-    # ==========================
-    # Create Prompt
-    # ==========================
+        language_instruction = "Answer ONLY in English language. If the retrieved legal text is written in Amharic, translate the explanation into English. Keep article numbers unchanged."
+        response_format = "Answer:\n(Legal explanation based only on retrieved evidence)"
 
     prompt = f"""
+You are an Ethiopian Legal Information Assistant.
 
-You are an Ethiopian Legal & Justice AI Assistant.
+Your task is to answer legal questions using ONLY the retrieved legal context provided below.
 
 LANGUAGE REQUIREMENT:
-
 {language_instruction}
 
-
-IMPORTANT RULES:
-
-- Use ONLY the provided legal context.
-- Do NOT use outside knowledge.
-- Do NOT invent laws.
-- Do NOT create missing articles.
-- Always mention the correct article number.
-- Follow the response format exactly.
-- Always include:
-  Answer/መልስ
-  Relevant Source/ምንጭ
-  Important Note/ማስታወሻ
-- Never remove section titles.
-
-
+STRICT LEGAL RAG RULES:
+1. Use ONLY information from the retrieved legal context.
+2. Do NOT use external knowledge.
+3. Do NOT invent laws, articles, sections, penalties, dates, or legal procedures.
+4. Do NOT write "Relevant Sources" or "Important Note". The system will add them automatically.
+5. If the retrieved context does not contain enough information to answer the question, respond exactly:
+"The answer is not available in the retrieved legal documents."
+6. Provide only general legal information.
 
 RESPONSE FORMAT:
-
 {response_format}
 
-
-
-LEGAL CONTEXT:
-
+RETRIEVED LEGAL CONTEXT:
 {legal_context}
 
-
-
 USER QUESTION:
-
 {question}
 
-
-
-Generate only the final answer.
-
+Generate only the final answer explanation.
 """
-
-
     return prompt

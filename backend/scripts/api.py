@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from scripts.chatbot import chat
+from scripts.rag_pipeline import generate_legal_answer
 
 
 app = FastAPI(
@@ -20,22 +20,39 @@ app.add_middleware(
 
 
 class ChatRequest(BaseModel):
+
     question: str
+
 
 
 @app.get("/")
 def root():
+
     return {
-        "message": "Ethiopian Legal Assistant API is running"
+        "message":"Ethiopian Legal Assistant API is running"
     }
+
 
 
 @app.post("/chat")
 def chat_endpoint(request: ChatRequest):
 
-    answer = chat(request.question)
+    try:
 
-    return {
-        "question": request.question,
-        "answer": answer
-    }
+        result = generate_legal_answer(
+            request.question
+        )
+
+        return {
+            "question": request.question,
+            "result": result
+        }
+
+
+    except Exception as e:
+
+        print("API ERROR:", e)
+
+        return {
+            "error": str(e)
+        }

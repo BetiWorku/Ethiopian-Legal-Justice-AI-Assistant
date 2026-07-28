@@ -2,86 +2,48 @@ from retriever import search_legal_documents
 from prompt_template import create_prompt
 from llm_service import generate_response
 from language_detector import detect_language
+from context_builder import build_context
+from logger import save_log
 
 
 
 def chat(question):
 
-    # ==========================
-    # Detect Language
-    # ==========================
-
     language = detect_language(question)
 
 
+    # Validate empty input
 
-    # ==========================
-    # Retrieve Legal Documents
-    # ==========================
+    if not question.strip():
+
+        return "Please enter a legal question."
+
+
+    # Retrieve
 
     documents = search_legal_documents(
         question,
-        top_k=5
+        top_k=5,
+        threshold=0.75
     )
 
 
-
-    # ==========================
-    # No Relevant Context
-    # ==========================
+    # Safe fallback
 
     if not documents:
 
-        if language == "am":
-
-            return """
-መልስ:
-
-በሕግ መረጃ ውሂብ ውስጥ ተዛማጅ መረጃ አልተገኘም።
-
-
-ምንጭ:
-
-ምንም ተዛማጅ የሕግ ሰነድ አልተገኘም።
-
-
-ማስታወሻ:
-
-እባክዎ የተረጋገጡ የሕግ ምንጮችን ይጠቀሙ።
-"""
-
-        else:
-
-            return """
-Answer:
-
-No relevant legal information was found.
-
-
-Relevant Source:
-
-No matching legal document found.
-
-
-Important Note:
-
-Please use official legal sources.
-"""
+        return fallback_response(language)
 
 
 
-    # ==========================
-    # Create Prompt Context
-    # Send documents directly
-    # ==========================
+    # Build legal context
 
-    context = documents
-
+    context = build_context(
+        documents
+    )
 
 
-    # ==========================
-    # Create Prompt
-    # ==========================
+    # Create RAG prompt
 
     prompt = create_prompt(
         context,
@@ -90,102 +52,20 @@ Please use official legal sources.
     )
 
 
+    # Gemini generation
 
-    # ==========================
-    # Generate Gemini Response
-    # ==========================
-
-    try:
-
-        response = generate_response(
-            prompt
-        )
-
-        return response.strip()
-
-
-
-    except Exception as e:
-
-        print(
-            "Gemini Error:",
-            e
-        )
-
-
-        if language == "am":
-
-            return """
-መልስ:
-
-Gemini API ላይ ችግር ተፈጥሯል።
-
-
-ማስታወሻ:
-
-እባክዎ ቆይተው እንደገና ይሞክሩ።
-"""
-
-        else:
-
-            return """
-Answer:
-
-Gemini API error occurred.
-
-
-Important Note:
-
-Please try again later.
-"""
-
-
-
-
-# ==========================
-# CLI Testing
-# ==========================
-
-if __name__ == "__main__":
-
-
-    print(
-        "Ethiopian Legal Assistant Chatbot"
-    )
-
-    print(
-        "የኢትዮጵያ የሕግ ረዳት ቻትቦት"
+    answer = generate_response(
+        prompt
     )
 
 
-    print(
-        "Type 'exit' to quit"
+    # Logging
+
+    save_log(
+        question,
+        documents,
+        answer
     )
 
 
-    while True:
-
-
-        question = input(
-            "\nAsk a legal question | የሕግ ጥያቄ: "
-        )
-
-
-        if question.lower() == "exit":
-
-            print(
-                "Chatbot stopped."
-            )
-
-            break
-
-
-
-        answer = chat(
-            question
-        )
-
-
-        print("\n")
-        print(answer)
-        print("\n")
+    return answer.strip()

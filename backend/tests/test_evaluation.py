@@ -3,8 +3,11 @@ import os
 import json
 import re
 
-# Add the scripts directory to the path to import from retrieval.py
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# FIX: Add the scripts directory to the system path so we can import retrieval.py
+# This goes up one level (to backend) and then into the scripts folder
+SCRIPTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'scripts')
+sys.path.append(SCRIPTS_DIR)
+
 from retrieval import search_legal
 
 # The 15 Test Questions
@@ -28,12 +31,9 @@ test_questions = [
 
 def extract_article_num(article_str):
     """Extracts the integer from 'Article 25' or 'Art 45-61'"""
-    # Look for "Art X" or "Article X" in strings like "Chapter 4 (e.g., Art 45-61)"
     match = re.search(r'(?:Art|Article)\s*(\d+)', article_str, re.IGNORECASE)
     if match:
         return int(match.group(1))
-    
-    # Fallback to any number if 'Art' isn't found
     match = re.search(r'\d+', article_str)
     return int(match.group()) if match else None
 
@@ -58,17 +58,14 @@ def run_evaluation():
         retrieved_articles = [res['article'] for res in response.get('results', [])]
         print(f"Retrieved Top-3: {retrieved_articles}")
         
-        # Calculate Hit Rate and MRR
         rank = 0
         is_hit = False
         
         if test['expected'] == "N/A (No Result)":
-            # If expected is N/A, a hit means the system returned no results
             if not retrieved_articles:
                 is_hit = True
                 rank = 1
         else:
-            # Check for exact match or range match (for Chapter questions)
             expected_art_num = extract_article_num(test['expected'])
             
             for idx, art in enumerate(retrieved_articles, 1):
@@ -77,12 +74,8 @@ def run_evaluation():
                     rank = idx
                     break
                 
-                # Handle Broad Topics (e.g., Chapter 3 -> Art 14-28)
                 if "Chapter" in test['expected'] and expected_art_num:
                     retrieved_num = extract_article_num(art)
-                    # Check if retrieved article falls within the expected chapter range
-                    # Chapter 3 is 14-28 (Range: 14 to 14+14=28)
-                    # Chapter 4 is 45-61 (Range: 45 to 45+16=61)
                     range_offset = 16 if "Chapter 4" in test['expected'] else 14
                     if retrieved_num and retrieved_num >= expected_art_num and retrieved_num <= expected_art_num + range_offset:
                         is_hit = True
@@ -106,7 +99,6 @@ def run_evaluation():
             "rank": rank
         })
 
-    # Final Metrics Calculation
     hit_rate = (hits / len(test_questions)) * 100
     mrr = mrr_sum / len(test_questions)
     
@@ -119,8 +111,13 @@ def run_evaluation():
     print(f"MRR (Mean Reciprocal Rank) : {mrr:.4f}")
     print("=" * 80)
     
-    # Save results to JSON for the report
-    with open("evaluation_results.json", "w", encoding="utf-8") as f:
+        # Save results to JSON strictly inside the tests folder
+    # __file__ is the path to this script (test_evaluation.py)
+    # os.path.dirname gets the folder containing this script (tests folder)
+    tests_folder = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(tests_folder, "evaluation_results.json")
+    
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump({
             "metrics": {
                 "hit_rate": hit_rate,
@@ -128,7 +125,7 @@ def run_evaluation():
             },
             "details": results_log
         }, f, ensure_ascii=False, indent=4)
-    print("\nDetailed results saved to 'evaluation_results.json'")
+    print(f"\nDetailed results saved to '{output_path}'")
 
 if __name__ == "__main__":
     run_evaluation()
