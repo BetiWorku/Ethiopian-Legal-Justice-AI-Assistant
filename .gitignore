@@ -10,3 +10,7 @@ __pycache__/
 
 # VS Code
 .vscode/
+
+# Retrieval logs and evaluation outputs
+output/
+evaluation_results.json
