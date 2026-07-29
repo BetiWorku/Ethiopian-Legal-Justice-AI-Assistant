@@ -1,343 +1,489 @@
-# ⚖️ Ethiopian Legal & Justice AI Assistant
+# Ethiopian Legal RAG Response Generation System (Task 9)
 
-An AI-powered legal assistant for Ethiopian legal documents.
+## Overview
 
-The system uses Large Language Models (LLM), legal document extraction, OCR, and FastAPI + React architecture to provide legal question answering.
+The **Ethiopian Legal RAG Response Generation System** extends the semantic retrieval system developed in Task 7 by integrating a Large Language Model (LLM) for grounded legal response generation.
 
----
+The system retrieves relevant legal provisions from the **FDRE Constitution**, builds structured legal context, and sends it to **Google Gemini** using a controlled RAG prompt.
 
-# 📌 Project Overview
+The generated responses are:
 
-The Ethiopian Legal & Justice AI Assistant helps users ask questions about Ethiopian legal documents.
+- Based only on retrieved legal evidence
+- Traceable through metadata citations
+- Protected against hallucinated legal information
+- Returned with a legal disclaimer for safe usage
 
-Current implemented features:
+This completes the end-to-end Legal AI Assistant pipeline:
 
-✅ FDRE Constitution English PDF extraction  
-✅ FDRE Constitution Amharic PDF OCR extraction  
-✅ Legal articles converted into JSON format  
-✅ Language detection (English / Amharic)  
-✅ Gemini LLM integration  
-✅ FastAPI backend API  
-✅ React frontend interface  
-
-Future improvements:
-
-- RAG (Retrieval Augmented Generation)
-- Vector database
-- Semantic search
-- More Ethiopian laws
-- Citation-based answers
+**Document Processing → Retrieval → Context Building → LLM Generation → Legal Response**
 
 ---
 
-# 🏗️ Project Structure
+# Objective
+
+The goal of Task 9 is to develop an LLM-based legal information generation system that:
+
+- Accepts legal questions in English and Amharic
+- Retrieves relevant legal chunks using semantic search
+- Validates retrieved context using similarity thresholds
+- Generates grounded legal responses using Google Gemini
+- Provides citation information from metadata
+- Returns safe fallback responses when evidence is insufficient
+
+---
+
+# End-to-End RAG Architecture
+
+```
+                Legal PDF Documents
+                        |
+                        ▼
+              OCR / Text Extraction
+                        |
+                        ▼
+              Document Cleaning
+                        |
+                        ▼
+              Metadata Generation
+                        |
+                        ▼
+              Legal Chunking
+                        |
+                        ▼
+            Multilingual Embedding Model
+                        |
+                        ▼
+              Qdrant Vector Database
+                        |
+                        ▼
+              Semantic Retrieval
+                        |
+                        ▼
+            Retrieved Legal Context
+                        |
+                        ▼
+             Context Builder Module
+                        |
+                        ▼
+          Controlled Legal RAG Prompt
+                        |
+                        ▼
+                 Google Gemini LLM
+                        |
+                        ▼
+          Grounded Legal Response
+                        |
+                        ▼
+          Citation + Legal Disclaimer
+```
+
+---
+
+# System Workflow
+
+```
+User Question
+      |
+      ▼
+Input Validation
+      |
+      ▼
+Semantic Retrieval (Task 7)
+      |
+      ▼
+Top-K Legal Chunks
+      |
+      ▼
+Similarity Threshold Checking
+      |
+      ▼
+Metadata Validation
+      |
+      ▼
+Context Construction
+      |
+      ▼
+Legal Prompt Generation
+      |
+      ▼
+Google Gemini Response Generation
+      |
+      ▼
+Citation Validation
+      |
+      ▼
+Response Logging
+```
+
+---
+
+# Key Features
+
+## 1. LLM-Based Legal Response Generation
+
+The system uses **Google Gemini** to generate legal information responses.
+
+The LLM is controlled by a RAG prompt that forces it to:
+
+- Use only retrieved legal context
+- Avoid unsupported legal claims
+- Never create fake citations
+- Provide safe responses when information is missing
 
 
+---
+
+## 2. Semantic Retrieval Integration
+
+The system integrates the Task 7 semantic retrieval engine.
+
+Features:
+
+- Multilingual embedding search
+- Top-K document retrieval
+- Similarity score validation
+- Metadata preservation
+- Duplicate removal
+
+
+---
+
+## 3. Context Builder
+
+Retrieved chunks are converted into structured legal context.
+
+Each context contains:
+
+```
+Document Title
+Chapter
+Article Number
+Article Title
+Page Number
+Source
+Similarity Score
+Legal Text
+```
+
+This context is provided to the LLM before response generation.
+
+---
+
+## 4. Citation Traceability
+
+Citations are generated from retrieved metadata.
+
+The system displays:
+
+```
+Document:
+FDRE Constitution
+
+Article:
+Article 25
+
+Page:
+8
+
+Source:
+FDRE Constitution
+```
+
+The LLM is not allowed to generate new citations.
+
+---
+
+## 5. Safe Fallback Handling
+
+If retrieved legal evidence is insufficient:
+
+```
+Answer:
+The answer is not available in the retrieved legal documents.
+
+
+Relevant Sources:
+No sufficiently relevant legal source was retrieved.
+
+
+Important Note:
+This response is provided for general legal information only and does not replace advice from a qualified legal professional.
+```
+
+---
+
+# Legal Disclaimer
+
+Every generated response includes:
+
+```
+Important Note:
+
+This response is provided for general legal information only 
+and does not replace advice from a qualified legal professional.
+```
+
+---
+
+# Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python 3.10+ | Backend development |
+| Google Gemini API | LLM response generation |
+| Sentence Transformers | Multilingual embeddings |
+| intfloat/multilingual-e5-base | Embedding model |
+| Qdrant | Vector database |
+| Deep Translator | Language translation |
+| NumPy | Vector processing |
+| Python-dotenv | Environment configuration |
+
+---
+
+# Project Structure
+
+```
 AILegalAssistant
 │
 ├── backend
 │   │
 │   ├── data
+│   │   │
+│   │   ├── chunks
+│   │   │   ├── article_chunks.json
+│   │   │   ├── article_chunks_metadata.json
+│   │   │   ├── fixed_chunks.json
+│   │   │   └── paragraph_chunks.json
+│   │   │
 │   │   ├── documents
 │   │   │   ├── Ethiopia_Constitution_Amharic.pdf
 │   │   │   └── Ethiopia_Constitution_English.pdf
 │   │   │
-│   │   ├── images
-│   │   │   └── amharic
-│   │   │       ├── page-001.png
-│   │   │       ├── page-002.png
-│   │   │       └── page-003.png
+│   │   ├── raw
+│   │   │   └── extracted_pages.txt
 │   │   │
-│   │   ├── fdre_constitution_articles.json
-│   │   └── fdre_constitution_english.json
+│   │   ├── vectors
+│   │   │   ├── e5_metadata.pkl
+│   │   │   ├── legal.index
+│   │   │   ├── legal_e5.index
+│   │   │   └── metadata.pkl
+│   │   │
+│   │   └── embeddings
+│   │
+│   ├── images
+│   │   └── amharic
 │   │
 │   ├── output
-│   │   ├── constitution_full.txt
-│   │   ├── page-001.txt
-│   │   └── page-002.txt
+│   │   └── reports
+│   │       ├── Task0Week1Report.md
+│   │       ├── Task2Week2Report.md
+│   │       ├── Task3Week2Report.md
+│   │       ├── Task4Week2Report.md
+│   │       ├── Task5Week2Report.md
+│   │       ├── Task6Week2_vector_database.md
+│   │       ├── Task7Week2_Semantic_Retrieval.md
+│   │       ├── Task8Week2Report.md
+│   │       └── Task1pdfinspection.md
 │   │
 │   ├── scripts
 │   │   ├── api.py
 │   │   ├── chatbot.py
-│   │   ├── data_extraction.py
+│   │   ├── chunking.py
+│   │   ├── clean_text.py
+│   │   ├── context_builder.py
+│   │   ├── embedding.py
+│   │   ├── embedding_e5.py
 │   │   ├── extract_json.py
+│   │   ├── ingest.py
 │   │   ├── language_detector.py
-│   │   ├── legal_knowledge.py
+│   │   ├── legal_structure_chunking.py
 │   │   ├── llm_service.py
-│   │   ├── main.py
-│   │   ├── pdf_to_json.py
-│   │   └── prompt_template.py
+│   │   ├── prompt_template.py
+│   │   ├── qdrant_insert.py
+│   │   ├── qdrant_setup.py
+│   │   ├── qdrant_test.py
+│   │   ├── rag_pipeline.py
+│   │   ├── retrieval.py
+│   │   └── reset_qdrant.py
+│   │
+│   ├── services
+│   │
+│   ├── tests
+│   │   ├── test_api.py
+│   │   ├── test_evaluation.py
+│   │   ├── test_pipeline.py
+│   │   └── test_retrieval.py
 │   │
 │   ├── requirements.txt
-│   └── .env
+│   └── README.md
 │
 ├── frontend
+│   │
+│   ├── public
 │   ├── src
+│   │   ├── assets
+│   │   ├── App.css
 │   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
 │   │
 │   ├── package.json
-│   └── vite.config.js
+│   ├── package-lock.json
+│   ├── vite.config.js
+│   └── eslint.config.js
 │
-└── README.md
+└── .gitignore
+```
 
 ---
 
-# ⚙️ Backend Setup
+# Installation
 
-Move to backend folder:
+## 1. Clone Repository
 
 ```bash
-cd backend
+git clone https://github.com/yourusername/AILegalAssistant.git
 
-Create virtual environment:
+cd AILegalAssistant/backend
+```
 
-python -m venv venv
+---
 
-Activate virtual environment:
+## 2. Create Virtual Environment
 
-Windows PowerShell
-.\venv\Scripts\activate
+### Windows
 
-Install dependencies:
+```bash
+python -m venv .venv
 
+.venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv .venv
+
+source .venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-📄 English Constitution PDF → JSON Extraction
+```
 
-The English constitution PDF is extracted using PyPDF.
+---
 
-File:
+# Environment Configuration
 
-data/documents/Ethiopia_Constitution_English.pdf
+Create a `.env` file inside the backend folder:
 
-Run:
+```env
+LLM_PROVIDER=gemini
 
-python scripts/pdf_to_json.py
+LLM_MODEL=gemini-1.5-flash
 
-Process:
+LLM_API_KEY=YOUR_API_KEY
 
-English PDF
+LLM_TEMPERATURE=0.1
 
-      |
-      v
+TOP_K=3
 
-PyPDF Extraction
+SIMILARITY_THRESHOLD=0.65
 
-      |
-      v
+EMBEDDING_MODEL=intfloat/multilingual-e5-base
+```
 
-Text Extraction
+---
 
-      |
-      v
-
-JSON Database
-
-fdre_constitution_english.json
-🇪🇹 Amharic Constitution OCR Pipeline
-
-The Amharic constitution PDF is scanned, therefore OCR is required.
-
-Tools used:
-
-Tesseract OCR
-Poppler (pdftoppm)
-Python extraction scripts
-Step 1: Convert PDF Pages to Images
-
-Install Poppler first.
+# Start Qdrant Vector Database
 
 Run:
 
-pdftoppm -png -r 300 data/documents/Ethiopia_Constitution_Amharic.pdf output/page
+```bash
+docker run -p 6333:6333 qdrant/qdrant
+```
 
-Generated images:
+Make sure the collection:
 
-output/
+```
+legal_documents
+```
 
-page-001.png
-page-002.png
-page-003.png
-Step 2: Run Tesseract OCR
+is already populated with legal embeddings.
 
-Amharic OCR:
+---
 
-tesseract output/page-001.png output/page-001 -l amh
+# Running the Legal RAG System
 
-Amharic + English OCR:
+Run the complete pipeline:
 
-tesseract output/page-001.png output/page-001 -l amh+eng
+```bash
+python -m scripts.rag_pipeline
+```
 
-Generated text:
+---
 
-page-001.txt
-page-002.txt
-Step 3: Combine OCR Text
+# Example
 
-Windows PowerShell:
+## Input
 
-type output\page-*.txt > output\constitution_full.txt
+```
+What does Article 25 of the FDRE Constitution say?
+```
 
-Linux:
+## Output
 
-cat output/page-*.txt > output/constitution_full.txt
+```
+Answer:
 
-Result:
+Article 25 of the FDRE Constitution states that all persons 
+are equal before the law and are entitled to equal protection 
+of the law without discrimination.
 
-constitution_full.txt
-Step 4: Convert TXT → JSON
 
-Run:
+Relevant Sources:
 
-python scripts/extract_json.py
+Document:
+FDRE Constitution
 
-Workflow:
+Article:
+Article 25
 
-Amharic PDF
+Pages:
+8
 
-      |
-      v
 
-PDF Images
+Important Note:
 
-      |
-      v
+This response is provided for general legal information only 
+and does not replace advice from a qualified legal professional.
+```
 
-Tesseract OCR
+---
 
-      |
-      v
+# Evaluation
 
-TXT File
+The RAG system was evaluated using 15 legal questions covering:
 
-      |
-      v
+- Direct legal questions
+- Article-based questions
+- Paraphrased questions
+- Amharic questions
+- English questions
+- Cross-language queries
+- Unsupported questions
 
-Python Parser
 
-      |
-      v
+Evaluation criteria:
 
-JSON Database
+- Retrieval relevance
+- Answer correctness
+- Groundedness
+- Citation accuracy
+- Hallucination detection
+- Safe fallback handling
 
-Output:
-
-data/fdre_constitution_articles.json
-🔑 Environment Variables
-
-Create:
-
-backend/.env
-
-Add:
-
-GEMINI_API_KEY=your_api_key_here
-🚀 Run Backend API
-
-Open PowerShell inside the backend folder.
-
-Start FastAPI server:
-
-uvicorn scripts.api:app --reload
-
-Backend API:
-
-http://localhost:8000
-
-Swagger Documentation:
-
-http://localhost:8000/docs
-🔌 API Example
-
-Endpoint:
-
-POST /chat
-
-Request:
-
-{
-  "question": "What is Article 25?"
-}
-
-Response:
-
-{
-  "answer": "Article 25 explains the right to equality..."
-}
-🎨 Frontend Setup
-
-Open another terminal:
-
-cd frontend
-
-Install packages:
-
-npm install
-
-Run React:
-
-npm run dev
-
-Frontend:
-
-http://localhost:5173
-🔄 System Architecture
-                User
-                 |
-                 v
-
-          React Frontend
-
-                 |
-                 v
-
-          FastAPI Backend
-
-                 |
-        -------------------
-        |                 |
-        v                 v
-
- Legal JSON Database     Gemini LLM
-
-                 |
-                 v
-
-          Legal Answer
-🧪 Testing
-
-Example questions:
-
-English:
-
-What does Article 25 say about equality?
-
-Amharic:
-
-የእኩልነት መብት ምንድነው?
-🛠️ Technologies Used
-Backend
-Python
-FastAPI
-Gemini API
-PyPDF
-Tesseract OCR
-JSON
-Frontend
-React
-Vite
-JavaScript
-CSS
-AI
-Large Language Models
-Prompt Engineering
-Context Engineering
-RAG Preparation
-👩‍💻 Developer
-
-Betelhem Worku
-
-Software Engineering Student
-
-AI Legal Assistant Project
