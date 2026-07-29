@@ -94,7 +94,7 @@ A hybrid extraction method was selected:
       (Sentence Transformer Model)
                       |
                       ▼
-             FAISS Vector Index
+             Qdrant vector database
                       |
                       ▼
           Semantic Search / Top-K Retrieval
@@ -143,11 +143,12 @@ Generated output:
 data/chunks/article_chunks.json
 
  ## Screenshoots
- a. article_chunks.json
+ a. Raw extraction screenshot before cleaning 
 ![alt text](image-2.png) 
-b.OCR Output
- ![alt text](image-1.png)
-
+b.OCR Output/After cleaning
+![alt text](image-3.png)
+c.Final structured output screenshot → article_chunks.json
+![alt text](image-1.png)
 # Justification
 
 The hybrid approach was selected because it supports both digital and scanned Ethiopian legal documents.

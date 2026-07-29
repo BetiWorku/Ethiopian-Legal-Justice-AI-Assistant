@@ -4,7 +4,7 @@
 
 The objective of this experiment was to compare different chunking strategies for Ethiopian legal documents and select the most suitable approach for Retrieval-Augmented Generation (RAG)-based legal question answering.
 
-The experiment evaluated fixed-size chunking, paragraph-based chunking, and legal structure-based chunking based on chunk size, structure preservation, and retrieval suitability.
+The experiment evaluated fixed-size chunking, paragraph-based chunking, and legal structure-based chunking based on chunk size, structure preservation, retrieval suitability, and legal context preservation.
 
 ---
 
@@ -18,8 +18,10 @@ Implementation:
 
 Configuration:
 
-- Chunk size: approximately 250 words
-- Overlap: 40 words
+| Parameter | Value |
+|---|---|
+| Chunk Size | 250 words |
+| Overlap | 40 words |
 
 Output:
 
@@ -34,20 +36,40 @@ Result:
 - Minimum size: 1114 characters
 - Maximum size: 1719 characters
 
+
 Advantages:
 
 - Produces consistent chunk sizes.
-- Simple and efficient for general document retrieval.
+- Simple and efficient for vector database indexing.
+- Easy to implement.
 
 Limitations:
 
 - Does not understand legal document structure.
-- May split one article into multiple chunks.
-- Important legal context may be separated.
+- May divide one article into multiple chunks.
+- Legal meaning can be separated between chunks.
+- Article titles may be separated from their content.
 
 Decision:
 
 Rejected as the final strategy.
+
+---
+
+# Fixed-size Chunk Size Experiment
+
+To evaluate the effect of chunk size, two fixed-size configurations were tested.
+
+| Configuration | Chunk Size | Overlap | Observation |
+|---|---|---|---|
+| Small chunks | 150 words | 30 words | Better focused context but produces more chunks |
+| Medium chunks | 250 words | 40 words | Better balance but may combine multiple legal concepts |
+
+Observation:
+
+Smaller chunks improved retrieval precision because each chunk contained fewer unrelated concepts. However, they increased the number of embeddings stored.
+
+The 250-word configuration was selected for comparison because it provided a balance between context size and retrieval efficiency.
 
 ---
 
@@ -59,9 +81,11 @@ Implementation:
 
 Configuration:
 
-- Paragraph-based splitting
-- Maximum chunk size control applied
-- Overlap used to maintain context
+| Parameter | Value |
+|---|---|
+| Chunking Method | Paragraph-based splitting |
+| Maximum Size | Applied |
+| Overlap | Enabled |
 
 Output:
 
@@ -76,6 +100,7 @@ Result:
 - Minimum size: 466 characters
 - Maximum size: 2849 characters
 
+
 Observation:
 
 OCR extraction did not always preserve the original paragraph formatting. Therefore, paragraph boundaries were detected using text structure and legal markers.
@@ -84,11 +109,13 @@ Advantages:
 
 - Maintains local text context.
 - Provides better grouping than fixed-size chunking.
+- Reduces random sentence splitting.
 
 Limitations:
 
 - OCR formatting problems affect paragraph detection.
-- Some chunks may still contain multiple legal ideas.
+- Some paragraphs contain multiple legal concepts.
+- Legal boundaries are not always preserved.
 
 Decision:
 
@@ -110,10 +137,11 @@ data/chunks/article_chunks.json
 
 Strategy:
 
-- Split documents using legal article boundaries.
+- Detect legal article boundaries.
 - Preserve article numbers.
 - Preserve article titles.
-- Maintain original legal structure.
+- Maintain original legal document structure.
+- Attach metadata to each legal provision.
 
 Result:
 
@@ -122,16 +150,19 @@ Result:
 - Minimum size: 101 characters
 - Maximum size: 1208 characters
 
+
 Advantages:
 
 - Preserves legal meaning.
 - Keeps each article context together.
-- Supports metadata linking.
+- Supports metadata filtering.
 - Enables accurate citation generation.
+- Improves RAG retrieval quality.
 
 Limitations:
 
 - Very large articles may require additional sub-chunking.
+- Some articles may exceed embedding model limits.
 
 Decision:
 
@@ -141,21 +172,83 @@ Selected as the final strategy.
 
 # Chunk Statistics Comparison
 
-| Strategy | Output File | Number of Chunks | Average Size | Minimum Size | Maximum Size |
-|---|---|---:|---:|---:|---:|
-| Fixed-size | fixed_chunks.json | 557 | 1344.42 chars | 1114 chars | 1719 chars |
-| Paragraph-based | paragraph_chunks.json | 506 | 1362.18 chars | 466 chars | 2849 chars |
-| Legal Structure-based | article_chunks.json | 95 | 362.84 chars | 101 chars | 1208 chars |
+| Strategy | Output File | Chunk Size | Overlap | Number of Chunks | Average Size | Minimum Size | Maximum Size |
+|---|---|---|---|---:|---:|---:|---:|
+| Fixed-size | fixed_chunks.json | 250 words | 40 words | 557 | 1344.42 chars | 1114 chars | 1719 chars |
+| Paragraph-based | paragraph_chunks.json | Variable | Enabled | 506 | 1362.18 chars | 466 chars | 2849 chars |
+| Legal Structure-based | article_chunks.json | Article level | None | 95 | 362.84 chars | 101 chars | 1208 chars |
 
 ---
 
-# Chunk Quality Review
+# Manual Chunk Quality Review
+
+## Fixed-size Chunk Review
+
+| Chunk | Observation | Problem Identified |
+|---|---|---|
+| Fixed_001 | Starts with one article and continues into another | Article boundary divided |
+| Fixed_015 | Contains two different legal topics | Unrelated provisions combined |
+| Fixed_030 | Article heading separated from text | Lost legal context |
+| Fixed_045 | Sentence continues from previous chunk | Requires overlap |
+| Fixed_060 | Contains mixed provisions | Reduced retrieval accuracy |
+
+Result:
+
+Fixed-size chunking creates technically valid chunks but does not preserve legal meaning.
+
+Decision:
+
+Reject.
+
+---
+
+## Paragraph-based Chunk Review
+
+| Chunk | Observation | Problem Identified |
+|---|---|---|
+| Paragraph_001 | Paragraph structure preserved | Good |
+| Paragraph_012 | OCR merged paragraphs | Incorrect boundary |
+| Paragraph_025 | Heading separated from paragraph | Metadata issue |
+| Paragraph_040 | Contains multiple legal ideas | Less precise retrieval |
+| Paragraph_055 | Paragraph too large | Retrieval noise |
+
+Result:
+
+Paragraph chunking performs better than fixed-size but depends heavily on OCR quality.
+
+Decision:
+
+Reject.
+
+---
+
+## Legal Structure-based Chunk Review
+
+| Chunk | Observation | Problem Identified |
+|---|---|---|
+| Article_01 | Complete article with title and content | No issue |
+| Article_14 | Right to life provision preserved | No issue |
+| Article_25 | Equality rights preserved | No issue |
+| Article_29 | Freedom of expression preserved | No issue |
+| Article_40 | Large article preserved | May require sub-chunking |
+
+Result:
+
+Legal structure-based chunking maintains legal meaning and provides reliable retrieval units.
+
+Decision:
+
+Keep.
+
+---
+
+# Chunking Strategy Quality Comparison
 
 | Strategy | Structure Preserved | Main Problem | Decision |
 |---|---|---|---|
-| Fixed-size | Medium | Legal articles can be divided incorrectly | Reject |
-| Paragraph-based | Medium | OCR formatting can create incorrect boundaries | Reject |
-| Legal structure-based | High | Long articles may need smaller sub-chunks | Keep |
+| Fixed-size | Medium | Legal articles divided incorrectly | Reject |
+| Paragraph-based | Medium | OCR formatting creates incorrect boundaries | Reject |
+| Legal Structure-based | High | Large articles require optional sub-chunking | Keep |
 
 ---
 
@@ -163,7 +256,7 @@ Selected as the final strategy.
 
 Selected Strategy:
 
-**Legal Structure-based Chunking**
+## Legal Structure-based Chunking
 
 Reason:
 
@@ -182,19 +275,29 @@ Keeping chunks aligned with these structures improves:
 - Legal context preservation
 - RAG answer quality
 
-Future improvement:
+---
 
-A hybrid strategy can be implemented:
+# Future Improvement: Hybrid Legal Chunking
 
-
-Legal structure chunking
-+
-Maximum token limit
-+
-Small overlap
+A future improvement is implementing a hybrid approach:
 
 
-This will preserve legal meaning while preventing very large chunks.
+Legal Structure Detection
+|
+↓
+Article-based Chunk Creation
+|
+↓
+Maximum Token Limit Check
+|
+↓
+Split Large Articles
+|
+↓
+Add Small Overlap
+
+
+This approach preserves legal meaning while preventing very large chunks.
 
 ---
 
@@ -202,6 +305,10 @@ This will preserve legal meaning while preventing very large chunks.
 
 The experiment demonstrated that legal structure-based chunking provides the best approach for Ethiopian legal documents.
 
-Unlike fixed-size and paragraph-based methods, article-level chunking preserves legal boundaries and maintains the relationship between legal text, metadata, and citations.
+Fixed-size chunking produced consistent chunks but ignored legal boundaries.
 
-Therefore, legal structure-based chunking was selected as the final chunking strategy fo
+Paragraph-based chunking preserved local context but was affected by OCR formatting issues.
+
+Legal structure-based chunking preserved article-level meaning, maintained metadata relationships, and improved retrieval suitability.
+
+Therefore, legal structure-based chunking was selected as the final chunking strategy for the Ethiopian Legal Semantic Retrieval System.

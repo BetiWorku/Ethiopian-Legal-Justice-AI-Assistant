@@ -1,4 +1,4 @@
-from retriever import search_legal_documents
+from retrieval import search_legal_documents
 from prompt_template import create_prompt
 from llm_service import generate_response
 from language_detector import detect_language

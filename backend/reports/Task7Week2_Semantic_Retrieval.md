@@ -4,15 +4,17 @@
 
 The Ethiopian Legal Semantic Retrieval System is a semantic search application that retrieves relevant legal provisions from the **FDRE (Federal Democratic Republic of Ethiopia) Constitution**.
 
-The system allows users to ask legal questions in **English or Amharic** and returns the most relevant constitutional articles together with traceable source information. It combines multilingual sentence embeddings, semantic vector search, keyword extraction, metadata filtering, and custom re-ranking to improve retrieval accuracy.
+The system enables users to ask legal questions in **English** or **Amharic** and retrieves the most relevant constitutional articles with traceable source information.
 
-The retrieval output is designed to be passed directly into the LLM-based legal response generation component developed in **Task 9**.
+It combines **multilingual E5 embeddings**, **template-based query alignment**, **semantic vector search using Qdrant**, **metadata filtering**, and **title-aware vector ranking** to improve retrieval accuracy.
+
+The retrieved legal chunks are designed to serve as context for the **LLM-based response generation component (Task 9).**
 
 ---
 
 # Objective
 
-Build a semantic retrieval application that accepts a legal question and returns the most relevant legal chunks with traceable evidence and metadata.
+Build a semantic retrieval system that accepts legal questions and returns the most relevant constitutional provisions together with traceable metadata and citations.
 
 ---
 
@@ -20,121 +22,103 @@ Build a semantic retrieval application that accepts a legal question and returns
 
 ## Multilingual Question Support
 
-- Supports both English and Amharic legal questions.
+- Supports English and Amharic legal questions.
 - Automatically detects the query language.
-- Translates English keywords into Amharic for accurate retrieval.
-- Translates retrieved content back into English when necessary.
+- Generates English and Amharic search queries.
+- Translates retrieved content back to English when required.
 
 ---
 
 ## Semantic Vector Search
 
-- Uses multilingual sentence embeddings.
-- Embeds user queries using the same embedding model used during document indexing.
-- Performs similarity search on the Qdrant Vector Database.
+The system performs dense semantic retrieval using multilingual embeddings stored in Qdrant.
 
 Embedding Model:
 
+```text
+intfloat/multilingual-e5-base
 ```
-paraphrase-multilingual-MiniLM-L12-v2
-```
+
+The same embedding model is used during document indexing and query embedding to ensure consistent semantic matching.
 
 ---
 
-## Keyword Extraction
+## Template-Based Query Alignment
 
-To improve retrieval quality, the system extracts only meaningful legal concepts by removing common stop words.
+To improve retrieval quality, user questions are converted into the same structure used by indexed legal documents.
 
-Extracted keywords include:
+Example query template:
 
-- Unigrams
-- Bigrams
-
-Example:
-
-Input:
-
-```
-What does Ethiopian law say about equality before the law?
+```text
+Article:
+Title: {query}
+Topic:
+Content: {query}
 ```
 
-Extracted keywords:
-
-```
-equality
-before law
-```
-
-This reduces embedding noise and improves semantic search accuracy.
-
----
-
-## Semantic Keyword Mapping
-
-Some legal concepts have direct constitutional articles.
-
-Examples:
-
-| Keyword | Article |
-|----------|----------|
-| Equality | Article 25 |
-| Privacy | Article 26 |
-| Freedom of Religion | Article 27 |
-| Freedom of Expression | Article 29 |
-
-The system intercepts these concepts and routes retrieval directly to the relevant article before semantic search.
+This alignment significantly improves semantic retrieval accuracy without relying on manually created keyword rules.
 
 ---
 
 ## Metadata Filtering
 
-Supports metadata filtering including:
+The retrieval system supports metadata filtering using:
 
-- Language
 - Article Number
 - Document Name
+- Language
 
 Example:
 
-```
-Article 25
+```text
+What is Article 25?
 ```
 
-retrieves only chunks belonging to Article 25.
+The system filters the search to retrieve only chunks belonging to **Article 25**.
 
 ---
 
-## Hybrid Re-ranking
+## Dual Vector Search
 
-After retrieving the Top-50 semantic matches from Qdrant, documents are re-ranked using keyword boosting.
+For multilingual retrieval, the system generates both English and Amharic query embeddings.
 
-Boost Rules
+Both embeddings are searched independently in Qdrant, and the highest similarity score is selected using **Max Score Fusion**.
 
-- Title match: +3.0
-- Content match: +1.0
+This improves:
 
-Final ranking combines:
+- English retrieval
+- Amharic retrieval
+- Cross-language retrieval
 
-- Vector similarity score
-- Keyword boost score
+---
 
-This significantly improves retrieval precision.
+## Title-Aware Vector Ranking
+
+After retrieving candidate chunks from Qdrant, the system compares the semantic similarity between the query and article titles.
+
+Title similarity is used as an additional ranking signal to improve retrieval quality.
+
+Benefits include:
+
+- Better legal concept matching
+- Improved retrieval precision
+- Reduced translation mismatch
 
 ---
 
 ## Safe No-Result Handling
 
-Unsupported legal questions are safely rejected.
+Unsupported legal questions are rejected safely.
 
 Example:
 
-```
+```text
 How do I file for divorce?
 ```
 
 Output:
 
-```
+```text
 No relevant legal information found in the FDRE Constitution.
 ```
 
@@ -154,10 +138,9 @@ Example:
   "article": "Article 25",
   "title": "Right to Equality",
   "content": "...",
-  "source": "FDRE Constitution",
   "pages": "8-8",
   "similarity_score": 0.92,
-  "ranking_score": 5.92
+  "ranking_score": 1.42
 }
 ```
 
@@ -165,49 +148,49 @@ Example:
 
 # System Workflow
 
-```
+```text
 User Question
-      │
-      ▼
-Input Validation
-      │
-      ▼
+        │
+        ▼
+Input Validation & Safe Fallback
+        │
+        ▼
 Language Detection
-      │
-      ▼
+        │
+        ▼
 Metadata Extraction
-      │
-      ▼
-Semantic Keyword Mapping
-      │
-      ▼
-Keyword Extraction
-      │
-      ▼
-English → Amharic Translation
-      │
-      ▼
-Sentence Embedding
-      │
-      ▼
-Qdrant Vector Search
-      │
-      ▼
-Top-50 Candidate Retrieval
-      │
-      ▼
-Keyword Re-ranking
-      │
-      ▼
-Top-K Results
-      │
-      ▼
-Translate Output (if English)
-      │
-      ▼
+        │
+        ▼
+English / Amharic Query Generation
+        │
+        ▼
+Template-Based Query Alignment
+        │
+        ▼
+E5 Embedding Generation (768 Dimensions)
+        │
+        ▼
+Qdrant Dual Vector Search
+        │
+        ▼
+Max Score Fusion
+        │
+        ▼
+Top Candidate Retrieval
+        │
+        ▼
+Title-Aware Vector Ranking
+        │
+        ▼
+Top-K Result Selection
+        │
+        ▼
+Translate Output (if required)
+        │
+        ▼
 Structured JSON Response
-      │
-      ▼
+        │
+        ▼
 Retrieval Logging
 ```
 
@@ -217,6 +200,7 @@ Retrieval Logging
 
 - Python 3.10+
 - Sentence Transformers
+- intfloat/multilingual-e5-base
 - Qdrant Vector Database
 - Deep Translator
 - NumPy
@@ -226,27 +210,29 @@ Retrieval Logging
 
 # Project Structure
 
-```
+```text
 backend/
 
-│
 ├── data/
-│   ├── chunks/
-        article_chunks.json
-        article_chunks_metadata.json
+│   └── chunks/
+│       ├── article_chunks.json
+│       └── article_chunks_metadata.json
 │
 ├── output/
-│   └── retrieval_logs.jsonl
+│   ├── retrieval_logs.jsonl
+│   └── rag_logs.jsonl
 │
 ├── scripts/
 │   ├── retrieval.py
-│   ├── qdrant_insert.py
-│   ├── qdrant_setup.py
-│   ├── qdrant_test.py
+│   ├── embedding_e5.py
+│   ├── rag_pipeline.py
+│   ├── llm_service.py
 │   └── test_evaluation.py
 │
+├── tests/
+│   └── evaluation_results.json
+│
 ├── .env
-├──  evaluation_results.json
 ├── requirements.txt
 └── README.md
 ```
@@ -255,7 +241,7 @@ backend/
 
 # Installation
 
-## 1. Clone Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/AILegalAssistant.git
@@ -265,9 +251,9 @@ cd AILegalAssistant/backend
 
 ---
 
-## 2. Create Virtual Environment
+## 2. Create a Virtual Environment
 
-Windows
+### Windows
 
 ```bash
 python -m venv .venv
@@ -275,7 +261,7 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-Linux / macOS
+### Linux / macOS
 
 ```bash
 python3 -m venv .venv
@@ -287,13 +273,11 @@ source .venv/bin/activate
 
 ## 3. Install Dependencies
 
-Install required packages.
-
 ```bash
 pip install -r requirements.txt
 ```
 
-Example requirements.txt
+Example dependencies:
 
 ```text
 sentence-transformers
@@ -301,6 +285,9 @@ qdrant-client
 deep-translator
 python-dotenv
 numpy
+google-generativeai
+fastapi
+uvicorn
 ```
 
 ---
@@ -312,34 +299,38 @@ Create a `.env` file.
 ```env
 TOP_K=3
 
-EMBEDDING_MODEL=paraphrase-multilingual-MiniLM-L12-v2
+EMBEDDING_MODEL=intfloat/multilingual-e5-base
+
+GEMINI_API_KEY=your_api_key
+
+LLM_MODEL=gemini-1.5-flash
+
+LLM_TEMPERATURE=0.1
 ```
 
 ---
 
 ## 5. Start Qdrant
 
-Using Docker
-
 ```bash
 docker run -p 6333:6333 qdrant/qdrant
 ```
 
-Ensure the `legal_documents` collection has already been populated with the processed FDRE Constitution vectors.
+Ensure the **legal_documents** collection has already been populated using **embedding_e5.py**.
 
 ---
 
 # Running the Retrieval System
 
-Run the CLI application.
+Run the retrieval application.
 
 ```bash
 python scripts/retrieval.py
 ```
 
-Example
+Example:
 
-```
+```text
 Enter your legal question:
 
 What does Ethiopian law say about equality?
@@ -349,17 +340,9 @@ What does Ethiopian law say about equality?
 
 # Example Retrieval Output
 
-```
-Search Question
-
+```text
+Question:
 What does Ethiopian law say about equality before the law?
-```
-
-Result 1
-
-```
-Document:
-FDRE Constitution
 
 Article:
 Article 25
@@ -367,20 +350,11 @@ Article 25
 Title:
 Right to Equality
 
-Content:
-All persons are equal before the law...
-
 Source:
 FDRE Constitution
 
-Pages:
-8-8
-
 Similarity Score:
 0.92
-
-Ranking Score:
-5.92
 ```
 
 ---
@@ -390,7 +364,9 @@ Ranking Score:
 Run the evaluation script.
 
 ```bash
-python scripts/test_evaluation.py
+cd tests
+
+python test_evaluation.py
 ```
 
 The evaluation measures:
@@ -398,51 +374,20 @@ The evaluation measures:
 - Hit Rate@K
 - Mean Reciprocal Rank (MRR)
 - Retrieval Accuracy
+- Top-K Performance
 
-using a predefined set of legal questions.
-
----
-
-# Retrieval Output Format
-
-Each search returns:
-
-- Document Name
-- Article Number
-- Article Title
-- Chunk Content
-- Source
-- Page Number(s)
-- Similarity Score
-- Ranking Score
-
-The output is also returned as structured JSON for integration with the LLM generation component.
-
----
-
-# Deliverables
-
-- Semantic legal retrieval system
-- Multilingual search support
-- Processed legal document chunks
-- Populated Qdrant vector database
-- Hybrid semantic retrieval with re-ranking
-- Retrieval logging
-- Structured JSON output for Task 9
-- Evaluation script with Hit Rate and MRR
-- README with installation and execution instructions
+using a predefined evaluation dataset.
 
 ---
 
 # Future Improvements
 
-- BM25 + Dense Retrieval Hybrid Search
+- Hybrid BM25 + Dense Retrieval
 - Cross-Encoder Re-ranking
-- Multi-document legal retrieval
-- Retrieval-Augmented Generation (RAG)
-- Support for Ethiopian Civil Code and Criminal Code
-- FastAPI REST API integration
-- Web-based legal search interface
-
----
+- Fine-tuned Legal Embedding Model
+- Support for Civil Code and Criminal Code
+- FastAPI REST API
+- Web-based Legal Chatbot
+- Larger Legal Corpus
+- Production Deployment
 

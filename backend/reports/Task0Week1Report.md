@@ -205,37 +205,29 @@ Reason:
 
 ## Embedding Model Comparison
 
-| Model | Purpose | Advantage |
-|---|---|---|
-| all-MiniLM-L6-v2 | General text embeddings | Fast and lightweight |
-| multilingual-e5-base | Multilingual semantic search | Better Amharic support |
 
+Model	                                    Purpose	                                 Advantage
+all-MiniLM-L6-v2	                     General text embeddings	           Fast and lightweight
+paraphrase-multilingual-MiniLM-L12-v2	Multilingual semantic search	     Better Amharic support
 Selected Model:
-
-multilingual-e5-base (Sentence Transformer)
+paraphrase-multilingual-MiniLM-L12-v2 (Sentence Transformer)
 
 Reason:
-- Supports Amharic and English legal documents.
-- Provides multilingual semantic search capability.
-- Suitable for legal question retrieval.
 
+Supports Amharic and English legal documents.
+Provides multilingual semantic search capability.
+Suitable for legal question retrieval.
+Uses 384 dimensions, making it fast and efficient for local Qdrant deployment.
 ---
 
 ## Vector Database Selection
 
-Selected:
-
-data/vectors/
-FAISS index
-retriever.py
-embedding.py
-
+Selected: Qdrant
 Reason:
-
-- Fast similarity search.
-- Easy local deployment.
-- Suitable for prototype RAG systems.
-- Supports large vector collections.
+   Fast similarity search and advanced metadata filtering.
+   Easy local deployment (via Docker or local instance).
+   Highly scalable and production-ready.
+   Excellent payload (metadata) support, which is critical for storing legal citations (Article, Page, Document Title).
 
 ---
 
@@ -245,7 +237,7 @@ Experiment:
 
 1. Extract Ethiopian legal PDF text.
 2. Generate embeddings using selected model.
-3. Store embeddings in FAISS.
+3. Store embeddings in qdrant.
 4. Test legal questions.
 5. Measure:
    - Retrieval accuracy
@@ -273,7 +265,7 @@ Article-level Chunks
 Embedding Model
 |
 ▼
-FAISS Vector Index
+qdrant Vector Index
 |
 ▼
 Semantic Search
@@ -287,8 +279,8 @@ Gemini LLM
 ▼
 Legal Answer with Citation
 
-
+base
 ---
 
 # Conclusion
-The reviewed technologies provide the foundation for building the Ethiopian Legal & Justice AI Assistant. A hybrid PDF extraction approach, multilingual embeddings, and FAISS vector search were selected to support accurate legal document retrieval and RAG-based question answering.
+The reviewed technologies provide the foundation for building the Ethiopian Legal & Justice AI Assistant. A hybrid PDF extraction approach, multilingual embeddings, and qdrant vector search were selected to support accurate legal document retrieval and RAG-based question answering.

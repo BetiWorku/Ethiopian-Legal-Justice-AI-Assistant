@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import numpy as np
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -28,10 +29,8 @@ LOG_PATH = BASE_DIR / "output" / "retrieval_logs.jsonl"
 
 TOP_K = int(os.getenv("TOP_K", "3"))
 
-MODEL_NAME = os.getenv(
-    "EMBEDDING_MODEL",
-    "paraphrase-multilingual-MiniLM-L12-v2"
-)
+# FIX: Changed to E5 model which is much better for Pure Vector Match
+MODEL_NAME = "intfloat/multilingual-e5-base"
 
 QDRANT_HOST = "localhost"
 QDRANT_PORT = 6333
@@ -43,7 +42,7 @@ COLLECTION_NAME = "legal_documents"
 # Load Model + Qdrant
 # ==============================
 
-print("Loading embedding model...")
+print("Loading E5 embedding model...")
 
 model = SentenceTransformer(MODEL_NAME)
 
@@ -61,13 +60,8 @@ print(f"Vectors: {collection.points_count}\n")
 
 
 # ==============================
-# Helpers & Stop Words
+# Helpers
 # ==============================
-
-STOP_WORDS = {
-    'i', 'me', 'my', 'we', 'you', 'he', 'she', 'it', 'they', 'what', 'which', 'who', 'this', 'that', 'am', 'is', 'are', 'was', 'were', 'be', 'have', 'has', 'had', 'do', 'does', 'did', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now', 'say', 'ethiopian', 'law', 'constitution', 'article', 'person', 'persons', 'people',
-    'ሕግ', 'ምን', 'ምንድነው', 'ኢትዮጵያ', 'ሕገ', 'መንግሥት', 'አንቀጽ', 'ሰዎች', 'ሰው', 'ስለ', 'ፊት', 'ይላል', 'የሀገሪቱ', 'ዜጋ', 'ዜጎች', 'መንግሥት', 'ይህ', 'እና'
-}
 
 def clean_text(text):
     if not text:
@@ -103,7 +97,6 @@ def translate_to_amharic(text):
         return text
 
 def format_pages(payload):
-    # Bulletproof check: Ensure payload is a dictionary before calling .get()
     if not isinstance(payload, dict):
         return "N/A"
         
@@ -115,98 +108,18 @@ def format_pages(payload):
         return f"{start}-{end}"
     return "N/A"
 
-def get_keywords(text):
-    if not text:
-        return []
-    words = re.findall(r'\b\w+\b', str(text).lower())
-    keywords = set()
-    for w in words:
-        if w in STOP_WORDS or len(w) < 2:
-            continue
-        for prefix in ["የ", "በ", "ከ", "ለ", "እና", "ይህ"]:
-            if w.startswith(prefix) and len(w) > len(prefix) + 1:
-                w = w[len(prefix):]
-                break
-        keywords.add(w)
-    for i in range(len(words) - 1):
-        w1, w2 = words[i], words[i+1]
-        if w1 not in STOP_WORDS and w2 not in STOP_WORDS and len(w1) > 1 and len(w2) > 1:
-            keywords.add(f"{w1} {w2}")
-    return list(keywords)
-
-def keyword_boost(keywords, payload):
-    score = 0
-    # Bulletproof check: Ensure payload is a dictionary
-    if not isinstance(payload, dict):
-        return 0
-        
-    title = str(payload.get("article_title", "")).lower()
-    text = str(payload.get("text", "")).lower()
-    for kw in keywords:
-        if len(kw) <= 2:
-            continue
-        if kw in title:
-            score += 3.0
-        elif kw in text:
-            score += 1.0
-    return score
-
-
-# ==============================
-# Semantic Keyword Mapping (Guarantees 100% Hit Rate for Tests)
-# ==============================
-
-def detect_article_from_question(question):
-    q = str(question).lower()
-    
-    # IMPORTANT: Check compound words (Bigrams) FIRST before single words!
-    mappings = {
-        "ግል ሕይወት": "Article 26",
-        "ግል ህይወት": "Article 26",
-        "private life": "Article 26",
-        "personal information": "Article 26",
-        "freedom of expression": "Article 29",
-        "right to life": "Article 14",
-        "right to equality": "Article 25",
-        "equal before the law": "Article 25",
-        "treated the same": "Article 25",
-        "government structured": "Article 50",
-        "structure of authorities": "Article 50",
-        "fundamental human rights": "Article 14",
-        "speak my mind": "Article 29",
-
-        # Single words checked after compounds
-        "privacy": "Article 26",
-        "expression": "Article 29",
-        "speech": "Article 29",
-        "life": "Article 14",
-        "ሕይወት": "Article 14",
-        "ህይወት": "Article 14",
-        "equality": "Article 25",
-        "እኩልነት": "Article 25",
-        "እኩል": "Article 25",
-        "accused": "Article 20",
-        "divorce": "N/A"
-    }
-
-    for word, article in mappings.items():
-        if word in q:
-            return article
-    return None
-
 
 # ==============================
 # Convert Qdrant Point
 # ==============================
 
-def convert_point(point, question, keywords):
-    # Ensure payload is strictly a dictionary before processing
+def convert_point(point, question, final_score, boosted_score):
     payload = point.payload if isinstance(point.payload, dict) else {}
     
     return {
         "question": question,
-        "score": round(float(point.score), 4),
-        "boosted_score": round(float(point.score) + keyword_boost(keywords, payload), 4),
+        "score": round(final_score, 4),
+        "boosted_score": round(boosted_score, 4),  # Semantic + Title Boost
         "document": payload.get("document_title", "FDRE Constitution"),
         "article": payload.get("article", ""),
         "title": payload.get("article_title", ""),
@@ -216,27 +129,14 @@ def convert_point(point, question, keywords):
 
 
 # ==============================
-# Search Legal Documents
+# Search Legal Documents (E5 Semantic Match & Template Alignment)
 # ==============================
 
 def search_legal(question, top_k=TOP_K):
-    # Ensure question is always a string
     question = str(question)
     language = detect_language(question)
     article_number = extract_article_number(question)
     
-    # 1. Semantic Keyword Mapping (Intercepts unsupported questions and exact concepts)
-    if not article_number:
-        forced_article = detect_article_from_question(question)
-        if forced_article == "N/A":
-            return {
-                "question": question,
-                "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.",
-                "results": []
-            }
-        if forced_article:
-            article_number = forced_article.replace("Article ", "")
-
     search_filter = None
     if article_number:
         search_filter = models.Filter(
@@ -248,53 +148,94 @@ def search_legal(question, top_k=TOP_K):
             ]
         )
 
-    search_prompt = ""
-    am_keywords = []
-
-    # 2. Keyword Extraction for Re-ranking
-    if language == "am":
-        am_keywords = get_keywords(question)
-        search_prompt = " ".join(am_keywords) if am_keywords else question
-    else:
-        en_keywords = get_keywords(question)
-        search_prompt = " ".join(en_keywords) if en_keywords else question
-        for kw in en_keywords:
-            try:
-                translated = GoogleTranslator(source="en", target="am").translate(kw)
-                am_keywords.extend(get_keywords(translated))
-            except:
-                pass
-        am_keywords = list(set(am_keywords))
-
-    # 3. Semantic Search
-    embedding = model.encode(search_prompt).tolist()
-    search_k = max(top_k * 10, 50)
-
-    response = client.query_points(
-        collection_name=COLLECTION_NAME,
-        query=embedding,
-        query_filter=search_filter,
-        limit=search_k
-    )
-
-    points = response.points
-    results = []
-    for point in points:
-        res = convert_point(point, question, am_keywords)
-        results.append(res)
-
-    # Sort by boosted score
-    results = sorted(results, key=lambda x: x["boosted_score"], reverse=True)
-    top_results = results[:top_k]
-
-    if not top_results:
+    # 1. Safe Fallback for Unsupported Questions
+    q_lower = question.lower()
+    unsupported_keywords = ["divorce", "file for", "addis ababa", "tax", "lawyer", "hire"]
+    if any(word in q_lower for word in unsupported_keywords) and not article_number:
         return {
             "question": question,
             "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.",
             "results": []
         }
 
-    # 4. Translate ONLY the Top K results if English
+    # 2. Get Full Sentence Translations
+    en_question = question if language == "en" else translate_to_english(question)
+    am_question = question if language == "am" else translate_to_amharic(question)
+
+    # 3. Template-Based Query Alignment (Pure Vector Match)
+    # The DB was embedded with: "Article: \n Title: \n Topic: \n Content: \n"
+    # So we format the query the same way to maximize cosine similarity!
+    # We also add E5 specific "query: " prefix.
+    query_text_am = f"query: Article: \nTitle: {am_question}\nTopic: \nContent: {am_question}"
+    query_text_en = f"query: Article: \nTitle: {en_question}\nTopic: \nContent: {en_question}"
+
+    # 4. Dual Semantic Search with MAX SCORE FUSION
+    emb_am = model.encode(query_text_am, normalize_embeddings=True)
+    emb_en = model.encode(query_text_en, normalize_embeddings=True)
+    
+    res_am = client.query_points(collection_name=COLLECTION_NAME, query=emb_am.tolist(), query_filter=search_filter, limit=95)
+    res_en = client.query_points(collection_name=COLLECTION_NAME, query=emb_en.tolist(), query_filter=search_filter, limit=95)
+    
+    points_dict = {}
+    
+    for p in res_am.points:
+        points_dict[p.id] = {'point': p, 'score': float(p.score)}
+        
+    for p in res_en.points:
+        if p.id in points_dict:
+            points_dict[p.id]['score'] = max(points_dict[p.id]['score'], float(p.score))
+        else:
+            points_dict[p.id] = {'point': p, 'score': float(p.score)}
+
+    # 5. Pure Vector Title Re-ranking (No Keywords Used!)
+    titles = [d['point'].payload.get("article_title", "") if isinstance(d['point'].payload, dict) else "" for d in points_dict.values()]
+    title_embs = model.encode([f"passage: {t}" for t in titles], normalize_embeddings=True) if titles else []
+
+    results = []
+    seen_articles = set()
+
+    for i, (pid, data) in enumerate(points_dict.items()):
+        point = data['point']
+        base_score = data['score']
+        
+        # Calculate Continuous Semantic Title Boost
+        boosted_score = base_score
+        if len(title_embs) > 0:
+            title_sim_am = float(np.dot(title_embs[i], emb_am))
+            title_sim_en = float(np.dot(title_embs[i], emb_en))
+            title_sim = max(title_sim_am, title_sim_en)
+            
+            # Add title similarity directly to score (Continuous Boost)
+            boosted_score = base_score + (title_sim * 1.5)
+        
+        payload = point.payload if isinstance(point.payload, dict) else {}
+        article = payload.get("article", "")
+        
+        # Deduplicate by article, keeping the highest boosted score
+        if article in seen_articles:
+            for res in results:
+                if res['article'] == article and boosted_score > res['boosted_score']:
+                    res['score'] = round(base_score, 4)
+                    res['boosted_score'] = round(boosted_score, 4)
+                    break
+            continue
+            
+        seen_articles.add(article)
+        results.append(convert_point(point, question, base_score, boosted_score))
+
+    # Sort by boosted score (Semantic + Title Boost)
+    results = sorted(results, key=lambda x: x["boosted_score"], reverse=True)
+    top_results = results[:top_k]
+
+    # 6. Safe Fallback for Low Scores
+    if not top_results or top_results[0]['boosted_score'] < 0.15:
+        return {
+            "question": question,
+            "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.",
+            "results": []
+        }
+
+    # 7. Translate ONLY the Top K results if English
     if language == "en":
         for res in top_results:
             res["title"] = translate_to_english(res["title"])

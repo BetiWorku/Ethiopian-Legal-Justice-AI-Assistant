@@ -1,34 +1,25 @@
 import json
 from pathlib import Path
-import pickle
-
-import faiss
-import numpy as np
 from sentence_transformers import SentenceTransformer
-
+from qdrant_client import QdrantClient
+from qdrant_client.http import models
 
 # ======================
 # Paths
 # ======================
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 CHUNKS_FILE = BASE_DIR / "data" / "chunks" / "article_chunks_metadata.json"
 
-VECTOR_DIR = BASE_DIR / "data" / "vectors"
+# ======================
+# Qdrant Configuration
+# ======================
 
-VECTOR_DIR.mkdir(
-    parents=True,
-    exist_ok=True
-)
-
-
-INDEX_FILE = VECTOR_DIR / "legal.index"
-
-META_FILE = VECTOR_DIR / "metadata.pkl"
-
-
+QDRANT_HOST = "localhost"
+QDRANT_PORT = 6333
+COLLECTION_NAME = "legal_documents"
+# MiniLM model uses 384 dimensions
+VECTOR_SIZE = 384 
 
 # ======================
 # Load chunks
@@ -36,273 +27,104 @@ META_FILE = VECTOR_DIR / "metadata.pkl"
 
 print("Loading chunks...")
 
-
-with open(
-    CHUNKS_FILE,
-    "r",
-    encoding="utf-8"
-) as f:
-
+with open(CHUNKS_FILE, "r", encoding="utf-8") as f:
     chunks = json.load(f)
 
-
-
-print(
-    f"Chunks loaded: {len(chunks)}"
-)
-
-
+print(f"Chunks loaded: {len(chunks)}")
 
 # ======================
-# Prepare text + metadata
+# Initialize Qdrant Client
 # ======================
 
+print("Connecting to Qdrant...")
 
-texts = []
+client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 
-metadata = []
+# FIX: Delete collection if it already exists (to avoid dimension mismatch errors)
+collections = client.get_collections().collections
+collection_names = [c.name for c in collections]
 
+if COLLECTION_NAME in collection_names:
+    print(f"Deleting existing collection '{COLLECTION_NAME}' to reset dimensions...")
+    client.delete_collection(COLLECTION_NAME)
 
-for chunk in chunks:
-
-
-    text = chunk.get(
-        "text",
-        ""
+# Create new collection with the correct vector size (384 for MiniLM)
+print(f"Creating collection '{COLLECTION_NAME}' with size {VECTOR_SIZE}...")
+client.create_collection(
+    collection_name=COLLECTION_NAME,
+    vectors_config=models.VectorParams(
+        size=VECTOR_SIZE,
+        distance=models.Distance.COSINE
     )
-
-
-    meta = chunk.get(
-        "metadata",
-        {}
-    )
-
-
-    if not text.strip():
-        continue
-
-
-
-    # Add metadata into embedding text
-    # This improves Amharic topic search
-
-    embedding_text = f"""
-
-Article:
-{meta.get("article","")}
-
-Title:
-{meta.get("article_title","")}
-
-Topic:
-{meta.get("topic","")}
-
-Content:
-{text}
-
-"""
-
-
-    texts.append(
-        embedding_text
-    )
-
-
-
-    # Save complete metadata
-
-    metadata.append({
-
-        "id": chunk.get(
-            "id",
-            ""
-        ),
-
-        "text": text,
-
-
-        "document_title": meta.get(
-            "document_title",
-            ""
-        ),
-
-
-        "document_type": meta.get(
-            "document_type",
-            ""
-        ),
-
-
-        "article": meta.get(
-            "article",
-            ""
-        ),
-
-
-        "article_title": meta.get(
-            "article_title",
-            ""
-        ),
-
-
-        "topic": meta.get(
-            "topic",
-            ""
-        ),
-
-
-        "language": meta.get(
-            "language",
-            "am"
-        ),
-
-
-        "jurisdiction": meta.get(
-            "jurisdiction",
-            ""
-        ),
-
-
-        "page_start": meta.get(
-            "page_start",
-            None
-        ),
-
-
-        "page_end": meta.get(
-            "page_end",
-            None
-        ),
-
-
-        "source": meta.get(
-            "source",
-            ""
-        ),
-
-
-        "chunk_index": meta.get(
-            "chunk_index",
-            0
-        )
-
-    })
-
-
-
-print(
-    f"Prepared {len(texts)} documents"
 )
-
-
+print("Collection created.")
 
 # ======================
 # Embedding model
 # ======================
 
-
-print(
-    "Loading embedding model..."
-)
-
-
-model = SentenceTransformer(
-    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-)
-
-
+print("Loading embedding model...")
+model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
 
 # ======================
-# Create embeddings
+# Prepare and Upload to Qdrant
 # ======================
 
+print("Creating embeddings and uploading to Qdrant...")
 
-print(
-    "Creating embeddings..."
-)
+points_to_upload = []
 
+for index, chunk in enumerate(chunks):
+    text = chunk.get("text", "")
+    meta = chunk.get("metadata", {})
+    
+    if not text.strip():
+        continue
 
-embeddings = model.encode(
-    texts,
-    batch_size=32,
-    show_progress_bar=True,
-    normalize_embeddings=True
-)
+    # Create a rich text for embedding
+    embedding_text = f"""
+Article: {meta.get("article", "")}
+Title: {meta.get("article_title", "")}
+Topic: {meta.get("topic", "")}
+Content: {text}
+    """.strip()
 
+    # Generate embedding
+    vector = model.encode(embedding_text, normalize_embeddings=True).tolist()
 
-
-embeddings = np.array(
-    embeddings,
-    dtype="float32"
-)
-
-
-
-# ======================
-# Create FAISS
-# ======================
-
-
-print(
-    "Creating FAISS index..."
-)
-
-
-dimension = embeddings.shape[1]
-
-
-index = faiss.IndexFlatIP(
-    dimension
-)
-
-
-index.add(
-    embeddings
-)
-
-
-
-# ======================
-# Save FAISS
-# ======================
-
-
-faiss.write_index(
-    index,
-    str(INDEX_FILE)
-)
-
-
-
-# ======================
-# Save metadata
-# ======================
-
-
-with open(
-    META_FILE,
-    "wb"
-) as f:
-
-    pickle.dump(
-        metadata,
-        f
+    # Prepare Qdrant Point
+    point = models.PointStruct(
+        id=index,  # Simple integer ID
+        vector=vector,
+        payload={
+            "id": chunk.get("id", str(index)),
+            "text": text,
+            "document_title": meta.get("document_title", "FDRE Constitution"),
+            "document_type": meta.get("document_type", ""),
+            "article": meta.get("article", ""),
+            "article_title": meta.get("article_title", ""),
+            "topic": meta.get("topic", ""),
+            "language": meta.get("language", "am"),
+            "jurisdiction": meta.get("jurisdiction", ""),
+            "page_start": meta.get("page_start"),
+            "page_end": meta.get("page_end"),
+            "source": meta.get("source", ""),
+            "chunk_index": meta.get("chunk_index", 0)
+        }
     )
+    
+    points_to_upload.append(point)
 
-
+    # Upload in batches of 64
+    if len(points_to_upload) >= 64 or index == len(chunks) - 1:
+        client.upsert(
+            collection_name=COLLECTION_NAME,
+            points=points_to_upload
+        )
+        points_to_upload = []  # Reset batch
+        print(f"Uploaded {index + 1}/{len(chunks)} chunks...")
 
 print("============================")
-print("Embedding completed")
+print("Ingestion completed successfully!")
 print("============================")
-
-print(
-    f"FAISS index: {INDEX_FILE}"
-)
-
-print(
-    f"Metadata: {META_FILE}"
-)
-
-print(
-    f"Documents: {len(metadata)}"
-)
+print(f"Total documents uploaded to Qdrant: {len(chunks)}")

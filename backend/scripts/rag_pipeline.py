@@ -52,7 +52,7 @@ def generate_legal_answer(question):
     # ==========================
     # Semantic Retrieval
     # ==========================
-    retrieval_response = search_legal(question, top_k=5)
+    retrieval_response = search_legal(question, top_k=3)
 
     # Bulletproof check: Ensure retrieval_response is a dictionary
     if not isinstance(retrieval_response, dict):
@@ -161,7 +161,7 @@ This response is provided for general legal information only and does not replac
                 "document": doc_title,
                 "article": art_num,
                 "title": doc.get("title", "Unknown"),
-                "pages": doc.get("pages", "Unknown"),
+                "pages": doc.get("pages", "N/A"),
                 "source": source_str,
                 "similarity_score": doc.get("score", 0)
             })
@@ -170,10 +170,14 @@ This response is provided for general legal information only and does not replac
     # Final Response (Multilingual Formatting)
     # ==========================
     
-    # 1. Build the sources string
+    # 1. Build the sources string (FIXED: Handle "N/A" pages cleanly)
     sources_str = ""
     for src in sources:
-        sources_str += f"\n- {src['document']}, {src['article']}, Page {src['pages']}"
+        page = src.get("pages", "N/A")
+        if page and page != "N/A":
+            sources_str += f"\n- {src['document']}, {src['article']}, Page {page}"
+        else:
+            sources_str += f"\n- {src['document']}, {src['article']}"
 
     # 2. Clean up the LLM answer
     clean_answer = answer.replace("Answer:", "").replace("መልስ:", "").strip()
@@ -224,7 +228,7 @@ if __name__ == "__main__":
     print("Type exit to quit")
 
     while True:
-        question = input("\nAsk legal question: ")
+        question = input("\nAsk a legal question | የሕግ ጥያቄ ይጠይቁ: ")
         if question.lower() == "exit":
             break
 
