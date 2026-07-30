@@ -193,7 +193,7 @@ Top-K Legal Articles
 Selected Method:
 
 **Hybrid Approach**
-(PyMuPDF + Tesseract OCR)
+(PyMuPDF + Tesseract OCR+ openCVfor image processing)
 
 Reason:
 
