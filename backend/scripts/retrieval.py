@@ -10,308 +10,180 @@ from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
-
+from rank_bm25 import BM25Okapi
 
 # ==============================
-# Paths
+# Paths & Config
 # ==============================
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 load_dotenv(BASE_DIR / ".env")
-
 LOG_PATH = BASE_DIR / "output" / "retrieval_logs.jsonl"
-
-
-# ==============================
-# Configuration
-# ==============================
-
 TOP_K = int(os.getenv("TOP_K", "3"))
-
-# FIX: Changed to E5 model which is much better for Pure Vector Match
 MODEL_NAME = "intfloat/multilingual-e5-base"
-
-QDRANT_HOST = "localhost"
-QDRANT_PORT = 6333
-
 COLLECTION_NAME = "legal_documents"
 
-
 # ==============================
-# Load Model + Qdrant
+# Load Model & Connect to Docker
 # ==============================
-
 print("Loading E5 embedding model...")
-
 model = SentenceTransformer(MODEL_NAME)
 
-print("Connecting to Qdrant...")
-
-client = QdrantClient(
-    host=QDRANT_HOST,
-    port=QDRANT_PORT
-)
-
+print("Connecting to Qdrant Docker Server (localhost:6333)...")
+client = QdrantClient(host="localhost", port=6333)
 collection = client.get_collection(COLLECTION_NAME)
-
 print(f"Loaded collection: {COLLECTION_NAME}")
 print(f"Vectors: {collection.points_count}\n")
-
 
 # ==============================
 # Helpers
 # ==============================
-
-def clean_text(text):
-    if not text:
-        return ""
-    text = re.sub(r"\s*\d*\s*=+\s*SOURCE:.*", "", str(text), flags=re.IGNORECASE)
-    return re.sub(r"\s+", " ", text).strip()
-
 def detect_language(text):
-    if re.search(r"[\u1200-\u137F]", str(text)):
-        return "am"
+    if re.search(r"[\u1200-\u137F]", str(text)): return "am"
     return "en"
+
+def translate_to_english(text):
+    if not text: return ""
+    try: return GoogleTranslator(source="auto", target="en").translate(text)
+    except: return text
+
+def translate_to_amharic(text):
+    if not text: return ""
+    try: return GoogleTranslator(source="auto", target="am").translate(text)
+    except: return text
 
 def extract_article_number(question):
     match = re.search(r"(article|art\.?|አንቀጽ)\s*(\d+)", str(question).lower())
-    if match:
-        return match.group(2)
+    return match.group(2) if match else None
+
+def extract_document_filter(question):
+    q_lower = question.lower()
+    # Added fuzzy matching for typos like "constition"
+    if "constit" in q_lower or "ሕገ መንግሥት" in q_lower: return "Constitution"
+    elif "family" in q_lower or "ቤተሰብ" in q_lower: return "Family Code"
+    elif "civil" in q_lower or "ሲቪል" in q_lower: return "Civil Code"
     return None
 
-def translate_to_english(text):
-    if not text:
-        return ""
-    try:
-        return GoogleTranslator(source="auto", target="en").translate(text)
-    except:
-        return text
-
-def translate_to_amharic(text):
-    if not text:
-        return ""
-    try:
-        return GoogleTranslator(source="auto", target="am").translate(text)
-    except:
-        return text
-
-def format_pages(payload):
-    if not isinstance(payload, dict):
-        return "N/A"
-        
-    start = payload.get("page_start")
-    end = payload.get("page_end")
-    if start and end:
-        if str(start) == str(end):
-            return str(start)
-        return f"{start}-{end}"
-    return "N/A"
-
+def tokenize(text):
+    return re.findall(r'\w+', str(text).lower())
 
 # ==============================
-# Convert Qdrant Point
+# Search Legal Documents (PURE HYBRID: 60% DENSE + 40% SPARSE)
 # ==============================
-
-def convert_point(point, question, final_score, boosted_score):
-    payload = point.payload if isinstance(point.payload, dict) else {}
-    
-    return {
-        "question": question,
-        "score": round(final_score, 4),
-        "boosted_score": round(boosted_score, 4),  # Semantic + Title Boost
-        "document": payload.get("document_title", "FDRE Constitution"),
-        "article": payload.get("article", ""),
-        "title": payload.get("article_title", ""),
-        "pages": format_pages(payload),
-        "text": clean_text(payload.get("text", ""))
-    }
-
-
-# ==============================
-# Search Legal Documents (E5 Semantic Match & Template Alignment)
-# ==============================
-
 def search_legal(question, top_k=TOP_K):
     question = str(question)
     language = detect_language(question)
     article_number = extract_article_number(question)
+    document_filter = extract_document_filter(question)
     
-    search_filter = None
+    # Build Filter
+    conditions = []
     if article_number:
-        search_filter = models.Filter(
-            must=[
-                models.FieldCondition(
-                    key="article",
-                    match=models.MatchValue(value=f"Article {article_number}")
-                )
-            ]
-        )
+        conditions.append(models.FieldCondition(key="article", match=models.MatchValue(value=f"Article {article_number}")))
+    if document_filter:
+        conditions.append(models.FieldCondition(key="document_title", match=models.MatchValue(value=document_filter)))
+            
+    search_filter = models.Filter(must=conditions) if conditions else None
 
     # 1. Safe Fallback for Unsupported Questions
     q_lower = question.lower()
     unsupported_keywords = ["divorce", "file for", "addis ababa", "tax", "lawyer", "hire"]
     if any(word in q_lower for word in unsupported_keywords) and not article_number:
-        return {
-            "question": question,
-            "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.",
-            "results": []
-        }
+        return {"question": question, "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.", "results": []}
 
     # 2. Get Full Sentence Translations
     en_question = question if language == "en" else translate_to_english(question)
     am_question = question if language == "am" else translate_to_amharic(question)
 
-    # 3. Template-Based Query Alignment (Pure Vector Match)
-    # The DB was embedded with: "Article: \n Title: \n Topic: \n Content: \n"
-    # So we format the query the same way to maximize cosine similarity!
-    # We also add E5 specific "query: " prefix.
-    query_text_am = f"query: Article: \nTitle: {am_question}\nTopic: \nContent: {am_question}"
-    query_text_en = f"query: Article: \nTitle: {en_question}\nTopic: \nContent: {en_question}"
+    # 3. Template-Based Query Alignment (Simplified for E5)
+    query_text_am = f"query: {am_question}"
+    query_text_en = f"query: {en_question}"
 
-    # 4. Dual Semantic Search with MAX SCORE FUSION
+    # 4. Dual Semantic Search (Dense) - Fetch Top 100 for Re-ranking
     emb_am = model.encode(query_text_am, normalize_embeddings=True)
     emb_en = model.encode(query_text_en, normalize_embeddings=True)
     
-    res_am = client.query_points(collection_name=COLLECTION_NAME, query=emb_am.tolist(), query_filter=search_filter, limit=95)
-    res_en = client.query_points(collection_name=COLLECTION_NAME, query=emb_en.tolist(), query_filter=search_filter, limit=95)
+    res_am = client.query_points(collection_name=COLLECTION_NAME, query=emb_am.tolist(), query_filter=search_filter, limit=100)
+    res_en = client.query_points(collection_name=COLLECTION_NAME, query=emb_en.tolist(), query_filter=search_filter, limit=100)
     
     points_dict = {}
-    
     for p in res_am.points:
         points_dict[p.id] = {'point': p, 'score': float(p.score)}
-        
     for p in res_en.points:
         if p.id in points_dict:
             points_dict[p.id]['score'] = max(points_dict[p.id]['score'], float(p.score))
         else:
             points_dict[p.id] = {'point': p, 'score': float(p.score)}
 
-    # 5. Pure Vector Title Re-ranking (No Keywords Used!)
-    titles = [d['point'].payload.get("article_title", "") if isinstance(d['point'].payload, dict) else "" for d in points_dict.values()]
-    title_embs = model.encode([f"passage: {t}" for t in titles], normalize_embeddings=True) if titles else []
-
-    results = []
+    # 5. Process Candidates
+    candidates = []
     seen_articles = set()
-
-    for i, (pid, data) in enumerate(points_dict.items()):
+    for pid, data in points_dict.items():
         point = data['point']
-        base_score = data['score']
-        
-        # Calculate Continuous Semantic Title Boost
-        boosted_score = base_score
-        if len(title_embs) > 0:
-            title_sim_am = float(np.dot(title_embs[i], emb_am))
-            title_sim_en = float(np.dot(title_embs[i], emb_en))
-            title_sim = max(title_sim_am, title_sim_en)
-            
-            # Add title similarity directly to score (Continuous Boost)
-            boosted_score = base_score + (title_sim * 1.5)
-        
         payload = point.payload if isinstance(point.payload, dict) else {}
         article = payload.get("article", "")
         
-        # Deduplicate by article, keeping the highest boosted score
-        if article in seen_articles:
-            for res in results:
-                if res['article'] == article and boosted_score > res['boosted_score']:
-                    res['score'] = round(base_score, 4)
-                    res['boosted_score'] = round(boosted_score, 4)
-                    break
-            continue
-            
+        if article in seen_articles: continue
         seen_articles.add(article)
-        results.append(convert_point(point, question, base_score, boosted_score))
+        
+        candidates.append({
+            "id": pid,
+            "dense_score": float(data['score']),
+            "document": payload.get("document_title", "Unknown"),
+            "article": article,
+            "text": payload.get("text", "")
+        })
 
-    # Sort by boosted score (Semantic + Title Boost)
-    results = sorted(results, key=lambda x: x["boosted_score"], reverse=True)
-    top_results = results[:top_k]
+    if not candidates:
+        return {"question": question, "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.", "results": []}
 
-    # 6. Safe Fallback for Low Scores
-    if not top_results or top_results[0]['boosted_score'] < 0.15:
-        return {
-            "question": question,
-            "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.",
-            "results": []
-        }
+    # 6. SPARSE SEARCH (BM25) & Normalized Score Fusion
+    tokenized_corpus = [tokenize(doc["text"]) for doc in candidates]
+    bm25 = BM25Okapi(tokenized_corpus)
+    
+    tokenized_query = tokenize(en_question)
+    bm25_scores = bm25.get_scores(tokenized_query)
+    
+    for i, doc in enumerate(candidates):
+        doc["sparse_score"] = float(bm25_scores[i])
 
-    # 7. Translate ONLY the Top K results if English
-    if language == "en":
-        for res in top_results:
-            res["title"] = translate_to_english(res["title"])
-            res["text"] = translate_to_english(res["text"])
+    # Normalize scores to 0-1 range
+    def normalize_scores(scores):
+        if not scores: return []
+        min_s, max_s = min(scores), max(scores)
+        if max_s == min_s: return [1.0 for _ in scores]
+        return [(s - min_s) / (max_s - min_s) for s in scores]
 
-    # Generate structured Answer text
+    dense_scores = [doc["dense_score"] for doc in candidates]
+    sparse_scores = [doc["sparse_score"] for doc in candidates]
+    
+    norm_dense = normalize_scores(dense_scores)
+    norm_sparse = normalize_scores(sparse_scores)
+    
+    # FIX: 60% Dense (Meaning), 40% Sparse (Keywords) to catch exact legal terms better
+    w_dense = 0.6
+    w_sparse = 0.4
+    
+    for i, doc in enumerate(candidates):
+        doc["hybrid_score"] = (w_dense * norm_dense[i]) + (w_sparse * norm_sparse[i])
+
+    top_results = sorted(candidates, key=lambda x: x["hybrid_score"], reverse=True)[:top_k]
+
+    # 7. Safe Fallback for Low Scores
+    # FIX: Threshold lowered to 0.05 to prevent blocking valid answers
+    if not top_results:
+        return {"question": question, "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.", "results": []}
+        
+    if top_results[0]['dense_score'] < 0.05 and not article_number:
+        return {"question": question, "answer": "ምንም የሕግ መረጃ አልተገኘም።" if language == "am" else "No legal information found.", "results": []}
+
+    # 8. Generate Answer Text
     top = top_results[0]
     if language == "am":
-        answer_text = f"በኢትዮጵያ ሕገ መንግሥት መሠረት፡-\nአንቀጽ: {top['article']}\nርዕስ: {top['title']}\nይዘት: {top['text']}\nምንጭ: {top['document']}, {top['article']}"
+        answer_text = f"በኢትዮጵያ ሕግ መሠረት፡-\nአንቀጽ: {top['article']}\nይዘት: {top['text']}\nምንጭ: {top['document']}, {top['article']}"
     else:
-        answer_text = f"According to Ethiopian law:\nArticle: {top['article']}\nTitle: {top['title']}\nContent: {top['text']}\nSource: {top['document']}, {top['article']}"
+        answer_text = f"According to Ethiopian law:\nArticle: {top['article']}\nContent: {top['text']}\nSource: {top['document']}, {top['article']}"
 
-    return {
-        "question": question,
-        "answer": answer_text,
-        "results": top_results
-    }
+    for res in top_results:
+        res["score"] = res.get("hybrid_score", 0)
 
-
-# ==============================
-# Print Results (Formatted for CLI)
-# ==============================
-
-def print_results(response):
-    print("\n" + "=" * 60)
-    print(f"Search Question: {response['question']}")
-    print("=" * 60)
-
-    print("\nANSWER:\n" + response['answer'])
-
-    if not response['results']:
-        return
-
-    print("\n" + "=" * 60)
-    print("RETRIEVAL RESULTS (EVIDENCE)")
-    print("=" * 60)
-
-    for index, result in enumerate(response['results'], start=1):
-        print(f"\nResult {index}:")
-        print(f"Document: {result['document']}")
-        print(f"Article: {result['article']}")
-        print(f"Content: {result['text']}")
-        print(f"Source: {result['document']}, {result['article']}")
-        print(f"Pages: {result['pages']}")
-        print(f"Similarity Score: {result['score']}")
-        print(f"Ranking Score: {result['boosted_score']}")
-
-
-# ==============================
-# Logging
-# ==============================
-
-def save_log(data):
-    LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
-    data["timestamp"] = datetime.now(timezone.utc).isoformat()
-
-    with open(LOG_PATH, "a", encoding="utf-8") as file:
-        file.write(json.dumps(data, ensure_ascii=False) + "\n")
-
-
-# ==============================
-# CLI
-# ==============================
-
-if __name__ == "__main__":
-
-    while True:
-        question = input("\nEnter legal question (or exit): ").strip()
-
-        if not question:
-            print("Input cannot be empty. Please enter a valid question.")
-            continue
-
-        if question.lower() in ["exit", "quit"]:
-            break
-
-        response = search_legal(question)
-        print_results(response)
-        save_log(response)
+    return {"question": question, "answer": answer_text, "results": top_results}

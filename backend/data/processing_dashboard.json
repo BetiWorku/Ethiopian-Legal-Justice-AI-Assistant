@@ -1,0 +1,48 @@
+{
+    "documents": [
+        {
+            "filename": "Civil_Code_AM.pdfpdf.pdf",
+            "type": "Mixed",
+            "ocr_confidence": 83.2,
+            "low_confidence_flag": false,
+            "chunks_added": 1
+        },
+        {
+            "filename": "Civil_Code_EN.pdf",
+            "type": "Digital",
+            "ocr_confidence": 100.0,
+            "low_confidence_flag": false,
+            "chunks_added": 518
+        },
+        {
+            "filename": "Ethiopia_Constitution_Amharic.pdf",
+            "type": "Scanned",
+            "ocr_confidence": 93.0,
+            "low_confidence_flag": false,
+            "chunks_added": 243
+        },
+        {
+            "filename": "Ethiopia_Constitution_English.pdf",
+            "type": "Digital",
+            "ocr_confidence": 100.0,
+            "low_confidence_flag": false,
+            "chunks_added": 71
+        },
+        {
+            "filename": "Family_Code_AM.pdf",
+            "type": "Digital",
+            "ocr_confidence": 100.0,
+            "low_confidence_flag": false,
+            "chunks_added": 0
+        },
+        {
+            "filename": "Family_Code_EN.pdf",
+            "type": "Digital",
+            "ocr_confidence": 100.0,
+            "low_confidence_flag": false,
+            "chunks_added": 154
+        }
+    ],
+    "duplicates_removed": 0,
+    "total_chunks": 987
+}

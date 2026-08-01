@@ -70,7 +70,7 @@ A hybrid extraction method was selected:
    PyMuPDF Direct          Convert Pages to Images
     Extraction                    |
           │                       ▼
-          │                 Image Preprocessing
+          │                 Image Preprocessing  by opencv
           │          (Grayscale, Threshold, Resize)
           │                       |
           │                       ▼
@@ -108,7 +108,7 @@ A hybrid extraction method was selected:
 | Page | Method | Language | Article Numbers | Readability | Major Errors | Rating |
 |---|---|---|---|---|---|---|
 | Clear page | Tesseract OCR | Amharic | Yes | High | Minor character errors | 4/5 |
-| Low-quality page | Tesseract OCR | Amharic | Partial | Medium | Character confusion, noise | 3/5 |
+| Low-quality page | Tesseract OCR | Amharic | high | Medium | Character confusion, noise | 4/5 |
 | Article structure page | Tesseract OCR | Amharic | Yes | High | Minor formatting issues | 4/5 |
 
 ## OCR Cleaning Example

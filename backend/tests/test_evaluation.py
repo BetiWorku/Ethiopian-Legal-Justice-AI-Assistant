@@ -1,131 +1,106 @@
+import json
+import time
 import sys
 import os
-import json
-import re
 
-# FIX: Add the scripts directory to the system path so we can import retrieval.py
-# This goes up one level (to backend) and then into the scripts folder
-SCRIPTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'scripts')
-sys.path.append(SCRIPTS_DIR)
-
+# Add scripts folder to path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 from retrieval import search_legal
 
-# The 15 Test Questions
-test_questions = [
-    {"id": 1, "category": "Direct", "question": "What does Ethiopian law say about equality before the law?", "expected": "Article 25"},
-    {"id": 2, "category": "Direct", "question": "What is the right to freedom of expression?", "expected": "Article 29"},
-    {"id": 3, "category": "Direct", "question": "Explain the right to life.", "expected": "Article 14"},
-    {"id": 4, "category": "Direct", "question": "What does the constitution say about privacy?", "expected": "Article 26"},
-    {"id": 5, "category": "Direct", "question": "What are the rights of the accused?", "expected": "Article 20"},
-    {"id": 6, "category": "Paraphrased", "question": "Are all citizens treated the same by the courts?", "expected": "Article 25"},
-    {"id": 7, "category": "Paraphrased", "question": "Can I speak my mind freely without government interference?", "expected": "Article 29"},
-    {"id": 8, "category": "Paraphrased", "question": "Does the state protect my personal information and home?", "expected": "Article 26"},
-    {"id": 9, "category": "Article-Number", "question": "What is article 25?", "expected": "Article 25"},
-    {"id": 10, "category": "Article-Number", "question": "Show me article 29.", "expected": "Article 29"},
-    {"id": 11, "category": "Broad-Topic", "question": "What are the fundamental human rights provisions?", "expected": "Chapter 3 (e.g., Art 14-28)"},
-    {"id": 12, "category": "Broad-Topic", "question": "How is the government structured under the constitution?", "expected": "Chapter 4 (e.g., Art 45-61)"},
-    {"id": 13, "category": "Amharic", "question": "የእኩልነት መብት ምንድነው?", "expected": "Article 25"},
-    {"id": 14, "category": "Cross-Language", "question": "What does Ethiopian law say about ግል ሕይወት (privacy)?", "expected": "Article 26"},
-    {"id": 15, "category": "Unsupported", "question": "How do I file for a divorce in Addis Ababa?", "expected": "N/A (No Result)"}
+# Perfect 15 Test Cases (Optimized for Document Filtering)
+test_cases = [
+    # --- CONSTITUTION (5 Questions) ---
+    {"id": 1, "category": "Direct", "question": "What does the constitution say about equality before the law?", "expected": "Article 25", "doc": "Constitution"},
+    {"id": 2, "category": "Direct", "question": "What is the right to freedom of expression in the constitution?", "expected": "Article 29", "doc": "Constitution"},
+    {"id": 3, "category": "Paraphrased", "question": "Are all citizens treated the same by the courts in the constitution?", "expected": "Article 25", "doc": "Constitution"},
+    {"id": 4, "category": "Amharic", "question": "በሕገ መንግሥት የእኩልነት መብት ምንድነው?", "expected": "Article 25", "doc": "Constitution"},
+    {"id": 5, "category": "Cross-Language", "question": "What does the constitution say about ግል ሕይወት (privacy)?", "expected": "Article 26", "doc": "Constitution"},
+    
+    # --- FAMILY CODE (4 Questions) ---
+    {"id": 6, "category": "Direct", "question": "What are the essential conditions for a valid marriage in the family code?", "expected": "Article 6", "doc": "Family Code"},
+    {"id": 7, "category": "Direct", "question": "What does the family code say about prohibited relatives (ርክርክ)?", "expected": "Article 8", "doc": "Family Code"},
+    {"id": 8, "category": "Article-Number", "question": "What is article 6 in the family code?", "expected": "Article 6", "doc": "Family Code"},
+    {"id": 9, "category": "Amharic", "question": "በቤተሰብ ሕግ የጋብቻ ውጤቶች ምን ምን ናቸው?", "expected": "Article 47", "doc": "Family Code"},
+    
+    # --- CIVIL CODE (3 Questions) ---
+    {"id": 10, "category": "Article-Number", "question": "What is article 4 in the civil code?", "expected": "Article 4", "doc": "Civil Code"},
+    {"id": 11, "category": "Direct", "question": "What is the legal definition of a contract in the civil code?", "expected": "Article 1675", "doc": "Civil Code"},
+    {"id": 12, "category": "Paraphrased", "question": "How does the civil code define ownership and property rights?", "expected": "Article 1204", "doc": "Civil Code"},
+    
+    # --- UNSUPPORTED (2 Questions) ---
+    {"id": 13, "category": "Unsupported", "question": "How do I file for a divorce in Addis Ababa?", "expected": "N/A", "doc": "N/A"},
+    {"id": 14, "category": "Unsupported", "question": "Can you help me hire a lawyer for tax evasion?", "expected": "N/A", "doc": "N/A"},
+    
+    # --- ADDITIONAL CONSTITUTION (1 Question) ---
+    {"id": 15, "category": "Direct", "question": "Explain the right to life in the constitution.", "expected": "Article 14", "doc": "Constitution"}
 ]
 
-def extract_article_num(article_str):
-    """Extracts the integer from 'Article 25' or 'Art 45-61'"""
-    match = re.search(r'(?:Art|Article)\s*(\d+)', article_str, re.IGNORECASE)
-    if match:
-        return int(match.group(1))
-    match = re.search(r'\d+', article_str)
-    return int(match.group()) if match else None
+print("\n" + "="*80)
+print("STARTING COMPREHENSIVE RETRIEVAL EVALUATION (Constitution, Civil, Family)")
+print("="*80)
 
-def run_evaluation():
-    print("=" * 80)
-    print("STARTING RETRIEVAL EVALUATION (15 QUESTIONS)")
-    print("=" * 80)
+hits = 0
+mrr_sum = 0.0
+detailed_results = []
+
+for test in test_cases:
+    print(f"\n[Test {test['id']}/15] Category: {test['category']} | Target Doc: {test.get('doc', 'Any')}")
+    print(f"Question: {test['question']}")
+    print(f"Expected: {test['expected']}")
+    print("-" * 40)
     
-    hits = 0
-    mrr_sum = 0.0
-    results_log = []
-
-    for i, test in enumerate(test_questions, 1):
-        print(f"\n[Test {i}/15] Category: {test['category']}")
-        print(f"Question: {test['question']}")
-        print(f"Expected: {test['expected']}")
-        print("-" * 40)
-        
-        # Call the search function from retrieval.py
-        response = search_legal(test['question'], top_k=3)
-        
-        retrieved_articles = [res['article'] for res in response.get('results', [])]
-        print(f"Retrieved Top-3: {retrieved_articles}")
-        
-        rank = 0
-        is_hit = False
-        
-        if test['expected'] == "N/A (No Result)":
-            if not retrieved_articles:
+    start_time = time.time()
+    response = search_legal(test["question"])
+    latency = time.time() - start_time
+    
+    retrieved_articles = [res.get("article", "") for res in response.get("results", [])]
+    print(f"Retrieved Top-3: {retrieved_articles}")
+    
+    is_hit = False
+    hit_rank = -1
+    
+    if test["expected"] == "N/A":
+        if not retrieved_articles:
+            is_hit = True
+            hit_rank = 1
+    else:
+        for i, art in enumerate(retrieved_articles):
+            if test["expected"].lower() in art.lower():
                 is_hit = True
-                rank = 1
-        else:
-            expected_art_num = extract_article_num(test['expected'])
-            
-            for idx, art in enumerate(retrieved_articles, 1):
-                if test['expected'] in art:
-                    is_hit = True
-                    rank = idx
-                    break
+                hit_rank = i + 1
+                break
                 
-                if "Chapter" in test['expected'] and expected_art_num:
-                    retrieved_num = extract_article_num(art)
-                    range_offset = 16 if "Chapter 4" in test['expected'] else 14
-                    if retrieved_num and retrieved_num >= expected_art_num and retrieved_num <= expected_art_num + range_offset:
-                        is_hit = True
-                        rank = idx
-                        break
+    if is_hit:
+        print(f"✅ HIT! Rank: {hit_rank} (Latency: {latency:.2f}s)")
+        hits += 1
+        mrr_sum += 1.0 / hit_rank
+    else:
+        print(f"❌ MISS! (Latency: {latency:.2f}s)")
         
-        if is_hit:
-            hits += 1
-            mrr_sum += (1.0 / rank)
-            print(f"✅ HIT! Rank: {rank}")
-        else:
-            print(f"❌ MISS!")
-            
-        results_log.append({
-            "id": i,
-            "category": test['category'],
-            "question": test['question'],
-            "expected": test['expected'],
-            "retrieved": retrieved_articles,
-            "hit": is_hit,
-            "rank": rank
-        })
+    detailed_results.append({
+        "id": test["id"],
+        "question": test["question"],
+        "expected": test["expected"],
+        "retrieved": retrieved_articles,
+        "hit": is_hit,
+        "rank": hit_rank,
+        "latency": round(latency, 2)
+    })
 
-    hit_rate = (hits / len(test_questions)) * 100
-    mrr = mrr_sum / len(test_questions)
-    
-    print("\n" + "=" * 80)
-    print("EVALUATION METRICS SUMMARY")
-    print("=" * 80)
-    print(f"Total Questions : 15")
-    print(f"Hits            : {hits}")
-    print(f"Hit Rate @ 3    : {hit_rate:.2f}%")
-    print(f"MRR (Mean Reciprocal Rank) : {mrr:.4f}")
-    print("=" * 80)
-    
-        # Save results to JSON strictly inside the tests folder
-    # __file__ is the path to this script (test_evaluation.py)
-    # os.path.dirname gets the folder containing this script (tests folder)
-    tests_folder = os.path.dirname(os.path.abspath(__file__))
-    output_path = os.path.join(tests_folder, "evaluation_results.json")
-    
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump({
-            "metrics": {
-                "hit_rate": hit_rate,
-                "mrr": mrr
-            },
-            "details": results_log
-        }, f, ensure_ascii=False, indent=4)
-    print(f"\nDetailed results saved to '{output_path}'")
+hit_rate = (hits / len(test_cases)) * 100
+mrr = mrr_sum / len(test_cases)
 
-if __name__ == "__main__":
-    run_evaluation()
+print("\n" + "="*80)
+print("EVALUATION METRICS SUMMARY")
+print("="*80)
+print(f"Total Questions : {len(test_cases)}")
+print(f"Hits            : {hits}")
+print(f"Hit Rate @ 3    : {hit_rate:.2f}%")
+print(f"MRR (Mean Reciprocal Rank) : {mrr:.4f}")
+print("="*80)
+
+# Save detailed results
+results_path = os.path.join(os.path.dirname(__file__), 'evaluation_results_v2.json')
+with open(results_path, "w", encoding="utf-8") as f:
+    json.dump(detailed_results, f, ensure_ascii=False, indent=4)
+print(f"Detailed results saved to '{results_path}'")

@@ -1,0 +1,185 @@
+[
+    {
+        "id": 1,
+        "question": "What does the constitution say about equality before the law?",
+        "expected": "Article 25",
+        "retrieved": [
+            "Article 4",
+            "Article 47",
+            "Article 3"
+        ],
+        "hit": false,
+        "rank": -1,
+        "latency": 2.28
+    },
+    {
+        "id": 2,
+        "question": "What is the right to freedom of expression in the constitution?",
+        "expected": "Article 29",
+        "retrieved": [
+            "Article 47",
+            "Article 30",
+            "Article 3"
+        ],
+        "hit": false,
+        "rank": -1,
+        "latency": 1.79
+    },
+    {
+        "id": 3,
+        "question": "Are all citizens treated the same by the courts in the constitution?",
+        "expected": "Article 25",
+        "retrieved": [
+            "Article 3",
+            "Article 16",
+            "Article 25"
+        ],
+        "hit": true,
+        "rank": 3,
+        "latency": 1.79
+    },
+    {
+        "id": 4,
+        "question": "በሕገ መንግሥት የእኩልነት መብት ምንድነው?",
+        "expected": "Article 25",
+        "retrieved": [
+            "Article 25",
+            "Article 42",
+            "Article 4"
+        ],
+        "hit": true,
+        "rank": 1,
+        "latency": 1.42
+    },
+    {
+        "id": 5,
+        "question": "What does the constitution say about ግል ሕይወት (privacy)?",
+        "expected": "Article 26",
+        "retrieved": [
+            "Article 26",
+            "Article 14",
+            "Article 34"
+        ],
+        "hit": true,
+        "rank": 1,
+        "latency": 1.38
+    },
+    {
+        "id": 6,
+        "question": "What are the essential conditions for a valid marriage in the family code?",
+        "expected": "Article 6",
+        "retrieved": [
+            "Article 26",
+            "Article 28",
+            "Article 6"
+        ],
+        "hit": true,
+        "rank": 3,
+        "latency": 1.6
+    },
+    {
+        "id": 7,
+        "question": "What does the family code say about prohibited relatives (ርክርክ)?",
+        "expected": "Article 8",
+        "retrieved": [
+            "Article 8",
+            "Article 224",
+            "Article 227"
+        ],
+        "hit": true,
+        "rank": 1,
+        "latency": 1.61
+    },
+    {
+        "id": 8,
+        "question": "What is article 6 in the family code?",
+        "expected": "Article 6",
+        "retrieved": [
+            "Article 6"
+        ],
+        "hit": true,
+        "rank": 1,
+        "latency": 1.64
+    },
+    {
+        "id": 9,
+        "question": "በቤተሰብ ሕግ የጋብቻ ውጤቶች ምን ምን ናቸው?",
+        "expected": "Article 47",
+        "retrieved": [
+            "Article 48",
+            "Article 42",
+            "Article 56"
+        ],
+        "hit": false,
+        "rank": -1,
+        "latency": 2.46
+    },
+    {
+        "id": 10,
+        "question": "What is article 4 in the civil code?",
+        "expected": "Article 4",
+        "retrieved": [
+            "Article 4"
+        ],
+        "hit": true,
+        "rank": 1,
+        "latency": 2.23
+    },
+    {
+        "id": 11,
+        "question": "What is the legal definition of a contract in the civil code?",
+        "expected": "Article 1675",
+        "retrieved": [
+            "Article 88",
+            "Article 274",
+            "Article 52"
+        ],
+        "hit": false,
+        "rank": -1,
+        "latency": 2.66
+    },
+    {
+        "id": 12,
+        "question": "How does the civil code define ownership and property rights?",
+        "expected": "Article 1204",
+        "retrieved": [
+            "Article 842",
+            "Article 3132",
+            "Article 166"
+        ],
+        "hit": false,
+        "rank": -1,
+        "latency": 2.2
+    },
+    {
+        "id": 13,
+        "question": "How do I file for a divorce in Addis Ababa?",
+        "expected": "N/A",
+        "retrieved": [],
+        "hit": true,
+        "rank": 1,
+        "latency": 0.0
+    },
+    {
+        "id": 14,
+        "question": "Can you help me hire a lawyer for tax evasion?",
+        "expected": "N/A",
+        "retrieved": [],
+        "hit": true,
+        "rank": 1,
+        "latency": 0.0
+    },
+    {
+        "id": 15,
+        "question": "Explain the right to life in the constitution.",
+        "expected": "Article 14",
+        "retrieved": [
+            "Article 14",
+            "Article 34",
+            "Article 35"
+        ],
+        "hit": true,
+        "rank": 1,
+        "latency": 2.66
+    }
+]
