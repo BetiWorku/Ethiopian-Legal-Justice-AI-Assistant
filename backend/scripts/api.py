@@ -4,11 +4,9 @@ from pydantic import BaseModel
 
 from scripts.rag_pipeline import generate_legal_answer
 
-
 app = FastAPI(
     title="Ethiopian Legal Assistant API"
 )
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,41 +16,25 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 class ChatRequest(BaseModel):
-
     question: str
-
-
 
 @app.get("/")
 def root():
-
     return {
-        "message":"Ethiopian Legal Assistant API is running"
+        "message": "Ethiopian Legal Assistant API is running"
     }
-
-
 
 @app.post("/chat")
 def chat_endpoint(request: ChatRequest):
-
     try:
-
-        result = generate_legal_answer(
-            request.question
-        )
-
+        result = generate_legal_answer(request.question)
         return {
             "question": request.question,
             "result": result
         }
-
-
     except Exception as e:
-
         print("API ERROR:", e)
-
         return {
             "error": str(e)
         }

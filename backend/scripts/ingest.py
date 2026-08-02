@@ -21,11 +21,16 @@ PDF_DIR = BASE_DIR / "data" / "documents"
 CACHE_PATH = BASE_DIR / "data" / "extracted_documents.json" # Cache file path
 DASHBOARD_LOG = BASE_DIR / "data" / "processing_dashboard.json"
 
+# FIX: "Civil_Code_AM.pdfpdf.pdf" has a duplicated extension typo. This means
+# the Civil Code Amharic PDF almost certainly never matched a real file on
+# disk (pdfs_to_process filters by exact filename match against this map),
+# which is why the coverage check showed only 1 Amharic chunk out of 519
+# total Civil Code chunks. Confirm the real filename and fix this key.
 PDF_METADATA_MAP = {
     "Ethiopia_Constitution_English.pdf": {"name": "Constitution", "language": "English"},
     "Ethiopia_Constitution_Amharic.pdf": {"name": "Constitution", "language": "Amharic"},
     "Civil_Code_EN.pdf": {"name": "Civil Code", "language": "English"},
-    "Civil_Code_AM.pdfpdf.pdf": {"name": "Civil Code", "language": "Amharic"},
+    "Civil_Code_AM.pdf": {"name": "Civil Code", "language": "Amharic"},  # FIXED typo (was "Civil_Code_AM.pdfpdf.pdf")
     "Family_Code_EN.pdf": {"name": "Family Code", "language": "English"},
     "Family_Code_AM.pdf": {"name": "Family Code", "language": "Amharic"}
 }
@@ -67,7 +72,7 @@ def classify_pdf_and_extract(pdf_path):
     digital_pages = 0
     scanned_pages = 0
     pages_text = []
-    
+
     for page in doc:
         text = page.get_text().strip()
         if len(text) > 50:
@@ -76,43 +81,43 @@ def classify_pdf_and_extract(pdf_path):
         else:
             scanned_pages += 1
             pages_text.append({"text": ""}) # Placeholder for OCR
-            
+
     doc.close()
-    
+
     pdf_type = "Digital"
     if scanned_pages > 0 and digital_pages > 0:
         pdf_type = "Mixed"
     elif scanned_pages > 0:
         pdf_type = "Scanned"
-        
+
     return pdf_type, pages_text, digital_pages, scanned_pages
 
 def run_ocr_with_confidence(pdf_path, pages_data):
     doc = fitz.open(pdf_path)
     total_confidence = 0
     ocr_pages_count = 0
-    
+
     for i, page in enumerate(doc):
         if not pages_data[i]["text"]: # If empty, run OCR
             pix = page.get_pixmap(dpi=300)
             img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
-            
+
             # Preprocess image
             np_img = np.array(img)
             gray = cv2.cvtColor(np_img, cv2.COLOR_RGB2GRAY)
             thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-            
+
             # Get OCR Data with confidence scores
             data = pytesseract.image_to_data(thresh, lang="amh+eng", output_type=pytesseract.Output.DICT)
             confidences = [int(c) for c in data['conf'] if int(c) > 0]
             avg_conf = sum(confidences) / len(confidences) if confidences else 0
-            
+
             text = " ".join(data['text'])
             pages_data[i]["text"] = text
             pages_data[i]["conf"] = round(avg_conf, 2)
             total_confidence += avg_conf
             ocr_pages_count += 1
-            
+
     doc.close()
     avg_ocr_conf = (total_confidence / ocr_pages_count) if ocr_pages_count > 0 else 100.0
     return pages_data, round(avg_ocr_conf, 2)
@@ -130,7 +135,7 @@ if __name__ == "__main__":
     for pdf in pdfs_to_process:
         meta = PDF_METADATA_MAP[pdf.name]
         print(f"\nProcessing: {pdf.name}")
-        
+
         # 1. Check if a clean Google Drive OCR text file exists!
         txt_path = pdf.with_suffix('.txt')
         if txt_path.exists():
@@ -139,46 +144,63 @@ if __name__ == "__main__":
                 full_text = f.read()
             pdf_type = "Digital (Google OCR)"
             ocr_conf = 100.0
-            
+
         else:
             # 2. Classify PDF
             pdf_type, pages_data, digital_count, scanned_count = classify_pdf_and_extract(pdf)
             print(f"  Type: {pdf_type} (Digital: {digital_count}, Scanned: {scanned_count})")
-            
+
             # 3. Run OCR if needed and get confidence
             ocr_conf = 100.0
             if pdf_type in ["Scanned", "Mixed"]:
                 print("  Running OCR...")
                 pages_data, ocr_conf = run_ocr_with_confidence(pdf, pages_data)
-                
+
             full_text = "\n".join([p["text"] for p in pages_data])
-            
+
         low_conf_flag = ocr_conf < 70.0
         full_text = re.sub(r'\n+', '\n', full_text).strip()
-        
+
         # 4. Chunking by Article
+        # FIX (the main bug): `pattern` already contains its own capturing
+        # group `(...)`. The original code wrapped it AGAIN with f'({pattern})',
+        # producing a regex with TWO capturing groups around the same match.
+        # re.split() returns every capturing group's text per match, so the
+        # result list had THREE elements per delimiter (header, duplicate
+        # header, body) instead of the TWO the loop below assumes (header,
+        # body). That off-by-one misalignment is what caused:
+        #   - ~50% of real article bodies to be skipped (landed on the
+        #     duplicate-header slot, which is short and got filtered by
+        #     `len(article_body) < 30`)
+        #   - the other ~50% to have their REAL body text treated as the
+        #     "header", so `re.search(r'\d+', article_id_raw)` pulled a
+        #     random number out of the paragraph (a cross-reference, a date,
+        #     a sub-clause number) instead of the true article number —
+        #     this is exactly how unrelated content ended up mislabeled as
+        #     "Article 25" of the Constitution.
+        # The fix: do NOT re-wrap `pattern` in an extra set of parentheses.
         pattern = r'((?:Article|Art\.?|አንቀጽ)\s*\d+)'
-        parts = re.split(f'({pattern})', full_text, flags=re.IGNORECASE)
-        
+        parts = re.split(pattern, full_text, flags=re.IGNORECASE)
+
         chunks_added = 0
         for i in range(1, len(parts), 2):
             if i+1 < len(parts):
                 article_id_raw = parts[i].replace('\n', ' ').strip()
                 article_body = parts[i+1].strip()
-                
+
                 if len(article_body) < 30: continue
-                
+
                 match_num = re.search(r'\d+', article_id_raw)
                 if not match_num: continue
                 article_id = f"Article {match_num.group()}"
-                
+
                 # 5. Duplicate Detection (Hashing)
                 chunk_hash = hashlib.md5(article_body.encode('utf-8')).hexdigest()
                 if chunk_hash in seen_hashes:
                     dashboard_data["duplicates_removed"] += 1
                     continue
                 seen_hashes.add(chunk_hash)
-                
+
                 all_legal_documents.append({
                     "text": article_body,
                     "document_title": meta["name"],
@@ -217,7 +239,7 @@ if __name__ == "__main__":
     for doc in all_legal_documents:
         text_to_embed = f"passage: {doc['text']}"
         vector = model.encode(text_to_embed, normalize_embeddings=True).tolist()
-        
+
         payload = {
             "document_title": doc["document_title"],
             "article": doc["article"],
@@ -225,9 +247,9 @@ if __name__ == "__main__":
             "language": doc["language"],
             "chunk_hash": doc["chunk_hash"]
         }
-        
+
         client.upsert(
-            collection_name=COLLECTION_NAME, 
+            collection_name=COLLECTION_NAME,
             points=[PointStruct(id=point_id_counter, vector=vector, payload=payload)]
         )
         point_id_counter += 1

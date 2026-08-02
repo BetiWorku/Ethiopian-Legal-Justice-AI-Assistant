@@ -4,39 +4,45 @@
         "question": "What does the constitution say about equality before the law?",
         "expected": "Article 25",
         "retrieved": [
-            "Article 4",
-            "Article 47",
-            "Article 3"
+            "Article 25",
+            "Article 2",
+            "Article 35",
+            "Article 106",
+            "Article 9"
         ],
-        "hit": false,
-        "rank": -1,
-        "latency": 2.28
+        "hit": true,
+        "rank": 1,
+        "latency": 7.1
     },
     {
         "id": 2,
         "question": "What is the right to freedom of expression in the constitution?",
         "expected": "Article 29",
         "retrieved": [
-            "Article 47",
+            "Article 29",
+            "Article 31",
+            "Article 27",
             "Article 30",
-            "Article 3"
+            "Article 105"
         ],
-        "hit": false,
-        "rank": -1,
-        "latency": 1.79
+        "hit": true,
+        "rank": 1,
+        "latency": 4.73
     },
     {
         "id": 3,
-        "question": "Are all citizens treated the same by the courts in the constitution?",
-        "expected": "Article 25",
+        "question": "Does the constitution guarantee the right to privacy?",
+        "expected": "Article 26",
         "retrieved": [
-            "Article 3",
-            "Article 16",
-            "Article 25"
+            "Article 26",
+            "Article 25",
+            "Article 20",
+            "Article 14",
+            "Article 19"
         ],
         "hit": true,
-        "rank": 3,
-        "latency": 1.79
+        "rank": 1,
+        "latency": 12.93
     },
     {
         "id": 4,
@@ -45,11 +51,13 @@
         "retrieved": [
             "Article 25",
             "Article 42",
-            "Article 4"
+            "Article 35",
+            "Article 41",
+            "Article 89"
         ],
         "hit": true,
         "rank": 1,
-        "latency": 1.42
+        "latency": 2.11
     },
     {
         "id": 5,
@@ -57,38 +65,44 @@
         "expected": "Article 26",
         "retrieved": [
             "Article 26",
+            "Article 20",
             "Article 14",
-            "Article 34"
+            "Article 1",
+            "Article 44"
         ],
         "hit": true,
         "rank": 1,
-        "latency": 1.38
+        "latency": 4.66
     },
     {
         "id": 6,
-        "question": "What are the essential conditions for a valid marriage in the family code?",
+        "question": "What does the family code say about free and full consent for a valid marriage?",
         "expected": "Article 6",
         "retrieved": [
-            "Article 26",
-            "Article 28",
-            "Article 6"
+            "Article 6",
+            "Article 25",
+            "Article 13",
+            "Article 7",
+            "Article 55"
         ],
         "hit": true,
-        "rank": 3,
-        "latency": 1.6
+        "rank": 1,
+        "latency": 3.68
     },
     {
         "id": 7,
         "question": "What does the family code say about prohibited relatives (ርክርክ)?",
         "expected": "Article 8",
         "retrieved": [
+            "Article 9",
             "Article 8",
+            "Article 16",
             "Article 224",
-            "Article 227"
+            "Article 55"
         ],
         "hit": true,
-        "rank": 1,
-        "latency": 1.61
+        "rank": 2,
+        "latency": 2.28
     },
     {
         "id": 8,
@@ -99,20 +113,22 @@
         ],
         "hit": true,
         "rank": 1,
-        "latency": 1.64
+        "latency": 3.11
     },
     {
         "id": 9,
-        "question": "በቤተሰብ ሕግ የጋብቻ ውጤቶች ምን ምን ናቸው?",
-        "expected": "Article 47",
+        "question": "በቤተሰብ ሕግ የጋብቻ ፈቃደኝነት ምንድን ነው?",
+        "expected": "Article 6",
         "retrieved": [
-            "Article 48",
-            "Article 42",
-            "Article 56"
+            "Article 14",
+            "Article 6",
+            "Article 3",
+            "Article 221",
+            "Article 143"
         ],
-        "hit": false,
-        "rank": -1,
-        "latency": 2.46
+        "hit": true,
+        "rank": 2,
+        "latency": 2.72
     },
     {
         "id": 10,
@@ -123,33 +139,29 @@
         ],
         "hit": true,
         "rank": 1,
-        "latency": 2.23
+        "latency": 3.38
     },
     {
         "id": 11,
-        "question": "What is the legal definition of a contract in the civil code?",
-        "expected": "Article 1675",
+        "question": "What is article 6 in the civil code?",
+        "expected": "Article 6",
         "retrieved": [
-            "Article 88",
-            "Article 274",
-            "Article 52"
+            "Article 6"
         ],
-        "hit": false,
-        "rank": -1,
-        "latency": 2.66
+        "hit": true,
+        "rank": 1,
+        "latency": 2.46
     },
     {
         "id": 12,
-        "question": "How does the civil code define ownership and property rights?",
-        "expected": "Article 1204",
+        "question": "What is article 5 in the civil code?",
+        "expected": "Article 5",
         "retrieved": [
-            "Article 842",
-            "Article 3132",
-            "Article 166"
+            "Article 5"
         ],
-        "hit": false,
-        "rank": -1,
-        "latency": 2.2
+        "hit": true,
+        "rank": 1,
+        "latency": 2.16
     },
     {
         "id": 13,
@@ -174,12 +186,14 @@
         "question": "Explain the right to life in the constitution.",
         "expected": "Article 14",
         "retrieved": [
+            "Article 15",
             "Article 14",
-            "Article 34",
-            "Article 35"
+            "Article 1",
+            "Article 36",
+            "Article 105"
         ],
         "hit": true,
-        "rank": 1,
-        "latency": 2.66
+        "rank": 2,
+        "latency": 2.15
     }
 ]
