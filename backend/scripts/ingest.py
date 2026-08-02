@@ -20,12 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PDF_DIR = BASE_DIR / "data" / "documents"
 CACHE_PATH = BASE_DIR / "data" / "extracted_documents.json" # Cache file path
 DASHBOARD_LOG = BASE_DIR / "data" / "processing_dashboard.json"
-
-# FIX: "Civil_Code_AM.pdfpdf.pdf" has a duplicated extension typo. This means
-# the Civil Code Amharic PDF almost certainly never matched a real file on
-# disk (pdfs_to_process filters by exact filename match against this map),
-# which is why the coverage check showed only 1 Amharic chunk out of 519
-# total Civil Code chunks. Confirm the real filename and fix this key.
 PDF_METADATA_MAP = {
     "Ethiopia_Constitution_English.pdf": {"name": "Constitution", "language": "English"},
     "Ethiopia_Constitution_Amharic.pdf": {"name": "Constitution", "language": "Amharic"},
@@ -161,24 +155,6 @@ if __name__ == "__main__":
         low_conf_flag = ocr_conf < 70.0
         full_text = re.sub(r'\n+', '\n', full_text).strip()
 
-        # 4. Chunking by Article
-        # FIX (the main bug): `pattern` already contains its own capturing
-        # group `(...)`. The original code wrapped it AGAIN with f'({pattern})',
-        # producing a regex with TWO capturing groups around the same match.
-        # re.split() returns every capturing group's text per match, so the
-        # result list had THREE elements per delimiter (header, duplicate
-        # header, body) instead of the TWO the loop below assumes (header,
-        # body). That off-by-one misalignment is what caused:
-        #   - ~50% of real article bodies to be skipped (landed on the
-        #     duplicate-header slot, which is short and got filtered by
-        #     `len(article_body) < 30`)
-        #   - the other ~50% to have their REAL body text treated as the
-        #     "header", so `re.search(r'\d+', article_id_raw)` pulled a
-        #     random number out of the paragraph (a cross-reference, a date,
-        #     a sub-clause number) instead of the true article number —
-        #     this is exactly how unrelated content ended up mislabeled as
-        #     "Article 25" of the Constitution.
-        # The fix: do NOT re-wrap `pattern` in an extra set of parentheses.
         pattern = r'((?:Article|Art\.?|አንቀጽ)\s*\d+)'
         parts = re.split(pattern, full_text, flags=re.IGNORECASE)
 
